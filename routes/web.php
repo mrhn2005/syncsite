@@ -194,3 +194,16 @@ Route::group([
     
     
 Route::get('sitemap', ['as'=>'sitempa', 'uses'=>'HomeController@sitemap']);
+Route::group(['prefix' => 'store'], function () {
+  Route::get('/login', 'StoreAuth\LoginController@showLoginForm')->name('login');
+  Route::post('/login', 'StoreAuth\LoginController@login');
+  Route::post('/logout', 'StoreAuth\LoginController@logout')->name('logout');
+
+  Route::get('/register', 'StoreAuth\RegisterController@showRegistrationForm')->name('register');
+  Route::post('/register', 'StoreAuth\RegisterController@register');
+
+  Route::post('/password/email', 'StoreAuth\ForgotPasswordController@sendResetLinkEmail')->name('password.request');
+  Route::post('/password/reset', 'StoreAuth\ResetPasswordController@reset')->name('password.email');
+  Route::get('/password/reset', 'StoreAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+  Route::get('/password/reset/{token}', 'StoreAuth\ResetPasswordController@showResetForm');
+});
