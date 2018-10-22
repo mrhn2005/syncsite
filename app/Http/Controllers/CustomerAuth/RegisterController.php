@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Http\Controllers\CustomerAuth;
-
+use App\Address;
 use App\Customer;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
-
+use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\URL;
+use App\Mail\UserRegistered;
+use Illuminate\Support\Facades\Mail;
 class RegisterController extends Controller
 {
     /*
@@ -28,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/customer/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -37,6 +40,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        $this->redirectTo = URL::previous();
         $this->middleware('customer.guest');
     }
 
@@ -48,9 +52,12 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        session()->flash("fail_register","failed");
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:customers',
+            'mobile' => 'required|numeric|unique:customers',
+            'address' => 'required',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -63,11 +70,38 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Customer::create([
+        
+        $address=new Address;
+        $address->name=$data['address'];
+        $address->customer_id=$data['address'];
+        $address->delivery_id=$data['region_id'];
+        $customer=Customer::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'mobile' => $data['mobile'],
+            'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
         ]);
+        
+        $address->customer_id=$customer->id;
+        $address->save();
+        session()->forget('fail_register');
+        try{
+            Mail::to($data['email'])->send(new UserRegistered($data['email'],$data['password']));
+            if ((Cart::content()->count()>0)){
+                Cart::store($customer->id);
+            }
+            
+            return $customer;
+        }
+        catch (\Exception $e){
+        //   echo $data['email'];
+        //   echo $e;
+        //   die();
+          return $customer;
+        }
+
+        
     }
 
     /**

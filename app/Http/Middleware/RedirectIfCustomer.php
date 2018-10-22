@@ -20,7 +20,7 @@ class RedirectIfCustomer
 	    if (Auth::guard($guard)->check()) {
 	        return redirect('customer/home');
 	    }
-
+		
 	    return $next($request);
 	}
 }

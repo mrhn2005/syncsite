@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\CustomerAuth;
-
+use Illuminate\Support\Facades\URL;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Hesto\MultiAuth\Traits\LogsoutGuard;
-
+use Gloudemans\Shoppingcart\Facades\Cart;
 class LoginController extends Controller
 {
     /*
@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    public $redirectTo = '/customer/home';
+    public $redirectTo ='/';
 
     /**
      * Create a new controller instance.
@@ -38,6 +38,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        $this->redirectTo = URL::previous();
         $this->middleware('customer.guest', ['except' => 'logout']);
     }
 
@@ -59,5 +60,13 @@ class LoginController extends Controller
     protected function guard()
     {
         return Auth::guard('customer');
+    }
+    
+    protected function authenticated($user, $user)
+    {
+        if ((Cart::content()->count()>0)){
+            Cart::delete_cart($user->id);
+            Cart::store($user->id);
+        }
     }
 }

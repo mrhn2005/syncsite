@@ -44,8 +44,13 @@ class CustomerResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('You are receiving this email because we received a password reset request for your account.')
-            ->action('Reset Password', url('customer/password/reset', $this->token))
-            ->line('If you did not request a password reset, no further action is required.');
+            ->subject('محلی جات - تغییر رمز عبور')
+            ->line('
+            شما این ایمیل را به این خاطر دریافت کرده اید که درخواست بازنشانی رمز عبور در سایت محلی جات کرده اید.
+            ')
+            ->action('بازگردانی رمز عبور', url('customer/password/reset', $this->token))
+            ->line('
+            اگر شما درخواست رمز عبور جدید نکرده اید. این ایمیل را نادیده بگیرید.
+            ');
     }
 }

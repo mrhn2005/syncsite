@@ -1,0 +1,412 @@
+.idn-follow-order {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+  padding: 0 0 50px 0;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  /*width: 900px;*/
+}
+.idn-first-login{
+  text-align: center;
+  color: red;
+  margin-top: 3%;
+  margin-bottom: auto;
+  vertical-align: middle;
+  font-weight: 500;
+  font-size: 14px;
+}
+.idn-vendor-pendding{
+  font-size: 10px;
+}
+.idn-pnk-pendding{
+  color:#ed0c6e;
+  font-size:14px;
+    text-align: center;
+}
+.idn-span-txt{
+  font-size: 15px !important;
+  line-height: 33px;
+  color: #ed0c6e;
+  font-style: normal;
+}
+/*.idn-span-txt-lft{
+  font-size: 13px;
+  line-height: 33px;
+  color: #292929;
+}*/
+#penddingImgSrc{
+  margin:10px auto;
+  width: 40%;
+}
+.idn-span-txt-valu{
+  font-size: 15px;
+  line-height: 33px;
+  color: #292929;
+}
+.idn-img-res{
+  max-width: 36px;
+  max-height: 45px;
+}
+.idn-left-align-txt{
+  color:#636363;
+  text-align:left;
+}
+.idn-span-line-txt{
+  font-size:12px;
+  color: #000000;
+  font-weight: 400;
+  font-style: normal;
+  background: #ffffff;
+}
+.idn-pink-span{
+  background: #ed0c6e;
+  font-size:12px;
+  color: #ffffff;
+  font-weight: 400;
+  font-style: normal;
+}
+.idn-right{
+  text-align: right !important;
+}
+.idn-left{
+  text-align: left !important;
+}
+.idn-order-info{
+  background: #ffffff;
+  border-color: #c7c7c7;
+  border:1px solid #c7c7c7;
+  border-radius: 5px;
+  color: #c7c7c7;
+  padding: 5px 60px;
+  font-size: 12px;
+  width: 100%;
+  display: inline-block;
+  font-family: "iransans", arial, sans-serif;
+  cursor: pointer;
+  margin: 40px 0;
+  text-align: center;
+}
+.idn-btn-takhir{
+  background: #505050;
+  border-color: #505050;
+  border-radius: 5px;
+  padding: 10px 60px;
+  font-size: 12px;
+  width: 100%;
+  display: inline-block;
+  font-family: "iransans", arial, sans-serif;
+  cursor: pointer;
+  margin: 10% 0;
+}
+.idn-btn-comment{
+  border-radius: 5px;
+  padding: 10px 60px;
+  font-size: 12px;
+  width: 100%;
+  display: inline-block;
+  font-family: "iransans", arial, sans-serif;
+  cursor: pointer;
+  margin: 10% 0;
+}
+.idn-btn-takhir:hover{
+  background: #353535;
+  border-color: #353535;
+}
+button.idn-btn-takhir[disabled=disabled], button.idn-btn-takhir:disabled {
+  background: #c7c7c7;
+  border-color: #c7c7c7;
+  color: #ffffff;
+}
+.gray-btn{
+  background: #505050;
+  border-color: #505050;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+}
+.gray-btn:hover{
+  background: #353535;
+  border-color: #353535;
+  color: #ffffff;
+}
+.gray-btn:active{
+  background: #353535;
+  border-color: #353535;
+  color: #ffffff;
+}
+.idn-header-table{
+  border: 1px solid #c7c7c7;
+  background: #f4f3f3;
+}
+.idn-header-table th{
+  text-align: center !important;
+  border: 1px solid #c7c7c7;
+  color: #9f9f9f;
+  font-size:12px;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "iransans", arial, sans-serif;
+}
+.idn-section-table{
+ margin: 5% 0;
+}
+.food-row td{
+  border: 1px solid #c7c7c7;
+}
+tr.idn-final-payment{
+  border: 1px solid #ed0c6e;
+  background: #ed0c6e;
+}
+tr.idn-final-payment td{
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+}
+.table>tbody>tr>td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: none;
+}
+td.idn-right-border{
+  border-right: 1px solid #c7c7c7;
+  padding-right: 5% !important;
+}
+td.idn-left-border{
+  border-left: 1px solid #c7c7c7;
+  padding-left: 5% !important;
+}
+.idn-circle-wrap{
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  width: 260px;
+  height: 260px;
+  text-align: center;
+  bottom: -10px;
+  margin-left: auto;
+  padding: 0 !important;
+}
+.idn-circle{
+  position: absolute;
+  border-radius: 50%;
+  width: 260px;
+  height: 260px;
+  border: 1px solid #d9d9d9;
+  background: #f4f3f3;
+  padding: 20px;
+  box-shadow: 2px 5px 10px 2px #868686;
+
+}
+.idn-circle-inner{
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    background-color: #ffffff;
+    border-radius: 50%;
+    top: 19px;
+    right: 18px;
+    padding: 0 10px;
+}
+.idn-header-img{
+  background-image: url(/bundles/bodofoodfrontend/images/vendor/placeholder_1.jpg);
+  background-repeat: repeat-x;
+  height: 180px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.idn-status-pendding{
+  text-align:center;
+  font-size:11px;
+  font-weight: 600;
+}
+
+.idn-flt-left{
+  float: left;
+}
+.idn-update-feel{
+  font-size:8px;
+  text-align:left;
+  font-weight: 500;
+}
+span .idn-update-time{
+  text-align:left;
+}
+.gmnoprint{
+  display: none;
+}
+.mapStatus{
+  background: #ed0c6e;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 15px;
+  text-align: center;
+  right: 75%;
+  width: 30%;
+  height: 10%;
+  padding-top: 5px;
+  z-index: 10;
+  position: absolute;
+  cursor: pointer;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  right: 0;
+  margin-top: 0;
+  margin: 0;
+}
+.idn-line-class{
+  content: '';
+  height: 1px;
+  border-bottom: 1px solid #ebebeb;
+  position: relative;
+  top: 14px;
+  right: 15px
+}
+
+.kk-follow-order{
+  overflow: hidden;
+}
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  .mapStatus {
+    width: 100%;
+    transform: rotate(0deg);
+    right: 0;
+    margin-top: 0;
+    margin: 0;
+
+  }
+  .mapClass {
+    top:30px;
+  }
+
+}
+.idn-center-align-txt{
+  text-align: center;
+}
+.idn-center-align-txt span{
+  font-size: 18px;
+}
+.idn-loader {
+  vertical-align: middle;
+  border: 2px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 2px solid #f25c31;
+  width: 25px;
+  height: 25px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin-top: -4px;
+  right: 0px;
+  left: 0px;
+  display: inline-block;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+      .kk-delivery-fee-alert {
+          margin: 0 0 20px;
+          text-align: center;
+          color: #000000;
+          /*background-color: #ffffff;*/
+          padding: 7px 40px;
+          display: inline-block;
+          border-radius: 20px;
+          font-weight: bold;
+      }
+      .kk-apply-comma.kk-comma-done{
+        text-align: center;
+      }
+      thead tr th:nth-child(2){
+        text-align: right;
+        padding-right: 25px;
+        padding-left: 25px;
+
+      }
+      thead tr th:last-child{
+          border-left: none;
+          width: 160px;
+      }
+
+      tbody .food-row td,
+      tbody .topping-row td{
+          padding: 25px;
+          text-align: center;
+          border-left: 1px solid #c7c7c7;
+          border-bottom:1px solid #c7c7c7;
+          border-top: 0;
+          color: #5e5e5e;
+          font-size: 12px;
+          font-weight: 400;
+      }
+      tbody .topping-row td{
+          padding: 5px 25px;
+          color: #555;
+          font-weight: 200;
+          background-color: #f9f9f9;
+      }
+
+      tbody .food-row td:last-child,
+      tbody .topping-row td:last-child{
+          border-left: 1px solid #c7c7c7;
+
+
+      }
+      tbody .food-row td[rel="price"]{
+          font-weight: bold;
+          font-size: 14px;
+      }
+      tbody .food-row td[rel="title"],
+      tbody .topping-row td[rel="title"]{
+          text-align: right;
+      }
+      tbody .topping-row td[rel="title"]{
+          padding-right: 50px;
+      }
+
+      /* invoice price row */
+      tbody .price-row td{
+          /*border-top: none;*/
+          padding:6px 20px;
+          color: #888888;
+          background-color: #f5f5f5;
+          border: 1px solid gray;
+          font-size: 13px;
+      }
+   tbody .price-row td:first-child{
+        padding-right: 35px;
+        /*border: 1px solid #d9d9d9;*/
+    }
+    tbody .price-row td:last-child{
+        text-align: center;
+
+    }
+
+/**/
+    /* invoice final row */
+    tbody .final-row td{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        color: #5e5e5e;
+        background-color: transparent;
+        font-weight: bold;
+        font-size: 15px;
+    }
+    tbody .final-row td:first-child{
+        padding-right: 35px;
+    }
+    tbody .final-row td:last-child{
+        text-align: center;
+    }

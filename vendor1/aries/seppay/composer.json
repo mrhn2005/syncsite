@@ -1,0 +1,19 @@
+{
+    "name": "aries/seppay",
+    "description": "A Laravel package for using to pay.ir payment gateways",
+    "keywords": ["laravel", "payment", "pay", "gateway", "payment-gateway", "saman", "saman-electronic-pardaz", "sep", "pay.ir", "aries"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohammad Mohammadi",
+            "email": "imohammadd@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Aries\\Seppay\\": "src"
+        }
+    }
+}

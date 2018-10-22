@@ -1,0 +1,291 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Siberian
+ *
+ * @version 4.14.0
+ * @author Xtraball SAS <dev@xtraball.com>
+ */
+
+global $_config;
+
+date_default_timezone_set('Europe/London');
+
+if (!file_exists('./config.php')) {
+    copy('./config.sample.php', './config.php');
+}
+
+require_once './config.php';
+require_once './lib/Siberian/Cli/Colors.php';
+
+function color ($string, $fg = null, $bg = null)
+{
+    return \Siberian\Cli\Colors::initColoredString($string, $fg, $bg);
+}
+
+set_time_limit(300);
+ini_set('max_execution_time', 300);
+umask(0);
+
+setlocale(LC_MONETARY, 'en_US');
+
+defined('DS')
+    || define('DS', DIRECTORY_SEPARATOR);
+
+defined('APPLICATION_PATH')
+    || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/app'));
+
+// Defining ENV globally!
+defined('APPLICATION_ENV')
+    || define('APPLICATION_ENV', $_config['environment']);
+
+// Sourcing default libs!
+set_include_path(implode(PATH_SEPARATOR, array(
+    realpath(APPLICATION_PATH . '/../lib'),
+)));
+
+require_once 'Zend/Application.php';
+
+// Initializing the application!
+$ini = is_readable(APPLICATION_PATH . '/configs/app.ini') ?
+    APPLICATION_PATH . '/configs/app.ini' : APPLICATION_PATH . '/configs/app.sample.ini';
+
+$application = new Zend_Application(
+    $_config['environment'],
+    [
+        'config' => [
+            $ini,
+            APPLICATION_PATH . '/configs/resources.cachemanager.ini',
+        ],
+    ]
+);
+
+$config = new Zend_Config($application->getOptions(), true);
+Zend_Registry::set('config', $config);
+Zend_Registry::set('_config', $_config);
+
+session_cache_limiter(false);
+
+$application->bootstrap();
+
+try {
+    $action = isset($argv[1]) ? $argv[1] : '';
+    switch ($action) {
+        case 'export:schemas':
+        case 'export-schemas':
+            (new Siberian_Migration_Db())
+                ->exportAll();
+            break;
+        case 'export:database':
+        case 'export-database':
+            $dbParams = $config->resources->db->params;
+            $filename = readline('Filename for the export: ');
+            if (is_file($filename)) {
+                $erase = readline('The given file already exists, would you like to replace it? (Y/n): ');
+                if ($erase !== 'Y') {
+                    echo 'Aborting.' . PHP_EOL;
+                    die();
+                }
+            }
+            $command = sprintf("mysqldump -h %s -u %s --password='%s' %s -r '%s'",
+                $dbParams->host,
+                $dbParams->username,
+                $dbParams->password,
+                $dbParams->dbname,
+                $filename);
+            exec($command);
+            echo 'Export done.' . PHP_EOL;
+            break;
+        case 'version':
+            $versionContent = file_get_contents('./lib/Siberian/Version.php');
+            $versionContent = preg_replace("#const VERSION = '([0-9a-z\.\-]+)';#im",
+                'const VERSION = \'' . $argv[2] . '\';', $versionContent);
+            file_put_contents('./lib/Siberian/Version.php', $versionContent);
+            break;
+        case 'user:update-password':
+            $userEmail = readline('Input backoffice user e-mail to change: ');
+            $backofficeUser = (new Backoffice_Model_User())
+                ->find($userEmail, 'email');
+            if (!$backofficeUser->getId()) {
+                echo 'Sorry this e-mail doesn\'t exists.' . PHP_EOL;
+            } else {
+                $newPassword = null;
+                $testPassword = function () {
+                    $newPassword = readline('Your new password (min 8 characters): ');
+                    if (strlen($newPassword) < 6) {
+                        echo 'Password too short.' . PHP_EOL;
+                        return false;
+                    }
+                    return $newPassword;
+                };
+
+                do {
+                    $newPassword = $testPassword();
+                } while (!$newPassword);
+
+                // Then update!
+                $backofficeUser
+                    ->setPassword($newPassword)
+                    ->save();
+
+                echo 'Password successfully changed.' . PHP_EOL;
+            }
+            break;
+        case 'user:create':
+            $userEmail = readline('Input new backoffice user e-mail: ');
+            $backofficeUser = (new Backoffice_Model_User())
+                ->find($userEmail, 'email');
+
+            if ($backofficeUser->getId()) {
+                echo 'Sorry this e-mail is used.' . PHP_EOL;
+                die();
+            }
+
+            $newPassword = null;
+            $testPassword = function () {
+                $newPassword = readline('Input new backoffice user password: ');
+                if (strlen($newPassword) < 6) {
+                    echo 'Password too short.' . PHP_EOL;
+                    return false;
+                }
+                return $newPassword;
+            };
+
+            do {
+                $newPassword = $testPassword();
+            } while (!$newPassword);
+
+            $backofficeUser
+                ->setEmail($userEmail)
+                ->setPassword($newPassword)
+                ->save();
+
+            echo 'Your new user is now created.' . PHP_EOL;
+
+            break;
+        case 'dev':
+        case 'development':
+            $configContent = file_get_contents('./config.php');
+            $configContent = preg_replace('#\$_config\[("|\')environment("|\')\] = ("|\')(development|production)("|\');#im',
+                '$_config[\'environment\'] = \'development\';', $configContent);
+            file_put_contents('./config.php', $configContent);
+            System_Model_Config::setValueFor('environment', 'development');
+            break;
+        case 'prod':
+        case 'production':
+            $configContent = file_get_contents('./config.php');
+            $configContent = preg_replace('#\$_config\[("|\')environment("|\')\] = ("|\')(development|production)("|\');#im',
+                '$_config[\'environment\'] = \'production\';', $configContent);
+            file_put_contents('./config.php', $configContent);
+            System_Model_Config::setValueFor('environment', 'production');
+            break;
+        case 'cache:design':
+            \Siberian_Cache_Design::rebuild($argv[2]);
+            break;
+        case 'cache:clear':
+            \Siberian_Cache::__clearCache();
+            \Siberian_Cache::__clearLog();
+            \Siberian_Cache::__clearTmp();
+            break;
+        case 'license:set':
+            if (isset($argv[2])) {
+                $license = (string) $argv[2];
+            } else {
+                $license = readline('New license: ');
+            }
+            if (!empty($license)) {
+                __set('siberiancms_key', trim($license));
+                echo 'Your license is updated to "' . $license . '".' . PHP_EOL;
+            } else {
+                echo 'Aborting, empty license.' . PHP_EOL;
+            }
+            break;
+        case 'app:manifest':
+            \Siberian\Manifest::rebuild();
+            break;
+        case 'app:keystore:restore':
+            $deviceId = 2;
+            if (isset($argv[2])) {
+                $appId = (integer) $argv[2];
+            } else {
+                $appId = readline('Input app id: ');
+            }
+
+            $basePath = \Core_Model_Directory::getBasePathTo('/var/tmp');
+
+            $app = (new Application_Model_Application())
+                ->find($appId, 'app_id');
+
+            if (!$app->getId()) {
+                echo 'Sorry app_id doesn\'t exists.' . PHP_EOL;
+            } else {
+                $device = $app->getDevice($deviceId);
+                $pks = $device->getPks();
+                if (!$pks) {
+                    echo 'Sorry no pks for this app in db.' . PHP_EOL;
+                } else {
+
+                    $pks = hex2bin($pks);
+                    file_put_contents($basePath . '/restored_' . $appId . '.pks', $pks);
+
+                    exec("echo \"\" | keytool -list -keystore " . $basePath . "/restored_" . $appId . ".pks",
+                        $output);
+
+                    echo 'Pks restored with signature (' . $basePath . '/restored_' . $appId . '.pks' . '): ' . PHP_EOL;
+                    foreach ($output as $out) {
+                        if (preg_match('/SHA1/', $out)) {
+                            echo $out . PHP_EOL;
+                        }
+                    }
+                }
+            }
+            break;
+        case 'help':
+        default:
+            echo color('== Siberian CLI Help ==', 'blue') . "
+            
+" . color('export:schemas', 'brown') . "
+    Export current tables schema to /var/schema/%VERSION%/ to php files.
+    
+" . color('export:database', 'brown') . "
+    Export complete database.
+    
+" . color('version <version>', 'brown') . "
+    Changes the current version to <version>.
+
+" . color('user:update-password', 'brown') . "
+    Change / Reset a backoffice user password.
+
+" . color('user:create', 'brown') . "
+    Create a new backoffice user.
+
+" . color('development|dev', 'brown') . "
+    Set environment to 'development'.
+
+" . color('production|prod', 'brown') . "
+    Set environment to 'production'.
+
+" . color('cache:design <sae|mae|pe>', 'brown') . "
+    Rebuilds sae/mae/pe cache design.
+    
+" . color('cache:clear', 'brown') . "
+    Clear var/cache, var/log & var/tmp.
+    
+" . color('license:set <license>', 'brown') . "
+    Update your license to <license>.
+    
+" . color('app:manifest', 'brown') . "
+    Rebuilds the application manifest.
+    
+" . color('app:keystore:restore <appId>', 'brown') . "
+    Extract a saved PKS (Keystore) from the database backup for the given <appId>.
+
+" . color('help', 'brown') . "
+    Prints the current help message.    
+
+";
+    }
+} catch (Exception $e) {
+    echo $e->getMessage() . PHP_EOL;
+}

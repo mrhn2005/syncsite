@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Tehran',
 
     /*
     |--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fa',
 
     /*
     |--------------------------------------------------------------------------
@@ -90,7 +90,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'fa',
 
     /*
     |--------------------------------------------------------------------------
@@ -177,7 +177,20 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
-
+        Morilog\Jalali\JalaliServiceProvider::class,
+        'Jenssegers\Date\DateServiceProvider',
+        Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        'Cviebrock\EloquentSluggable\ServiceProvider',
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Aries\Seppay\SeppayServiceProvider::class,
+        Telegram\Bot\Laravel\TelegramServiceProvider::class,
+        // Roumen\Sitemap\SitemapServiceProvider::class,
+        Gabievi\Promocodes\PromocodesServiceProvider::class,
+        Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
+        'Spatie\LaravelAnalytics\LaravelAnalyticsServiceProvider',
+         \Conner\Tagging\Providers\TaggingServiceProvider::class,
+         Kavenegar\Laravel\ServiceProvider::class,
     ],
 
     /*
@@ -227,7 +240,14 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
-
+        'jDate' => Morilog\Jalali\Facades\jDate::class,
+        'Date' => Jenssegers\Date\Date::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Telegram'  => Telegram\Bot\Laravel\Facades\Telegram::class,
+        'Promocodes' => Gabievi\Promocodes\Facades\Promocodes::class,
+        'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
+        'LaravelAnalytics' => 'Spatie\LaravelAnalytics\LaravelAnalyticsFacade',
+        'Kavenegar' => Kavenegar\Laravel\Facade::class,
     ],
 
 ];

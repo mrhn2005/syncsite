@@ -5,7 +5,8 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-
+use Illuminate\Session\TokenMismatchException;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 class Handler extends ExceptionHandler
 {
     /**
@@ -44,6 +45,15 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+         if ($exception instanceof TokenMismatchException){
+            //redirect to a form when there is token mismatch
+            return redirect()->back()->with('fail',"
+            متاسفانه مشکلی پیش آمده است. لطفا دوباره تلاش کنید.
+            ");
+        }
+        if ($exception instanceof MethodNotAllowedHttpException) {
+            return redirect()->back();
+    }
         return parent::render($request, $exception);
     }
 
@@ -56,6 +66,8 @@ class Handler extends ExceptionHandler
      */
    protected function unauthenticated($request, AuthenticationException $exception)
     {
+        
+         
         if ($request->expectsJson()) {
             return response()->json(['error' => 'Unauthenticated.'], 401);
         }

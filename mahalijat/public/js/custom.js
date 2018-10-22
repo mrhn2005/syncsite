@@ -1,0 +1,26 @@
+$('.owl-one').owlCarousel({
+    rtl:true,
+    loop:true,
+    margin:0,
+    nav:false,
+    autoplay:false,
+    autoplayTimeout:4000,
+     autoplayHoverPause:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        500:{
+            items:2
+        },
+        800:{
+            items:3
+        },
+        1200:{
+            items:4
+        },
+        1400:{
+            items:5
+        }
+    }
+})

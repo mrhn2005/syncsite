@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Address;
 use Illuminate\Http\Request;
 
@@ -35,9 +35,40 @@ class AddressController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id=Auth::guard('customer')->user()->id;
+        // return $request->address;
+        if($id==$request->customer_id){
+            $address= new Address;
+            $address->name=$request->address;
+            $address->customer_id=$request->customer_id;
+            $address->delivery_id=$request->region_id;
+            $address->save();
+            
+        }
+        $a[0]=view('includes.main-cart')->render();
+        $a[1]=view('includes.addresses')->render();
+        return $a;
+        
     }
-
+    public function store1(Request $request)
+    {
+        // return $request->address;
+        $id=Auth::guard('customer')->user()->id;
+        $this->validate($request, [
+            'name' => 'required',
+            
+        ]);
+        $address= new Address;
+        $address->name=$request->name;
+        $address->customer_id=$id;
+        $address->delivery_id=$request->region_id;
+        $address->save();
+        return redirect()->back()->with([
+            'success'=>'
+            آدرس با موفقیت افزوده شد.
+            '
+            ]);
+    }
     /**
      * Display the specified resource.
      *
@@ -67,9 +98,23 @@ class AddressController extends Controller
      * @param  \App\Address  $address
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Address $address)
+    public function update(Request $request,$address_id)
     {
-        //
+        $id=Auth::guard('customer')->user()->id;
+        $address=Address::where('id',$address_id)->firstOrFail();
+        // return $address->name;
+        if ($address->customer->id==$id){
+           $address->name=$request->name;
+           $address->delivery_id=$request->region_id;
+            $address->update();
+            return redirect()->back()->with([
+                'success'=>'
+                به روز رسانی مشخصات با موفقیت انجام شد.
+                '
+                ]); 
+        }
+        return redirect()->back();
+        
     }
 
     /**
@@ -78,8 +123,18 @@ class AddressController extends Controller
      * @param  \App\Address  $address
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Address $address)
+    public function destroy($address_id)
     {
-        //
+        $id=Auth::guard('customer')->user()->id;
+        $address=Address::where('id',$address_id)->firstOrFail();
+        if ($address->customer->id==$id){
+            $address->delete();
+            return redirect()->back()->with([
+                'success'=>'
+              آدرس با موقیت حذف شد.
+                '
+            ]);
+        }
+       return redirect()->back(); 
     }
 }

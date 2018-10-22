@@ -6,10 +6,25 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "aries/seppay": "^1.0",
+        "barryvdh/laravel-ide-helper": "^2.4",
+        "cviebrock/eloquent-sluggable": "^4.2",
+        "doctrine/dbal": "~2.3",
         "gloudemans/shoppingcart": "^2.4",
         "hesto/multi-auth": "1.*",
+        "irazasyed/telegram-bot-sdk": "^2.0",
+        "jenssegers/date": "^3.2",
+        "kalnoy/nestedset": "^4.3",
+        "kavenegar/laravel": "^1.0",
+        "kris/laravel-form-builder": "^1.14",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "morilog/jalali": "^2.3",
+        "roumen/sitemap": "^2.6",
+        "rtconner/laravel-tagging": "~2.2",
+        "spatie/laravel-analytics": "^1.4",
+        "unisharp/laravel-filemanager": "~1.8",
+        "zgabievi/promocodes": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -1,9 +1,11 @@
-@extends('admin.layout.auth')
+@extends('admin.layout.auth1')
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <br>
+            <br>
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
@@ -54,9 +56,9 @@
                                     Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/admin/password/reset') }}">
-                                    Forgot Your Password?
-                                </a>
+                                <!--<a class="btn btn-link" href="{{ url('/admin/password/reset') }}">-->
+                                <!--    Forgot Your Password?-->
+                                <!--</a>-->
                             </div>
                         </div>
                     </form>

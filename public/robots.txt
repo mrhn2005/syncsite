@@ -1,2 +1,5 @@
 User-agent: *
-Disallow:
+Disallow: /app/
+Disallow: /lib/
+Disallow: /var/
+Disallow: /errors/204.php

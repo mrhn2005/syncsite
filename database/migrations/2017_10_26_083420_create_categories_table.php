@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
+use Kalnoy\Nestedset\NestedSet;
 class CreateCategoriesTable extends Migration
 {
     /**
@@ -16,7 +16,13 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('photo')->nullable();
+            $table->integer('maincat_id')->nullable();
+            $table->string('slug')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
+            
+            NestedSet::columns($table);
         });
     }
 
@@ -27,6 +33,9 @@ class CreateCategoriesTable extends Migration
      */
     public function down()
     {
+        // NestedSet::dropColumns($table);
         Schema::dropIfExists('categories');
+        
+        
     }
 }

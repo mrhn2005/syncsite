@@ -1,10 +1,11 @@
 <?php
+use App\Review;
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Review;
 use Illuminate\Http\Request;
-
+use Illuminate\Foundation\Auth\User as Authenticatable;
 class ReviewController extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews=Review::orderBy('id','desc')->get();
+       return view('admin.reviews.index',compact('reviews'));
     }
 
     /**
@@ -34,8 +36,8 @@ class ReviewController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   
+     
     }
 
     /**
@@ -69,7 +71,13 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
-        //
+        $review->active=$request->active;
+        $review->description=$request->description;
+        $review->reply=$request->reply;
+        $review->update();
+        return redirect()->back()->with(['success'=>'
+         تغییرات با موفقیت ذخیره گردید.
+         ']);
     }
 
     /**
@@ -80,6 +88,9 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
-        //
+        $review->delete();
+        return redirect()->back()->with(['success'=>'
+         کامنت مورد نظر حذف شد.
+         ']);
     }
 }

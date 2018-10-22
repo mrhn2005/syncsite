@@ -16,17 +16,25 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('origin');
-            $table->text('desc_short');
-            $table->text('desc');
-            $table->integer('quantity');
-            $table->integer('price_buy');
-            $table->integer('price_sell');
-            $table->integer('price_discount');
-            $table->float('score');
-            $table->string('image');
-            $table->tinyinteger('active_discount');
-            $table->integer('category_id')->unsigned();
+            $table->string('origin')->nullable();
+            $table->text('desc_short')->nullable();
+            $table->text('desc')->nullable();
+            $table->integer('quantity')->unsigned()->nullable();
+            $table->integer('price_buy')->nullable();
+            $table->integer('price_sell')->nullable();
+            $table->integer('price_discount')->nullable();
+            $table->float('score')->nullable();
+            $table->string('image')->nullable();
+            $table->integer('weight')->nullable();
+            $table->tinyinteger('dynamic')->default(0);
+            $table->string('weight_unit')->nullable();
+            $table->tinyinteger('active_discount')->nullable();
+            $table->tinyinteger('whole_sale_active')->default(0);
+            $table->tinyinteger('free')->default(0);
+            $table->integer('whole_sale_quantity')->default(0);
+            $table->integer('whole_sale_price')->default(0);
+            $table->integer('category_id')->unsigned()->nullable();
+            $table->string('slug')->nullable();
             $table->timestamps();
             
         });

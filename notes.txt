@@ -1,0 +1,3 @@
+change in '/vendor/kalnoy/nestedset/src/QueryBuilder.php' line 1033
+from 'foreach ($data as $itemData) {'
+to   'foreach ($data[0] as $itemData) {
