@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'BYekan';
+    src: url('../fonts/BYekan/Yekan.woff');
+    
+}
+
+@font-face {
+    font-family: 'IranSans';
+    src: url('../fonts/IranSans/irsans.woff');
+}
+
+body{
+    font-family: 'BYekan',"Raleway", sans-serif !important; 
+     
+    /*direction: rtl !important;*/
+}

@@ -303,7 +303,19 @@
                             <a title="Shop Now" href="{{route('shop')}}" >
                            می خواهم خرید کنم
                             </a>
+                            
+                            
                         </div>
+                        
+                        <div   class="banner7-readmore">
+                            <br>
+                            <a  title="Shop Now" href="/store/register" >
+                               می خواهم حجره بسازم
+                            </a>
+                            
+                            
+                        </div>
+                        
                     </div>
                 </div>
             </div>

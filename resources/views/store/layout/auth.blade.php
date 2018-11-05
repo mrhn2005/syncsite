@@ -7,18 +7,20 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <link rel="shortcut icon" type="image/x-icon" href="/img/logo/mahalijat.1.png">
     <title>{{ config('app.name', 'Laravel Multi Auth Guard') }}</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/css/store.css">
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    
+    @yield('style')
 </head>
 <body>
     <nav class="navbar navbar-default navbar-static-top">
@@ -35,7 +37,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/store') }}">
-                    {{ config('app.name', 'Laravel Multi Auth Guard') }}: Store
+                    محلی جات
                 </a>
             </div>
 
@@ -49,8 +51,12 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/store/login') }}">Login</a></li>
-                        <li><a href="{{ url('/store/register') }}">Register</a></li>
+                        <li><a href="{{ url('/store/login') }}">
+                            ورود
+                        </a></li>
+                        <li><a href="{{ url('/store/register') }}">
+                        ثبت نام
+                        </a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

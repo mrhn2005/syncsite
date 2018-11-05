@@ -1,33 +1,19 @@
 @extends('store.layout.auth')
-@section('style')
-<style>
-    label{
-        text-align:left!important;
-    }
-    .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio]{
-        margin-right:-20px;
-    }
-</style>
 
-@endsection
 @section('content')
-<div class="container" style="direction:rtl;text-align:right">
+<div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                ورود
-                </div>
+                <div class="panel-heading">Login</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/store/login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 col-md-push-8 control-label">
-                            آدرس پست الکترونیکی:
-                            </label>
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                            <div class="col-md-6 col-md-pull-2">
+                            <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" autofocus>
 
                                 @if ($errors->has('email'))
@@ -39,11 +25,9 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 col-md-push-8 control-label">
-                            رمز عبور:
-                            </label>
+                            <label for="password" class="col-md-4 control-label">Password</label>
 
-                            <div class="col-md-6 col-md-pull-2">
+                            <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password">
 
                                 @if ($errors->has('password'))
@@ -55,26 +39,23 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-2">
+                            <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="remember"> 
-                                        مرا به خاطر بسپار
+                                        <input type="checkbox" name="remember"> Remember Me
                                     </label>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-8 col-md-offset-0">
+                            <div class="col-md-8 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    ورود
+                                    Login
                                 </button>
 
                                 <a class="btn btn-link" href="{{ url('/store/password/reset') }}">
-                                    
-                    رمز عبورم را فراموش کردم.
-                
+                                    Forgot Your Password?
                                 </a>
                             </div>
                         </div>

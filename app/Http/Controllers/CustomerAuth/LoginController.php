@@ -62,7 +62,7 @@ class LoginController extends Controller
         return Auth::guard('customer');
     }
     
-    protected function authenticated($user, $user)
+    protected function authenticated($user)
     {
         if ((Cart::content()->count()>0)){
             Cart::delete_cart($user->id);
