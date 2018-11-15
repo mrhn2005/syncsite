@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use App\Scopes\ActiveScope;
+
 class Product extends Model
 {
     use Sluggable;
@@ -23,14 +25,22 @@ class Product extends Model
         'active_discount',
         'category_id',
         'weight',
-        'weight_unit'
+        'weight_unit',
         
         
         ];
     protected $appends = [
         'TotalSales',
     ];
-        
+    
+    
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new ActiveScope);
+    }
+            
     public function category(){
         return $this->belongsTo('App\Category');
     }
@@ -117,5 +127,9 @@ class Product extends Model
     public function main_photo(){
         $photo=Photo::where('product_id',$this->id)->where('main_photo',1)->first();
         return $photo;
+    }
+    
+    public function store(){
+        return $this->belongsTo('App\Store');
     }
 }

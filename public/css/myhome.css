@@ -298,14 +298,30 @@ body, html {
     transition: transform .5s ease;
 }
 
-#shop-now:hover{
-    -ms-transform: scale(1.1); /* IE 9 */
-    -webkit-transform: scale(1.1); /* Chrome, Safari, Opera */
-    transform: scale(1.1) ;
+.shop-now:hover{
+    -ms-transform: scale(1.06); /* IE 9 */
+    -webkit-transform: scale(1.06); /* Chrome, Safari, Opera */
+    transform: scale(1.06) ;
     transition: transform .5s ease;
 }
 
+.shop-now{
+    margin:10px;
+    display: inline-block;
+}
 
+@media (max-width: 767px){
+    .shop-now {
+        
+        padding:4px;
+        margin:5px;
+    }
+    
+    .shop-now a{
+        padding:6px  12px !important;
+        font-size: 100% !important;
+    }
+}
 .custom-icon {
   background: #666;
   background: rgba(0, 0, 0, 0.4);

@@ -94,7 +94,7 @@ Route::group([
    Route::resource('sale','SaleController');
    Route::resource('transactions','TransactionController');
    Route::resource('costs','CostController');
-   Route::resource('photo','PhotoController');
+   
    Route::post('/products/update_quantity', ['as'=>'quantity.update', 'uses'=>'ProductController@update_quantity']);
    Route::post('/products/update_multiple', ['as'=>'multiple.update', 'uses'=>'ProductController@update_multiple']);
    Route::patch('/orders/update_delivery/{order}', ['as'=>'orders.update_delivery', 'uses'=>'OrderController@update_delivery']);
@@ -110,8 +110,14 @@ Route::group([
    Route::post('category/property/update',['as'=>'category.property.update', 'uses'=>'PropertyController@category_update']);
    Route::get('product/{product}/property',['as'=>'products.properties', 'uses'=>'PropertyController@product_add']);
    Route::post('product/property/add',['as'=>'product.property.store', 'uses'=>'PropertyController@product_store']);
-});
+   
+   Route::post('stores/{store}/message',['as'=>'store.message.store', 'uses'=>'AdminStoreController@send_notification']);
+   Route::get('stores',['as'=>'admin.store.index', 'uses'=>'AdminStoreController@index']);
+   Route::get('stores/edit/{store}',['as'=>'admin.store.edit', 'uses'=>'AdminStoreController@edit']);
+   Route::get('stores/{store}/notification',['as'=>'admin.store.notification', 'uses'=>'AdminStoreController@notification']);
+   Route::put('stores/{store}/notification',['as'=>'admin.store.notification.store', 'uses'=>'AdminStoreController@send_notification']);
 
+});
 
  
 Route::group([
@@ -207,3 +213,36 @@ Route::group(['prefix' => 'store'], function () {
   Route::get('/password/reset', 'StoreAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
   Route::get('/password/reset/{token}', 'StoreAuth\ResetPasswordController@showResetForm');
 });
+
+
+Route::group([
+    'middleware' => ['web','auth:store'], //you need to add the last middleware to array to fix it (version < v.1.0.6)
+    'prefix' => 'store',
+    ], function () {
+         Route::get('/home', ['as'=>'store.home', 'uses'=>'StoreController@index']);
+        Route::resource('/store','StoreController', ['except' => [ 'update']]);
+        Route::get('/products/add',['as'=>'store.products.add', 'uses'=>'StoreController@add_product']);
+        Route::get('/products/edit/{product}',['as'=>'store.products.edit', 'uses'=>'StoreController@edit_product']);
+        Route::put('/products/edit/{product}',['as'=>'store.products.update', 'uses'=>'StoreController@update_product']);
+        Route::get('/products',['as'=>'store.products', 'uses'=>'StoreController@products']);
+        Route::post('/products/add',['as'=>'store.products.store', 'uses'=>'StoreController@store_product']);
+        Route::get('/photos/products/{product}', ['as'=>'store.product.photos', 'uses'=>'StoreController@add_photos']);
+        Route::get('/notifications', ['as'=>'store.notifications.show', 'uses'=>'StoreController@notifications']);
+        
+        //  Route::get('/customer/favorites', ['as'=>'customer.favorites', 'uses'=>'CustomerController@favorites']); 
+        //  Route::get('/customer/orders', ['as'=>'customer.orders', 'uses'=>'CustomerController@orders']); 
+        //  Route::get('/customer/order/{order_id}', ['as'=>'customer.orders.show', 'uses'=>'CustomerController@orders_show']); 
+        //  Route::get('/customer/addresses', ['as'=>'customer.addresses', 'uses'=>'CustomerController@addresses']); 
+        //  Route::post('/customer/edit', ['as'=>'customer.edit.profile', 'uses'=>'CustomerController@edit_profile']);
+        //  Route::post('/customer/address/{address_id}', ['as'=>'edit.address', 'uses'=>'AddressController@update']);
+        //  Route::post('/customer/address/{address_id}/delete', ['as'=>'delete.address', 'uses'=>'AddressController@destroy']);
+        //  Route::post('/code_check', ['as'=>'check.code', 'uses'=>'CustomerController@check_code']);
+        //  Route::get('/free', ['as'=>'free', 'uses'=>'CustomerController@free']);
+    });
+    
+Route::group([
+    'middleware' => ['web','storeAdmin'], //you need to add the last middleware to array to fix it (version < v.1.0.6)
+    ], function () {
+        Route::resource('photo','PhotoController');
+        Route::resource('/store','StoreController', ['only' => [ 'update']]);
+    });

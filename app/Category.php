@@ -4,6 +4,7 @@ namespace App;
 use Kalnoy\Nestedset\NodeTrait;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use App\Scopes\ActiveScope;
 class Category extends Model
 {
     
@@ -15,6 +16,15 @@ class Category extends Model
         'name','photo'
 
         ];
+    
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new ActiveScope);
+    }
+        
+    
     public function products(){
         return $this->hasMany('App\Product');  
     }

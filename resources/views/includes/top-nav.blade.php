@@ -298,7 +298,7 @@
 								<!--<span class="word10">!</span>-->
 							</h2>
 							<br>
-                        <div id="shop-now"  class="banner7-readmore">
+                        <div  class="banner7-readmore shop-now">
                             <br>
                             <a title="Shop Now" href="{{route('shop')}}" >
                            می خواهم خرید کنم
@@ -307,7 +307,7 @@
                             
                         </div>
                         
-                        <div   class="banner7-readmore">
+                        <div    class="banner7-readmore shop-now">
                             <br>
                             <a  title="Shop Now" href="/store/register" >
                                می خواهم حجره بسازم

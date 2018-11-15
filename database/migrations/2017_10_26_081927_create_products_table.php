@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->text('desc_short')->nullable();
             $table->text('desc')->nullable();
             $table->integer('quantity')->unsigned()->nullable();
+            $table->integer('store_id')->unsigned()->nullable();
             $table->integer('price_buy')->nullable();
             $table->integer('price_sell')->nullable();
             $table->integer('price_discount')->nullable();
@@ -29,6 +30,7 @@ class CreateProductsTable extends Migration
             $table->tinyinteger('dynamic')->default(0);
             $table->string('weight_unit')->nullable();
             $table->tinyinteger('active_discount')->nullable();
+            $table->tinyinteger('active')->default(1)->nullable();
             $table->tinyinteger('whole_sale_active')->default(0);
             $table->tinyinteger('free')->default(0);
             $table->integer('whole_sale_quantity')->default(0);

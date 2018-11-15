@@ -126,6 +126,15 @@
                         </a>
                     </li>
                     <li class="sub-menu">
+                        <a href="{{route('admin.store.index')}}" class="">
+                            <i class="fa fa-sitemap"></i>
+                            <span>
+                              حجره ها
+                                </span>
+                            
+                        </a>
+                    </li>
+                    <li class="sub-menu">
                         <a href="{{route('costs.index')}}" class="">
                             <i class="fa fa-money"></i>
                             <span>

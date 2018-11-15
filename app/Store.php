@@ -5,7 +5,7 @@ namespace App;
 use App\Notifications\StoreResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use App\Scopes\ActiveScope;
 class Store extends Authenticatable
 {
     use Notifiable;
@@ -15,9 +15,11 @@ class Store extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    // protected $fillable = [
+    //     'name', 'email', 'password'
+    // ];
+    
+    protected $guarded=[];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -37,5 +39,9 @@ class Store extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new StoreResetPassword($token));
+    }
+    
+    public function products(){
+        return $this->hasMany('App\Product')->withoutGlobalScopes();
     }
 }

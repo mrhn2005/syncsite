@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Photo;
 use Illuminate\Http\Request;
-
+use Intervention\Image\Facades\Image;
 class PhotoController extends Controller
 {
     /**
@@ -45,7 +45,8 @@ class PhotoController extends Controller
         $file=$request->file('file');
         $name=time().$file ->getClientOriginalName();
         $name = preg_replace('/\s+/', '-', $name);
-        $file->move('photos',$name);
+        // $file->move('photos',$name);
+        Image::make($request->file('file'))->resize(502, 602)->save('photos/'.$name,80);
         $photo=new Photo;
         $photo->name=$name;
         $photo->product_id=$request->product_id;

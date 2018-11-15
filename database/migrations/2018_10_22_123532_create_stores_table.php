@@ -23,6 +23,8 @@ class CreateStoresTable extends Migration
             $table->string('photo')->nullable();
             $table->string('phone')->nullable();
             $table->string('mobile')->nullable();
+            $table->string('slug')->nullable();
+            $table->tinyinteger('active')->default(1)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

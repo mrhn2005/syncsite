@@ -18,7 +18,7 @@
     </div>
     @endif
 <div class="text-center" style="font-size:160%; height:300px;direction:rtl;font-weight:bold">
-    محصولات ارگانیک به زودی به محلی جات افزوده خواهند شد.
+    محصولات این دسته به زودی به محلی جات افزوده خواهند شد.
 </div>
 </div>
 

@@ -23,8 +23,14 @@
                                         @if (old('category_id') == $category->id)
                                               <option value="{{$category->id}}" selected>{{$category->name}}</option>
                                         @elseif (isset($product))
-                                            @if($product->category->id==$category->id)
+                                            @if(!empty($product->category))
+                                                @if($product->category->id==$category->id)
                                                 <option value="{{$category->id}}" selected>{{$category->name}}</option>
+                                                @else
+                                              <option value="{{$category->id}}">
+                                                    {{$category->name}}
+                                                </option>
+                                                @endif
                                             @else
                                               <option value="{{$category->id}}">
                                                     {{$category->name}}
@@ -51,6 +57,41 @@
        <input type="hidden" name="id" value="{{$product->id}}" form="update{{$product->id}}">
     </td>
     <td>
+     <select name="store_id[]" form="update-multiple"  class="form-control" style="font-size:90%">
+                                
+                                    <option value="">
+                                    انتخاب غرفه
+                                    </option>
+                                @foreach($stores as $store)
+                                        @if (old('store_id') == $store->id)
+                                              <option value="{{$store->id}}" selected>{{$store->name}}</option>
+                                        @elseif (isset($product))
+                                            @if(!empty($product->store))
+                                                @if($product->store->id==$store->id)
+                                                <option value="{{$store->id}}" selected>{{$store->name}}</option>
+                                                @else
+                                              <option value="{{$store->id}}">
+                                                    {{$store->name}}
+                                                </option>
+                                                @endif
+                                            @else
+                                              <option value="{{$store->id}}">
+                                                    {{$store->name}}
+                                                </option>
+                                            @endif
+                                            
+                                        
+                                        @else
+                                              <option value="{{$store->id}}">
+                                                    {{$store->name}}
+                                                </option>
+                                        @endif 
+                                    
+                                @endforeach
+                            </select>  
+       
+    </td>
+    <td>
         <select name="active_discount[]"  class="form-control" form="update-multiple">
              <?php $selected=""?>
                     @if (old('active_discount') == '1')
@@ -69,12 +110,12 @@
         </select>
     </td>
     <td>
-        <select name="free[]"  class="form-control" form="update-multiple" style="padding-right:0px">
+        <select name="active[]"  class="form-control" form="update-multiple" style="padding-right:0px">
              <?php $selected=""?>
-                    @if (old('free') == '1')
+                    @if (old('active') == '1')
                           <?php $selected="selected"?>
                     @elseif (isset($product))
-                        @if($product->free=='1')
+                        @if($product->active=='1')
                             <?php $selected="selected"?>
                         @endif
                     @endif

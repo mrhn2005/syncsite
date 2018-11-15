@@ -7,6 +7,7 @@ use App\Category;
 use App\Photo;
 use Illuminate\Http\Request;
 use App\Tag;
+use App\Store;
 class ProductController extends Controller
 {
 
@@ -18,7 +19,7 @@ class ProductController extends Controller
      
     public function update_quantity(Request $request){
         
-        $product=Product::find($request->id);
+        $product=Product::withoutGlobalScopes()->find($request->id);
         $product->quantity=$request->new_product_quantity;
         $product->active_discount=$request->active_discount;
         $product->free=$request->free;
@@ -52,7 +53,8 @@ class ProductController extends Controller
     public function index()
     {   
         $categories=Category::whereIsLeaf()->get();
-        $products=Product::orderBy('id','desc')->paginate(12);
+        $stores=Store::all();
+        $products=Product::withoutGlobalScopes()->orderBy('id','desc')->with(['category','store'])->paginate(12);
         //  foreach($products as $product){
         //      $text=substr(strip_tags($product->desc), 0,250);
         //      $text=str_replace("&zwnj;"," ",$text);
@@ -62,7 +64,7 @@ class ProductController extends Controller
              
         //      $product->update();
         //  }
-        return view('admin.products.index',compact('products','categories'));
+        return view('admin.products.index',compact('products','categories','stores'));
     }
 
     /**
@@ -198,7 +200,7 @@ class ProductController extends Controller
             
              $photo->delete();
         }
-        Product::find($product->id)->delete();
+        Product::withoutGlobalScopes()->find($product->id)->delete();
         
         return redirect()->back()->with(['success'=>'
         محصول مورد نظر حذف شد.
@@ -244,7 +246,7 @@ class ProductController extends Controller
     
     public function update_multiple(Request $request){
         
-        $products=Product::findOrFail($request->product_id);
+        $products=Product::withoutGlobalScopes()->findOrFail($request->product_id);
         $i=count($products);
     
         foreach($products as $product){
@@ -252,10 +254,12 @@ class ProductController extends Controller
             $product->quantity=$request->product_quantity[$i];
             $product->active_discount=$request->active_discount[$i];
             $product->weight=$request->weight[$i];
-            $product->free=$request->free[$i];
+            // $product->free=$request->free[$i];
+            $product->active=$request->active[$i];
             $product->weight_unit=$request->weight_unit[$i];
             $product->price_sell=$request->product_price_sell[$i];
             $product->category_id=$request->category_id[$i];
+            $product->store_id=$request->store_id[$i];
             $product->save();
             
         }

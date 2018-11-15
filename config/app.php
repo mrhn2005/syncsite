@@ -191,6 +191,7 @@ return [
         'Spatie\LaravelAnalytics\LaravelAnalyticsServiceProvider',
          \Conner\Tagging\Providers\TaggingServiceProvider::class,
          Kavenegar\Laravel\ServiceProvider::class,
+         Spatie\Fractal\FractalServiceProvider::class,
     ],
 
     /*
@@ -248,6 +249,7 @@ return [
         'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
         'LaravelAnalytics' => 'Spatie\LaravelAnalytics\LaravelAnalyticsFacade',
         'Kavenegar' => Kavenegar\Laravel\Facade::class,
+        'Fractal' => Spatie\Fractal\FractalFacade::class,
     ],
 
 ];

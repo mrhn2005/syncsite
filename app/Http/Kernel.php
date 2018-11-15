@@ -18,6 +18,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        
 
     ];
 
@@ -36,6 +37,7 @@ class Kernel extends HttpKernel
             // \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
              \App\Http\Middleware\ForceSSL::class,
+             
             
         ],
 
@@ -66,5 +68,6 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'customerAuth'=>\App\Http\Middleware\CustomerAuth::class,
+        'storeAdmin'=>\App\Http\Middleware\StoreAdmin::class,
     ];
 }

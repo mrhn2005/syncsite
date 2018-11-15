@@ -1,4 +1,6 @@
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=bfcd9xgl3ioypmuxa15758gsezncweu7gt9ta3wwnoeas3c0"></script>
+<!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=bfcd9xgl3ioypmuxa15758gsezncweu7gt9ta3wwnoeas3c0"></script>-->
+<script src="/tinymce/tinymce.min.js"></script>
+<script src="/tinymce/jquery.tinymce.min.js"></script>
   
   <script>
   var editor_config = {
@@ -11,9 +13,11 @@
       "insertdatetime media nonbreaking save table contextmenu directionality",
       "emoticons template paste textcolor colorpicker textpattern"
     ],
-    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image media anchor",
-    
+    toolbar: "insertfile undo redo | styleselect | bold italic| alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | fontsizeselect link image  media anchor|ltr rtl",
+    directionality :"rtl",
+    // language: 'fa_IR',
     relative_urls: false,
+    
     table_responsive_width: true,
     file_browser_callback : function(field_name, url, type, win) {
       var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;

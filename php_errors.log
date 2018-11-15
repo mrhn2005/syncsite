@@ -1,0 +1,41 @@
+[09-Nov-2018 01:21:02 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/ubuntu/workspace/app/Http/Controllers/StoreController.php on line 117
+[09-Nov-2018 01:22:18 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/ubuntu/workspace/app/Http/Controllers/StoreController.php on line 117
+[09-Nov-2018 01:25:49 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Controllers\Photo' not found in /home/ubuntu/workspace/app/Http/Controllers/StoreController.php on line 128
+[11-Nov-2018 18:05:58 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Middleware\Auth' not found in /home/ubuntu/workspace/app/Http/Middleware/StoreAdmin.php on line 18
+[11-Nov-2018 18:06:10 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Middleware\Auth' not found in /home/ubuntu/workspace/app/Http/Middleware/StoreAdmin.php on line 18
+[12-Nov-2018 16:41:44 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Controllers\Image' not found in /home/ubuntu/workspace/app/Http/Controllers/PhotoController.php on line 49
+[15-Nov-2018 11:40:20 Asia/Tehran] PHP Fatal error:  Class 'App\Scopes\ProductScope' not found in /home/ubuntu/workspace/app/Product.php on line 41
+[15-Nov-2018 11:42:22 Asia/Tehran] PHP Fatal error:  Class 'App\Scopes\ProductScope' not found in /home/ubuntu/workspace/app/Product.php on line 41
+[15-Nov-2018 11:43:00 Asia/Tehran] PHP Fatal error:  Class 'App\Scopes\ProductScope' not found in /home/ubuntu/workspace/app/Product.php on line 41
+[15-Nov-2018 11:43:54 Asia/Tehran] PHP Fatal error:  Class 'App\Scopes\ProductScope' not found in /home/ubuntu/workspace/app/Product.php on line 41
+[15-Nov-2018 11:59:56 Asia/Tehran] PHP Fatal error:  Class 'App\ProductScope' not found in /home/ubuntu/workspace/app/Product.php on line 41
+[15-Nov-2018 13:53:20 Asia/Tehran] PHP Fatal error:  Class 'App\Transformers\StoreTransformer' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminStoreController.php on line 15
+[15-Nov-2018 13:54:29 Asia/Tehran] PHP Fatal error:  Class 'App\Transformers\StoreTransformer' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminStoreController.php on line 15
+[15-Nov-2018 13:55:20 Asia/Tehran] PHP Fatal error:  Class 'App\Transformers\StoreTransformer' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminStoreController.php on line 15
+[15-Nov-2018 13:55:51 Asia/Tehran] PHP Fatal error:  Call to undefined function App\Http\Controllers\json() in /home/ubuntu/workspace/app/Http/Controllers/AdminStoreController.php on line 17
+[15-Nov-2018 13:59:59 Asia/Tehran] PHP Fatal error:  Cannot use object of type Illuminate\Http\JsonResponse as array in /home/ubuntu/workspace/app/Http/Controllers/AdminStoreController.php on line 19
+[15-Nov-2018 14:00:14 Asia/Tehran] PHP Fatal error:  Call to undefined method Illuminate\Http\JsonResponse::first() in /home/ubuntu/workspace/app/Http/Controllers/AdminStoreController.php on line 19
+[15-Nov-2018 14:03:40 Asia/Tehran] PHP Fatal error:  Cannot access protected property Illuminate\Http\JsonResponse::$data in /home/ubuntu/workspace/app/Http/Controllers/AdminStoreController.php on line 19
+[15-Nov-2018 14:05:21 Asia/Tehran] PHP Fatal error:  Cannot access protected property Spatie\Fractal\Fractal::$data in /home/ubuntu/workspace/app/Http/Controllers/AdminStoreController.php on line 19
+[15-Nov-2018 14:07:36 Asia/Tehran] PHP Fatal error:  Call to a member function getData() on array in /home/ubuntu/workspace/app/Http/Controllers/AdminStoreController.php on line 18
+[15-Nov-2018 14:08:37 Asia/Tehran] PHP Fatal error:  Call to a member function getData() on string in /home/ubuntu/workspace/app/Http/Controllers/AdminStoreController.php on line 19
+[15-Nov-2018 14:17:01 Asia/Tehran] PHP Fatal error:  Call to a member function getOriginal() on integer in /home/ubuntu/workspace/storage/framework/views/9a5edfa32ee82fb504947828cbd85e35f59c6faf.php on line 13
+[15-Nov-2018 14:19:15 Asia/Tehran] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/storage/framework/views/9a5edfa32ee82fb504947828cbd85e35f59c6faf.php on line 13
+[15-Nov-2018 14:57:58 Asia/Tehran] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/storage/framework/views/9a5edfa32ee82fb504947828cbd85e35f59c6faf.php on line 50
+[15-Nov-2018 16:04:41 Asia/Tehran] PHP Fatal error:  Call to a member function except() on null in /home/ubuntu/workspace/routes/web.php on line 220
+[15-Nov-2018 16:04:49 Asia/Tehran] PHP Fatal error:  Call to a member function except() on null in /home/ubuntu/workspace/routes/web.php on line 220
+[15-Nov-2018 16:04:58 Asia/Tehran] PHP Fatal error:  Call to a member function except() on null in /home/ubuntu/workspace/routes/web.php on line 220
+[15-Nov-2018 16:05:32 Asia/Tehran] PHP Fatal error:  Call to a member function except() on null in /home/ubuntu/workspace/routes/web.php on line 220
+[15-Nov-2018 16:07:14 Asia/Tehran] PHP Fatal error:  Call to a member function except() on null in /home/ubuntu/workspace/routes/web.php on line 220
+[15-Nov-2018 16:08:24 Asia/Tehran] PHP Fatal error:  Call to a member function except() on null in /home/ubuntu/workspace/routes/web.php on line 214
+[15-Nov-2018 16:08:40 Asia/Tehran] PHP Fatal error:  Call to a member function except() on null in /home/ubuntu/workspace/routes/web.php on line 214
+[15-Nov-2018 16:08:55 Asia/Tehran] PHP Fatal error:  Call to a member function except() on null in /home/ubuntu/workspace/routes/web.php on line 214
+[15-Nov-2018 17:04:18 Asia/Tehran] PHP Fatal error:  Call to undefined function get() in /home/ubuntu/workspace/routes/web.php on line 117
+[15-Nov-2018 17:15:59 Asia/Tehran] PHP Fatal error:  Call to undefined function crsf_token() in /home/ubuntu/workspace/storage/framework/views/f16ef215242b52a0ebdc0601c4a4cb0a6ce5174d.php on line 12
+[15-Nov-2018 23:37:24 Asia/Tehran] PHP Fatal error:  Class 'Db' not found in /home/ubuntu/workspace/storage/framework/views/ab176a71e59a4e82979c1c6983a656b1d6e07135.php on line 33
+[15-Nov-2018 23:44:37 Asia/Tehran] PHP Parse error:  syntax error, unexpected '$product' (T_VARIABLE) in /home/ubuntu/workspace/storage/framework/views/ab176a71e59a4e82979c1c6983a656b1d6e07135.php on line 34
+[15-Nov-2018 23:44:52 Asia/Tehran] PHP Fatal error:  Call to undefined function print_f() in /home/ubuntu/workspace/storage/framework/views/ab176a71e59a4e82979c1c6983a656b1d6e07135.php on line 34
+[15-Nov-2018 23:48:13 Asia/Tehran] PHP Fatal error:  Cannot use object of type stdClass as array in /home/ubuntu/workspace/storage/framework/views/ab176a71e59a4e82979c1c6983a656b1d6e07135.php on line 34
+[15-Nov-2018 23:49:30 Asia/Tehran] PHP Fatal error:  Cannot use object of type stdClass as array in /home/ubuntu/workspace/storage/framework/views/ab176a71e59a4e82979c1c6983a656b1d6e07135.php on line 35
+[15-Nov-2018 23:51:22 Asia/Tehran] PHP Fatal error:  Cannot use object of type stdClass as array in /home/ubuntu/workspace/storage/framework/views/ab176a71e59a4e82979c1c6983a656b1d6e07135.php on line 34
+[15-Nov-2018 23:54:09 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/ubuntu/workspace/storage/framework/views/ab176a71e59a4e82979c1c6983a656b1d6e07135.php on line 44
