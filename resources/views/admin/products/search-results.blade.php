@@ -1,6 +1,6 @@
 
 @foreach ($products as $product)
-<form method="post" action="{{route('products.destroy',$product)}}" id="delete{{$product->id}}"> </form>
+<form method="post" action="{{route('products.destroy',$product->id)}}" id="delete{{$product->id}}"> </form>
 
 
 <input type="hidden" name="_method" value="DELETE" form="delete{{$product->id}}" >
@@ -10,7 +10,7 @@
    <input type="hidden" name="product_id[]" value="{{$product->id}}" form="update-multiple">
    <td>{{$product->name}}
    <br>
-<a href="{{route('product.photos',$product)}}"><img height="50" src="{{$product->photo ? '/photos/'.$product->photo->name : 'http://placehold.it/400x400' }} " alt="">
+<a href="{{route('product.photos',$product->id)}}"><img height="50" src="{{$product->photo ? '/photos/'.$product->photo->name : 'http://placehold.it/400x400' }} " alt="">
 </a>
    </td>
    <td>
@@ -135,7 +135,7 @@
     </td>
 
     <td>
-          <a class="btn btn-info" data-pageAccelerator="false" href="{{route('products.edit',$product)}}">
+          <a class="btn btn-info" data-pageAccelerator="false" href="{{route('products.edit',$product->id)}}">
               <i class="fa fa-edit"></i> </a> 
     </td>
     <td>

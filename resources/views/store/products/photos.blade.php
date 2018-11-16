@@ -46,10 +46,10 @@
                             <?php $i=0; ?>
                           @foreach($product->images as $photo)
                              <form method="post" action="{{route('photo.destroy',$photo)}}" id="delete{{$photo->id}}"> </form>
-                             <input type="hidden" name="product_id" value="{{$photo->product->id}}"  form="delete{{$photo->id}}">
+                             <input type="hidden" name="product_id" value="{{$product->id}}"  form="delete{{$photo->id}}">
                              <form method="post" action="{{route('photo.update',$photo)}}" id="update{{$photo->id}}" >
                                  <input type="hidden" name="_method" value="PATCH" form="update{{$photo->id}}">
-                                 <input type="hidden" name="product_id" value="{{$photo->product->id}}"  form="update{{$photo->id}}">
+                                 <input type="hidden" name="product_id" value="{{$product->id}}"  form="update{{$photo->id}}">
                                </form>
                              <input type="hidden" name="_method" value="DELETE" form="delete{{$photo->id}}" >
                           <tbody>

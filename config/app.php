@@ -188,10 +188,10 @@ return [
         // Roumen\Sitemap\SitemapServiceProvider::class,
         Gabievi\Promocodes\PromocodesServiceProvider::class,
         Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
-        'Spatie\LaravelAnalytics\LaravelAnalyticsServiceProvider',
+        
          \Conner\Tagging\Providers\TaggingServiceProvider::class,
          Kavenegar\Laravel\ServiceProvider::class,
-         Spatie\Fractal\FractalServiceProvider::class,
+         
     ],
 
     /*
@@ -247,9 +247,9 @@ return [
         'Telegram'  => Telegram\Bot\Laravel\Facades\Telegram::class,
         'Promocodes' => Gabievi\Promocodes\Facades\Promocodes::class,
         'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
-        'LaravelAnalytics' => 'Spatie\LaravelAnalytics\LaravelAnalyticsFacade',
+        
         'Kavenegar' => Kavenegar\Laravel\Facade::class,
-        'Fractal' => Spatie\Fractal\FractalFacade::class,
+        
     ],
 
 ];

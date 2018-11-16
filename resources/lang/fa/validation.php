@@ -147,7 +147,8 @@ return [
         'size'                  => 'اندازه',
         'terms'                 => 'شرایط',
         'price_buy'             => 'قیمت خرید',
-        'price_sell'             => 'قیمت فروش'
+        'price_sell'             => 'قیمت فروش',
+        'weight'                => 'وزن'
         
     ],
 

@@ -133,7 +133,7 @@ class StoreController extends Controller
                 $photo->save();
                 //return $input;
             }
-         return view('store.products.photos',compact('product'))->with(['success'=>'
+         return redirect()->route('store.products')->with(['success'=>'
          محصول با موفقیت اضافه شد. می توانید تصاویر بیشتری اضافه نمایید.
          ']);
     }
@@ -143,12 +143,15 @@ class StoreController extends Controller
         return view('store.products.show');
     }
     
-    public function add_photos(Product $product){
+    public function add_photos($id){
         
+        $product=Product::withoutGlobalScopes()->where('id',$id)->first();
+        // return $product;
         return view('store.products.photos',compact('product'));
     } 
     
-    public function edit_product(Product $product){
+    public function edit_product($id){
+        $product=Product::withoutGlobalScopes()->where('id',$id)->first();
         if(!$this->can_edit($product)){
             return redirect()->route('store.home');
         }
@@ -158,7 +161,8 @@ class StoreController extends Controller
     
     
     
-    public function update_product(Request $request,Product $product){
+    public function update_product(Request $request,$id){
+        $product=Product::withoutGlobalScopes()->where('id',$id)->first();
         if(!$this->can_edit($product)){
             return redirect()->route('store.home');
         }

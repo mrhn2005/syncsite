@@ -132,10 +132,10 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
         
-       
+        $product=Product::withoutGlobalScopes()->where('id',$id)->first();
         // return substr(strip_tags($product->desc), 0, 450);
         $categories=Category::whereIsLeaf()->get();
         return view('admin.products.edit',compact('product','categories'));
@@ -148,9 +148,9 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-       
+       $product=Product::withoutGlobalScopes()->where('id',$id)->first();
         if($file = $request->file('image')){
             $name = time() . $file->getClientOriginalName();
             $name = preg_replace('/\s+/', '-', $name);
@@ -189,9 +189,9 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-       
+       $product=Product::withoutGlobalScopes()->where('id',$id)->first();
         foreach($product->images as $photo){
             if(!is_null($photo)){
                 if(file_exists(public_path() .'/photos/'. $photo->name)){

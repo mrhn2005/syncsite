@@ -136,7 +136,7 @@
                           </div>
                           <div class="col-xs-4">
                             <label for="price_buy">
-                                قیمت خرید
+                                قیمت خرید (تومان)
                             </label>
                             <input required type="number" name="price_buy" id="price_buy" class="form-control" size="60"  value="{{isset($product)?$product->price_buy:Request::old('price_buy')}}" data-error="لطفا این فیلد را  پر نمایید." >
                             <div class="help-block with-errors"></div>
@@ -156,7 +156,7 @@
                               </div>
                               <div class="col-xs-6">
                                 <label for="weight">
-                                    وزن محصول
+                                    وزن محصول (به صورت عدد)
                                 </label>
                                 <input required type="text" name="weight" id="weight" class="form-control" size="60" value="{{isset($product)?$product->weight:Request::old('weight')}}" data-error="لطفا این فیلد را  پر نمایید." >
                                  <div class="help-block with-errors"></div>

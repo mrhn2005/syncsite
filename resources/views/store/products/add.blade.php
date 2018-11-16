@@ -17,7 +17,7 @@
      }
 
 </style>
-<link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">
+<!--<link href="https://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.css" />
 
 @endsection
@@ -43,7 +43,7 @@
 
 @section('js')
     @include('includes.tinyeditor')
-        <script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js" ></script>
+        <!--<script src="https://code.jquery.com/ui/1.10.2/jquery-ui.min.js" ></script>-->
     
     <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.min.js"></script>

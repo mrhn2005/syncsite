@@ -36,7 +36,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/store') }}">
+                <a class="navbar-brand" href="{{ url('/') }}">
                     محلی جات
                 </a>
             </div>

@@ -13,8 +13,8 @@ class PhotoController extends Controller
      * @return \Illuminate\Http\Response
      */
      
-    public function add_photos(Product $product){
-        
+    public function add_photos($id){
+        $product=Product::withoutGlobalScopes()->where('id',$id)->first();
         return view('admin.products.photos',compact('product'));
     } 
      

@@ -40,7 +40,7 @@
           </label>
 
         <div class="">
-            <input id="phone" type="text" class="form-control" name="phone" pattern="^[\u06F0-\u06F90-9]{8}$" value="{{ $store->phone}}" placeholder="02187654321" data-error="لطفا این فیلد را مطابق فرمت خواسته شده پر نمایید." >
+            <input id="phone" type="text" class="form-control" name="phone" pattern="^[\u06F0-\u06F90-9]{11}$" value="{{ $store->phone}}" placeholder="02187654321" data-error="لطفا این فیلد را مطابق فرمت خواسته شده پر نمایید." >
             <div class="help-block with-errors"></div>
             @if ($errors->has('phone'))
                 <span class="help-block">

@@ -28,11 +28,11 @@
             	<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 edit-mom">
             		@include('includes.single-product')
             		<div class="edit">
-                         <a class="btn btn-success" href="{{route('store.product.photos',$product)}}">
+                         <a class="btn btn-success" href="{{route('store.product.photos',$product->id)}}">
                              افزودن عکس
                          </a>
                          
-                         <a class="btn btn-primary" href="{{route('store.products.edit',$product)}}">
+                         <a class="btn btn-primary" href="{{route('store.products.edit',$product->id)}}">
                             ویرایش
                          </a>
                      </div>
