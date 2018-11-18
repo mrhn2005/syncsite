@@ -191,6 +191,7 @@ return [
         
          \Conner\Tagging\Providers\TaggingServiceProvider::class,
          Kavenegar\Laravel\ServiceProvider::class,
+         Barryvdh\Debugbar\ServiceProvider::class,
          
     ],
 
@@ -249,6 +250,7 @@ return [
         'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
         
         'Kavenegar' => Kavenegar\Laravel\Facade::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
         
     ],
 

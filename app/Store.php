@@ -5,11 +5,12 @@ namespace App;
 use App\Notifications\StoreResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Cviebrock\EloquentSluggable\Sluggable;
 use App\Scopes\ActiveScope;
 class Store extends Authenticatable
 {
     use Notifiable;
-
+    use Sluggable;
     /**
      * The attributes that are mass assignable.
      *
@@ -41,7 +42,25 @@ class Store extends Authenticatable
         $this->notify(new StoreResetPassword($token));
     }
     
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
+    
     public function products(){
         return $this->hasMany('App\Product')->withoutGlobalScopes();
+    }
+    
+    public function city(){
+        return $this->belongsTo('App\City');
+    }
+    
+    public function getPhotoAttribute($value)
+    {
+        return '/photos/stores/'.$value;
     }
 }

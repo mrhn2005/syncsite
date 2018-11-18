@@ -64,6 +64,15 @@
     @yield('style')
     <link rel="stylesheet" href="/css/myhome.css">
      <style>
+     .storeName{
+        margin-bottom:0px;
+        min-height:24px;
+        float:right;
+    }
+    
+    .price-box {
+        clear:both;
+    }
      .sin-product-shot-desc ul {
         margin-left:0px;
     }
@@ -202,9 +211,7 @@
 
 <body style="padding-right:0;">
     <!--<div class="loader" style="background-color:#FFFFFF"></div>-->
-    @if(!Request::is('free'))
-        @include('includes.free-message')
-    @endif
+    
     @include('includes.telegram')
     @include('includes.fixed-message') 
     @if(!Auth::guard('customer')->check())

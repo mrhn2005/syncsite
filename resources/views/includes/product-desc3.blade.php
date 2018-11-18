@@ -24,13 +24,19 @@
                 </div>
             @endif
             </div>
-            
-            <div  class="right-class" style="clear:both;padding-top:20px">
+            <div  class="right-class" style="clear:both;padding-top:20px;font-size:120%">
+                <div class="gray">
+                    حجره:
+                    <a style="color:#90133B" href="{{route('store.page',$product->store->slug)}}">{{$product->store->name}}</a>
+                </div>
+            </div>
+            <div  class="right-class" style="clear:both;padding-top:20px;padding-bottom:15px;">
                 <div class="gray">
                     دسته بندی:
                     <a style="color:#90133B" href="{{route('category.show',$product->category->slug)}}">{{$product->category->name}}</a>
                 </div>
             </div>
+            
             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="price-box single-product-price">
                 <meta itemprop="priceCurrency" content="IRR" />
             @if(Request::is('free'))

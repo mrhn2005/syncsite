@@ -23,7 +23,7 @@ class StoreAdmin
             
             if(isset($request->product_id)){
                 
-                   $product=Product::findOrFail($request->product_id);
+                   $product=Product::withoutGlobalScopes()->findOrFail($request->product_id);
                    if($product->store->id==Auth::guard('store')->user()->id){
                        
                        return $next($request);

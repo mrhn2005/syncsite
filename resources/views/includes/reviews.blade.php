@@ -8,7 +8,7 @@
                <div>
                    
                     {{jDate::forge($review->created_at->diffForHumans())->ago()}}
-                    
+                    {{$review->customer->name}}
                 </div>
                 <div>
                     توسط

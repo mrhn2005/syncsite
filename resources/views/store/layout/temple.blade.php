@@ -58,7 +58,9 @@
     									<span style="background-color:lightgreen" class="badge">{{$count}}</span>
     									@endif
     									</a></li>
-    									
+    									<li class="category-select" ><a href="{{ route('store.page',Auth::guard('store')->user()->slug)}}" style="width:100%" >
+    									حجره شما
+    									</a></li>
     								
     								</ul>
     							</div>

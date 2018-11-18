@@ -26,6 +26,7 @@
             <div class="product-desc" style="">
                 <div style="max-height:26px;overflow:hidden;">
                     <h2 class="product-name floatright" style="text-overflow: ellipsis;direction:rtl"><a href="{{route('product.show',$product->slug)}}">{{$product->name}}</a></h2>
+                    
                     @if(Request::is('free'))
                      <h5 style="direction:rtl;" class="product-name floatleft"><a href="{{route('product.show',$product->slug)}}">
                            به اندازه نمونه
@@ -35,7 +36,19 @@
                            {{$product->weight.' '. $product->weight_unit}}
                         </a></h5>
                     @endif
+                    
                 </div>
+                
+                        
+                        <p class="storeName">
+                            @if(!empty($product->store))
+                            <a href="{{route('store.page',$product->store->slug)}}">
+                                حجره 
+                                {{$product->store->name}}
+                            </a>
+                             @endif
+                        </p>
+                   
                 <div class="price-box floatleft">
                     @if(Request::is('free'))
                      <p style="color:red; visibility: hidden " class="normal-price"> <span class="floatleft">تومان</span>
@@ -72,6 +85,7 @@
                             @endif
                         @endif
                     @endif
+                    
                 </div>
                 <div class="product-action floatright">
                     <br>

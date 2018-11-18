@@ -38,15 +38,15 @@ class ProductController extends Controller
     {
         $term=$request->term;
     	
+    	$stores=Store::all();
     	
-    	
-    	$products = Product::whereHas('category', function ($query) use ( $term ) {
+    	$products = Product::withoutGlobalScopes()->whereHas('category', function ($query) use ( $term ) {
     $query->where('name', 'like', '%'.$term.'%');
 })->orWhere('name', 'LIKE', '%'.$term.'%')->orderBy('id','desc')->get();
     	$categories=Category::whereIsLeaf()->get();
     
         
-    	return view('admin.products.search-results',compact('products','categories'));
+    	return view('admin.products.search-results',compact('products','categories','stores'));
         
     }
      

@@ -39,3 +39,11 @@
 [15-Nov-2018 23:49:30 Asia/Tehran] PHP Fatal error:  Cannot use object of type stdClass as array in /home/ubuntu/workspace/storage/framework/views/ab176a71e59a4e82979c1c6983a656b1d6e07135.php on line 35
 [15-Nov-2018 23:51:22 Asia/Tehran] PHP Fatal error:  Cannot use object of type stdClass as array in /home/ubuntu/workspace/storage/framework/views/ab176a71e59a4e82979c1c6983a656b1d6e07135.php on line 34
 [15-Nov-2018 23:54:09 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/ubuntu/workspace/storage/framework/views/ab176a71e59a4e82979c1c6983a656b1d6e07135.php on line 44
+[17-Nov-2018 14:53:05 Asia/Tehran] PHP Fatal error:  Class 'Barryvdh\Debugbar\ServiceProvider' not found in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php on line 208
+[17-Nov-2018 15:12:25 Asia/Tehran] PHP Fatal error:  Call to a member function addEagerConstraints() on null in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php on line 501
+[18-Nov-2018 09:28:10 Asia/Tehran] PHP Fatal error:  Trait 'App\Sluggable' not found in /home/ubuntu/workspace/app/Store.php on line 12
+[18-Nov-2018 09:38:36 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Controllers\Store' not found in /home/ubuntu/workspace/app/Http/Controllers/HomeController.php on line 75
+[18-Nov-2018 10:39:24 Asia/Tehran] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/storage/framework/views/62c9e32015ebb7f65febfdff2d001e1ec85f66dc.php on line 69
+[18-Nov-2018 12:26:33 Asia/Tehran] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/storage/framework/views/35c7c9a4b1b9ce9013bf2e47c306a346d7894342.php on line 12
+[18-Nov-2018 12:45:41 Asia/Tehran] PHP Parse error:  syntax error, unexpected ':', expecting '(' in /home/ubuntu/workspace/storage/framework/views/a08fc9bf027a9fd61efa621286027af5b00e4e34.php on line 79
+[18-Nov-2018 12:45:59 Asia/Tehran] PHP Parse error:  syntax error, unexpected ':', expecting '(' in /home/ubuntu/workspace/storage/framework/views/a08fc9bf027a9fd61efa621286027af5b00e4e34.php on line 79

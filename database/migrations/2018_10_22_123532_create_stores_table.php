@@ -16,10 +16,11 @@ class CreateStoresTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            $table->unsignedinteger('town_id')->nullable();
-            $table->string('address')->nullable();
             $table->string('password');
-            $table->string('history')->nullable();
+            $table->unsignedinteger('city_id')->nullable();
+            $table->string('address')->nullable();
+            $table->text('history')->nullable();
+            $table->text('description')->nullable();
             $table->string('photo')->nullable();
             $table->string('phone')->nullable();
             $table->string('mobile')->nullable();

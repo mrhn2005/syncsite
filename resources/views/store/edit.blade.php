@@ -4,12 +4,12 @@
             
 <div class="col-md-10 col-md-offset-1" style="padding-top:20px;">
     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-        <label for="name" class=" control-label" >
+        <label  class=" control-label" >
           نام حجره:
           </label>
 
         <div class="">
-            <input id="name" type="text" class="form-control" name="name" value="{{$store->name }}" required data-error="لطفا این فیلد را  پر نمایید." >
+            <input  type="text" class="form-control" name="name" value="{{$store->name }}" required data-error="لطفا این فیلد را  پر نمایید." >
             <div class="help-block with-errors"></div>
             @if ($errors->has('name'))
                 <span class="help-block">
@@ -19,12 +19,12 @@
         </div>
     </div>
     <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
-        <label for="mobile" class="control-label">
+        <label  class="control-label">
           تلفن همراه:
           </label>
 
         <div class="">
-            <input id="mobile" type="text" class="form-control" name="mobile" pattern="^[\u06F0-\u06F90-9]{11}$" value="{{$store->mobile}}" placeholder="09124322534" required data-error="لطفا این فیلد را مطابق فرمت خواسته شده پر نمایید." >
+            <input  type="text" class="form-control" name="mobile" pattern="^[\u06F0-\u06F90-9]{11}$" value="{{$store->mobile}}" placeholder="09124322534" required data-error="لطفا این فیلد را مطابق فرمت خواسته شده پر نمایید." >
             <div class="help-block with-errors"></div>
             @if ($errors->has('mobile'))
                 <span class="help-block">
@@ -35,12 +35,12 @@
     </div>
 
     <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-        <label for="phone" class=" control-label">
+        <label  class=" control-label">
           تلفن ثابت:
           </label>
 
         <div class="">
-            <input id="phone" type="text" class="form-control" name="phone" pattern="^[\u06F0-\u06F90-9]{11}$" value="{{ $store->phone}}" placeholder="02187654321" data-error="لطفا این فیلد را مطابق فرمت خواسته شده پر نمایید." >
+            <input  type="text" class="form-control" name="phone" pattern="^[\u06F0-\u06F90-9]{11}$" value="{{ $store->phone}}" placeholder="02187654321" data-error="لطفا این فیلد را مطابق فرمت خواسته شده پر نمایید." >
             <div class="help-block with-errors"></div>
             @if ($errors->has('phone'))
                 <span class="help-block">
@@ -49,16 +49,62 @@
             @endif
         </div>
     </div>
-    
-    
-    
+    <div class="form-group">
+        <label for="province">
+            انتخاب استان:
+        </label>
+        <select onChange="getCity(this.value);" id="province" class="form-control" style="font-size:90%">
+                
+                @foreach($provinces as $province)
+                
+                @if(!empty($store->city))
+                    @if($store->city->province->id==$province->id)
+                    <option value="{{$province->id}}" selected>{{$province->name}}</option>
+                    @else
+                  <option value="{{$province->id}}">
+                        {{$province->name}}
+                    </option>
+                    @endif
+                @else
+                  <option value="{{$province->id}}">
+                        {{$province->name}}
+                    </option>
+                @endif
+            @endforeach
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="city">
+            انتخاب شهر:
+        </label>
+        <select required id="city" name="city_id" class="form-control" style="font-size:90%">
+            <?php $cities=!empty($store->city)?$store->city->province->cities:$provinces->first()->cities; ?>
+            
+            @foreach($cities as $city)
+                @if(!empty($store->city))
+                    @if($store->city->id==$city->id)
+                    <option value="{{$city->id}}" selected>{{$city->name}}</option>
+                    @else
+                  <option value="{{$city->id}}">
+                        {{$city->name}}
+                    </option>
+                    @endif
+                @else
+                  <option value="{{$city->id}}">
+                        {{$city->name}}
+                    </option>
+                @endif
+                
+            @endforeach
+        </select>
+    </div>
     <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-        <label for="address" class=" control-label">
+        <label  class=" control-label">
              آدرس:
           </label>
 
         <div class="">
-            <input id="address" type="text" class="form-control" name="address"  value="{{ $store->address}}"  data-error="لطفا این فیلد را پر نمایید." >
+            <input  type="text" class="form-control" name="address"  value="{{ $store->address}}"  data-error="لطفا این فیلد را پر نمایید." >
             <div class="help-block with-errors"></div>
             @if ($errors->has('address'))
                 <span class="help-block">
@@ -73,7 +119,7 @@
           </label>
 
         <div class="">
-            <textarea id="history" rows="6" type="text" class="form-control" name="history"  data-error="لطفا این فیلد را پر نمایید." >{{ $store->history}}</textarea>
+            <textarea required id="history" rows="6"  class="form-control" name="history"  data-error="لطفا این فیلد را پر نمایید." >{{ $store->history}}</textarea>
             <div class="help-block with-errors"></div>
             @if ($errors->has('phone'))
                 <span class="help-block">
@@ -82,7 +128,21 @@
             @endif
         </div>
     </div>
-    
+    <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+        <label for="description" class=" control-label">
+            توضیحات برای خریداران شما
+          </label>
+
+        <div class="">
+            <textarea id="description" rows="6"  class="form-control" name="description">{{$store->description}}</textarea>
+            <div class="help-block with-errors"></div>
+            @if ($errors->has('phone'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('description') }}</strong>
+                </span>
+            @endif
+        </div>
+    </div>
     
         <div class="form-group">
           <label for="photo">
@@ -90,7 +150,7 @@
             <br>
             ( هرچی عکس طبیعی تر و از محل کار و تولید محصول باشه مطمئنا تاثیر بیشتری میتونه داشته باشه)
           </label>
-          <input accept="image/*" type="file" class="" data-max-size="5000000"  id="photo" name="photo" multiple  data-error="لطفا عکس غرفه را بارگذاری نماید.">
+          <input  accept="image/*" type="file" class="" data-max-size="5000000"  id="photo" name="photo" multiple  data-error="لطفا عکس غرفه را بارگذاری نماید.">
           <div class="help-block with-errors"></div>
           
         </div>

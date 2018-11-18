@@ -16,6 +16,7 @@
 
 @section('style')
     <style>
+    
     .modal-header1 p {
     background-color: #5cb85c !important;
     color: white !important;

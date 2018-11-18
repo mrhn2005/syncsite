@@ -156,6 +156,7 @@ Route::group([
         Route::get('/amp/blog/{slug}', ['as'=>'blog.ampshow', 'uses'=>'HomeController@blog_amp']);
         Route::get('/contact-us', ['as'=>'contact', 'uses'=>'HomeController@contact']);
         Route::post('/your-message', ['as'=>'your_message', 'uses'=>'HomeController@your_message']);
+        Route::get('/vendor/{store}', ['as'=>'store.page', 'uses'=>'HomeController@show_store']);
 });
 
  Route::get('products/autocomplete',[
@@ -246,3 +247,4 @@ Route::group([
         Route::resource('photo','PhotoController');
         Route::resource('/store','StoreController', ['only' => [ 'update']]);
     });
+Route::post('/getcities',['as'=>'get_cities', 'uses'=>'StoreController@get_cities']);

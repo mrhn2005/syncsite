@@ -14,6 +14,7 @@ use App\Maincat;
 use App\Promocode;
 use App\Customer;
 use App\Message;
+use App\Store;
 use Session;
 use DB;
 use App;
@@ -32,68 +33,6 @@ class HomeController extends Controller
 {
     private $product_num=6;
     public function home_view(){
-        // try{
-        //     $sender = "Mahalijat";
-        //     $message = "از ثبت نام شما در محلیجات سپاسگذاریم";
-        //     $receptor = array("09144062667");
-        //     $result = Kavenegar::Send($sender,$receptor,$message);
-        //     if($result){
-        //         foreach($result as $r){
-        //             echo "messageid = $r->messageid";
-        //             echo "message = $r->message";
-        //             echo "status = $r->status";
-        //             echo "statustext = $r->statustext";
-        //             echo "sender = $r->sender";
-        //             echo "receptor = $r->receptor";
-        //             echo "date = $r->date";
-        //             echo "cost = $r->cost";
-        //         }       
-        //     }
-        // }
-        // catch(\Kavenegar\Exceptions\ApiException $e){
-        //     // در صورتی که خروجی وب سرویس 200 نباشد این خطا رخ می دهد
-        //     echo $e->errorMessage();
-        // }
-        // catch(\Kavenegar\Exceptions\HttpException $e){
-        //     // در زمانی که مشکلی در برقرای ارتباط با وب سرویس وجود داشته باشد این خطا رخ می دهد
-        //     echo $e->errorMessage();
-        // }
-        // exit();
-//     $productss=Category::with('products')->descendantsAndSelf(1)->pluck('products');
-//     $products=$productss[0]->paginate(3);
-//     $categories =Category::get(['id', 'name', '_lft', '_rgt', 'parent_id'])->toTree();
-//      return view('test2',compact('products','categories'));
-//         return $paginator->make($arr, count($arr), $perPage);
-//         $categories =Category::get(['id', 'name', '_lft', '_rgt', 'parent_id'])->toTree();
-//         return view('test2',compact('categories'));
-
-//      $categories =Category::get(['id', 'name as label', '_lft', '_rgt', 'parent_id'])->toTree();
-
-// return $categories;
-    // // $node->saveAsRoot();
-    // return 'hi';
-    
-    //   $sales=Sale::all();
-    //   foreach($sales as $sale){
-    //       if($sale->product_id!=42){
-    //       $sale->product_weight_unit=$sale->product->weight_unit;
-    //       $sale->product_weight=$sale->product->weight;
-    //       $sale->product_name=$sale->product->name;
-           
-    //       }else{
-    //           $sale->product_id=43;
-               
-    //       }
-    //       $sale->save();
-    //   }
-        //  if(($cart=Cart::content()->where('rowId',23)->first())){
-        //   return 'hi';  
-        // }
-        // return Session::getId();
-        // return Session::get('cart');
-        // // return $this->get_client_ip_env();
-        //  $product=Product::first();
-        //  return $product->total_sales;
         $start=microtime(true);
         $this->sync_cart();
         $categories =Category::defaultOrder()->get(['id', 'name','slug', '_lft', '_rgt', 'parent_id'])->toTree();
@@ -131,6 +70,11 @@ class HomeController extends Controller
         $duration=(microtime(true)-$start)*1000;
     // return $duration;
         return view('home',compact('categories','products','sales','maincats','mahalije','isbanner','banners'));
+    }
+    
+    public function show_store($id){
+        $store=Store::where('id',$id)->orWhere('slug',$id)->with('products')->first();    
+        return view('store.store-page',compact('store'));
     }
     
     public function blog(){
@@ -351,7 +295,7 @@ class HomeController extends Controller
         //     { 
         //         $query->where('name', $product->category); 
         //     })->whereNotIn('name', [$product->name])->get();
-        $related_products=Product::where('category_id',$product->category_id)->whereNotIn('id', [$product->id])->inRandomOrder()->take(5)->get();
+        $related_products=Product::with('photo')->where('category_id',$product->category_id)->whereNotIn('id', [$product->id])->inRandomOrder()->take(5)->get();
         
         // $categories =Category::defaultOrder()->get(['id', 'name','slug','photo' ,'_lft', '_rgt', 'parent_id'])->toTree();
         return view('product-page2',compact('related_products','product'));

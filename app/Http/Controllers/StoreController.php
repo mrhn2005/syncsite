@@ -8,6 +8,7 @@ use Intervention\Image\Facades\Image;
 use App\Category;
 use App\Product;
 use App\Photo;
+use App\Province;
 use Illuminate\Support\Facades\Auth;
 class StoreController extends Controller
 {
@@ -18,8 +19,8 @@ class StoreController extends Controller
      */
     public function index()
     {
-        
-        return view('store.info');
+        $provinces=Province::all();
+        return view('store.info',compact('provinces'));
     }
 
     /**
@@ -198,6 +199,13 @@ class StoreController extends Controller
         return view('store.notifications',compact('store'));
     }
  
+    
+    public function get_cities(Request $request){
+        $province=Province::where('id',$request->state_id)->with('cities')->first();
+        
+        return view('store.city',compact('province'));
+    }
+    
     
     private function can_edit($product){
         if(!empty($product->store)){
