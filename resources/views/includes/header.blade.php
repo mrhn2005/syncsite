@@ -24,7 +24,16 @@
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <!-- header-top-right start -->
                             <div class="header-top-right">
-                                @if (Auth::guard('customer')->check())
+                                @if(Auth::guard('store')->check())
+                                <div class="top-menu floatright ">
+                                    <ul> 
+                                        <li><a href="{{ route('store.home')}}" style="direction:rtl;text-align:right">
+                                            غرفه من
+                                        </a></li>
+                                    </ul>
+                                </div>
+                                @elseif(Auth::guard('customer')->check())
+                                
                                 <div class="top-menu floatright ">
                                     <ul> 
                                         <li><a href="{{ route('customer.panel')}}" style="direction:rtl;text-align:right">
@@ -49,6 +58,7 @@
                                             </li>
                                     </ul>
                                 </div>
+                                
                                 @else
                                 <div class="top-menu floatright" style="padding-left:14px;">
                                     <ul><li>
@@ -154,7 +164,12 @@
                                                             طبع شناسی
                                                          </a>
                                                         </li>
-                                                        @if (Auth::guard('customer')->check())
+                                                        @if(Auth::guard('store')->check())
+                                                        <li><a href="{{route('store.home')}}">
+                                                            غرفه من
+                                                         </a>
+                                                        </li>
+                                                        @elseif(Auth::guard('customer')->check())
                                                             <li><a href="{{ route('customer.panel')}}" style="direction:rtl">
                                                                             خوش آمدید
                                                                            {{ Auth::guard('customer')->user()->name}}

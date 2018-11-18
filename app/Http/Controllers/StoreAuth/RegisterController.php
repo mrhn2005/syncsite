@@ -7,7 +7,9 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\URL;
+use App\Mail\UserRegistered;
+use Illuminate\Support\Facades\Mail;
 class RegisterController extends Controller
 {
     /*
@@ -63,11 +65,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Store::create([
+        $store=Store::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+        
+        try{
+            Mail::to($data['email'])->send(new UserRegistered($data['email'],$data['password']));
+            
+            return $store;
+        }
+        catch (\Exception $e){
+        //   echo $data['email'];
+        //   echo $e;
+        //   die();
+          return $store;
+        }
     }
 
     /**

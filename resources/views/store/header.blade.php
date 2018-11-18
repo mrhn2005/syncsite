@@ -27,19 +27,19 @@
                                 @if (Auth::guard('store')->check())
                                 <div class="top-menu floatright ">
                                     <ul> 
-                                        <li><a href="{{ route('customer.panel')}}" style="direction:rtl;text-align:right">
+                                        <li><a href="{{ route('store.home')}}" style="direction:rtl;text-align:right">
                                         <i class="fa fa-user" style="font-size:14px"></i>
                                                             خوش آمدید
                                                            {{ Auth::guard('store')->user()->name}}
                                                             </a>
                                                 <ul class="sub-menu" >
                                                         <li>
-                                                            <a style="text-align:right" href="{{ route('customer.panel')}}">
+                                                            <a style="text-align:right" href="{{ route('store.home')}}">
                                                                 پنل کاربری
                                                                 </a>
                                                         </li>
                                                         <li>
-                                                            <a style="text-align:right" href="{{ url('/customer/logout') }}"
+                                                            <a style="text-align:right" href="{{ url('/store/logout') }}"
                                                                   onclick="event.preventDefault();
                                                                      document.getElementById('logout-form').submit();">
                                                                 خروج
@@ -154,19 +154,19 @@
                                                             طبع شناسی
                                                          </a>
                                                         </li>
-                                                        @if (Auth::guard('customer')->check())
-                                                            <li><a href="{{ route('customer.panel')}}" style="direction:rtl">
+                                                        @if (Auth::guard('store')->check())
+                                                            <li><a href="{{ route('store.home')}}" style="direction:rtl">
                                                                             خوش آمدید
-                                                                           {{ Auth::guard('customer')->user()->name}}
+                                                                           {{ Auth::guard('store')->user()->name}}
                                                                             </a>
                                                                 <ul class="sub-menu">
                                                                         <li>
-                                                                            <a href="{{ route('customer.panel')}}">
+                                                                            <a href="{{ route('store.home')}}">
                                                                                 پنل کاربری
                                                                                 </a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="{{ url('/customer/logout') }}"
+                                                                            <a href="{{ url('/store/logout') }}"
                                                 onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
                                                                                 خروج

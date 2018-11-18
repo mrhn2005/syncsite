@@ -5,7 +5,7 @@
                 <div class="col-md-7 col-md-push-5">
                     <div class="product-name " style="text-align:right;margin-bottom:10px;margin-top:-25px;font-size: 39px!important;">
                          <h1 style="font-size: 39px!important;">
-                             حجره:
+                             شهر-حجره:
                              {{$store->name}}
                              </h1>
                     </div>

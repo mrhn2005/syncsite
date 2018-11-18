@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Store;
+use App\Province;
 use Illuminate\Http\Request;
 use App\Notifications\StoreNotification;
 use App\Scopes\ActiveScope;
@@ -16,7 +17,8 @@ class AdminStoreController extends Controller
     }
     
     public function edit(Store $store){
-        return view('admin.stores.edit',compact('store'));
+        $provinces=Province::all();
+        return view('admin.stores.edit',compact('store','provinces'));
     }
     
     

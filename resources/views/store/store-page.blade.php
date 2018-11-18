@@ -23,6 +23,10 @@ $value=str_replace('&zwnj;',' ',$value)
 
 @section('style')
 <style>
+
+.no-product{
+    font-size:160%;font-weight:bold;padding:50px 0;direction:rtl;
+}
 .product-name h1 {
     color: #8ba462;
     font-size: 24px;
@@ -261,7 +265,15 @@ blockquote strong{
                                 @endforeach
                                         
                             </div>
- 
+                            @if(count($store->products)<1)
+                            
+                            <div class="text-center no-product" >
+                                <p>
+                                    هنوز محصولی اضافه نشده است.
+                                </p>
+                            </div>
+                            
+                            @endif
                     </div>
                     
                     

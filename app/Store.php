@@ -61,6 +61,9 @@ class Store extends Authenticatable
     
     public function getPhotoAttribute($value)
     {
-        return '/photos/stores/'.$value;
+        if($value){
+            return '/photos/stores/'.$value;
+        }
+        return $value;
     }
 }

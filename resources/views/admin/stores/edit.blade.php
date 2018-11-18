@@ -22,3 +22,24 @@
         </section>
 
 @endsection
+
+
+
+@section('js')
+<script>
+    
+    function getCity(val) {
+        $("#city").html('');
+    	$.ajax({
+    	type: "POST",
+    	url: "{{route('get_cities')}}",
+    	data:'state_id='+val,
+    	success: function(data){
+    		$("#city").html(data);
+    		
+    	}
+    	});
+    }
+</script>
+
+@endsection
