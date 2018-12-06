@@ -73,7 +73,7 @@ class HomeController extends Controller
     }
     
     public function show_store($id){
-        $store=Store::where('id',$id)->orWhere('slug',$id)->with('products')->first();    
+        $store=Store::where('id',$id)->orWhere('slug',$id)->with('products')->firstOrFail();    
         return view('store.store-page',compact('store'));
     }
     

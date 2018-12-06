@@ -22,10 +22,17 @@ class CustomerController extends Controller
     
     public function edit_profile(Request $request){
         $id=Auth::guard('customer')->user()->id;
-        $this->validate($request, [
-            'name' => 'required',
-            'mobile' => 'required',
-        ]);
+        if(Auth::guard('customer')->user()->mobile==$request->mobile){
+            $this->validate($request, [
+                'name' => 'required',
+                'mobile' => 'required',
+            ]);
+        }else{
+            $this->validate($request, [
+                'name' => 'required',
+                'mobile' => 'required|unique:customers',
+            ]);
+        }
         $customer=Customer::where('id',$id)->firstOrFail();
         $customer->update($request->all());
         return redirect()->back()->with([

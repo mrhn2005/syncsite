@@ -46,7 +46,7 @@
                                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-top:20px;padding-bottom:20px;">
     								<ul class="nav nav-pills nav-stacked">
     									<li class="category-select {{strpos($_SERVER['REQUEST_URI'],'home')?'active':'' }}" ><a href="{{ route('store.home')}}" style="width:100%" >
-    									مشخصات  غرفه
+    									مشخصات  حجره
     									</a></li>
     									<li class="category-select {{strpos($_SERVER['REQUEST_URI'],'products')?'active':'' }}" ><a href="{{ route('store.products')}}" style="width:100%" >
     										محصولات شما

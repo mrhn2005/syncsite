@@ -18,7 +18,7 @@
                
                     <a   href="{{route('product.show',$product->slug)}}" target="_blank">
                      <div class="img1" style="background-color: white;">    
-                            <img  src="{{!is_null($product->photo) ? (!empty($product->main_photo())?'/photos/'.$product->main_photo()->name:'/photos/'.$product->photo->name) : 'http://placehold.it/400x400' }}" alt="{{$product->slug}}" />
+                            <img  src="{{!is_null($product->photo) ? (!empty($product->main_photo())?'/photos/'.$product->main_photo()->name:'/photos/'.$product->photo->name) : 'http://placehold.it/500x600' }}" alt="{{$product->slug}}" />
                       </div>
                     </a>
                 

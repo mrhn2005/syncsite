@@ -379,7 +379,9 @@ class Cart
         $content = $this->getContent();
 
         if ($this->storedCartWithIdentifierExists($identifier)) {
-            throw new CartAlreadyStoredException("A cart with identifier {$identifier} was already stored.");
+           $this->delete_cart($identifier);
+        //   return ;
+            // throw new CartAlreadyStoredException("A cart with identifier {$identifier} was already stored.");
         }
 
         $this->getConnection()->table($this->getTableName())->insert([

@@ -11,7 +11,7 @@ class AdminStoreController extends Controller
 {
     
     public function index(){
-        $stores=Store::withoutGlobalScopes()->with('products')->get();
+        $stores=Store::withoutGlobalScopes()->with('products')->orderBy('id','desc')->get();
         // return $stores;
         return view('admin.stores.index',compact('stores'));
     }

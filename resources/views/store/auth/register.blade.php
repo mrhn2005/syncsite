@@ -93,6 +93,14 @@
                             </div>
                         </div>
                     </form>
+                    <div style="margin-right:-10px;">
+                <div class="text-center">
+           
+                   <a class="btn btn-link"  href="store/login" >
+                          اگر قبلا ثبت نام کرده ایدِ برای ورود اینجا کلیک نمایید.
+                    </a>
+                </div>
+            </div>
                 </div>
             </div>
         </div>

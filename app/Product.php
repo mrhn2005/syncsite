@@ -72,6 +72,9 @@ class Product extends Model
     
     
     public function discount_percentage(){
+        if ($this->price_sell==0){
+            return 100;
+        }
         return round(($this->price_sell-$this->price_discount)/$this->price_sell*100);
     }
     

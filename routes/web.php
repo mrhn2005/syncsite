@@ -80,7 +80,7 @@ Route::group([
    Route::get('/caegpry/{id}', ['as'=>'products.category', 'uses'=>'ProductController@single_category']);
    Route::get('/discount/products', ['as'=>'products.discount', 'uses'=>'ProductController@discount']);
    Route::get('/free/products', ['as'=>'products.free', 'uses'=>'ProductController@free']);
-   Route::get('/tags/autosearch', ['as'=>'tags.autosearch', 'uses'=>'ProductController@tags_autosearch']);
+   
    Route::post('/add/product/{id}', ['as'=>'order.sale.add', 'uses'=>'SaleController@add_product']);
    Route::resource('products','ProductController');
    Route::resource('customers','AdminCustomerController');
@@ -119,7 +119,7 @@ Route::group([
 
 });
 
- 
+Route::get('/tags/autosearch', ['as'=>'tags.autosearch', 'uses'=>'ProductController@tags_autosearch']); 
 Route::group([
     'middleware' => ['web'], //you need to add the last middleware to array to fix it (version < v.1.0.6)
     ], function () {

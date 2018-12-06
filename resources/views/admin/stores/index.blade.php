@@ -14,6 +14,9 @@
                             
                             
                           <tr>
+                              <th>
+                                  شماره
+                              </th>
                                <th>
                                   نام حجره
                                 </th>
@@ -22,6 +25,9 @@
                                  </th>
                                 <th>
                                  تلفن
+                                </th>
+                                <th>
+                                    ایمیل
                                 </th>
                                 <th>
                                 آدرس    
@@ -45,9 +51,11 @@
                         <tbody>
                             @foreach ($stores as $store)
                             <tr>
+                                <td>{{$loop->iteration}}</td>
                                 <td>{{$store->name}}</td>
                                 <td>{{$store->created_at}}</td>
                                 <td>{{$store->mobile}}</td>
+                                <td>{{$store->email}}</td>
                                 <td>{{$store->address}}</td>
                                 <td>{{$store->products->count()}}</td>
                                 <td>{{$store->active}}</td>

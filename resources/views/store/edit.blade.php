@@ -146,15 +146,19 @@
     
         <div class="form-group">
           <label for="photo">
-                 تصویر غرفه
+                 تصویر حجره
             <br>
             ( هرچی عکس طبیعی تر و از محل کار و تولید محصول باشه مطمئنا تاثیر بیشتری میتونه داشته باشه)
           </label>
-          <input  accept="image/*" type="file" class="" data-max-size="5000000"  id="photo" name="photo" multiple  data-error="لطفا عکس غرفه را بارگذاری نماید.">
+          <input  accept="image/*" type="file" class="" data-max-size="5000000"  id="photo" name="photo" multiple  data-error="لطفا عکس حجره را بارگذاری نماید.">
           <div class="help-block with-errors"></div>
           
         </div>
-    
+    <div>
+        <a href="{{route('store.page',$store->slug)}}">
+             <img src="{{$store->photo ? $store->photo : 'http://placehold.it/400x400' }}" alt="{{$store->slug}}" class="simpleLens-big-image">
+        </a>
+    </div>
     <div class="form-group">
         <div class="col-md-4 col-md-offset-4">
             <input style="font-size:18px" type="submit" class="btn btn-success btn-md btn-block" value="تایید">              

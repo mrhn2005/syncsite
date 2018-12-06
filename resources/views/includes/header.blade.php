@@ -28,7 +28,7 @@
                                 <div class="top-menu floatright ">
                                     <ul> 
                                         <li><a href="{{ route('store.home')}}" style="direction:rtl;text-align:right">
-                                            غرفه من
+                                            حجره من
                                         </a></li>
                                     </ul>
                                 </div>
@@ -166,7 +166,7 @@
                                                         </li>
                                                         @if(Auth::guard('store')->check())
                                                         <li><a href="{{route('store.home')}}">
-                                                            غرفه من
+                                                        حجره من
                                                          </a>
                                                         </li>
                                                         @elseif(Auth::guard('customer')->check())

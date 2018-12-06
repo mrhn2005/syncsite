@@ -9,7 +9,16 @@
           ورود
           </p>
         </div>
-        <div class="modal-body" style="padding:40px 50px;">
+        <div class="modal-body" style="padding:5px 40px;">
+            <div style="margin-right:-10px;">
+                <p>
+           
+                   <a class="btn btn-link"  href="{{ url('/store/login') }}" >
+                          اگر حجره دار هستیدِ برای ورود اینجا کلیک نمایید.
+                    </a>
+                </p>
+            </div>
+            
           <!--<form role="form">-->
           <!--  <div class="form-group">-->
           <!--    <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>-->

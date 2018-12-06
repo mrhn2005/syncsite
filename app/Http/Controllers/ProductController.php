@@ -224,8 +224,9 @@ class ProductController extends Controller
     
     public function single_category($id){
         $categories=Category::all();
+        $stores=Store::all();
         $products=Product::where('category_id',$id)->orderBy('id','desc')->get();
-        return view('admin.products.index',compact('products','categories'));   
+        return view('admin.products.index',compact('products','categories','stores'));   
     }
     
     public function tags_autosearch(Request $request){

@@ -214,9 +214,11 @@
     
     @include('includes.telegram')
     @include('includes.fixed-message') 
-    @if(!Auth::guard('customer')->check())
-      @include('includes.register-modal')
-      @include('includes.login')
+    @if(!strpos($_SERVER['REQUEST_URI'],'store'))
+        @if(!Auth::guard('customer')->check())
+          @include('includes.register-modal')
+          @include('includes.login')
+        @endif
     @endif
     @yield('content')
      

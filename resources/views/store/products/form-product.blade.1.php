@@ -34,11 +34,11 @@
                                  دسته بندی محصول
                                  </label>
                     
-                            <select name="category_id" id="category_id" class="form-control"  data-error="لطفا این فیلد را  پر نمایید." >
+                            <select name="category_id" id="category_id" class="form-control" required data-error="لطفا این فیلد را  پر نمایید." >
                                 
-                                    <!--<option value="">-->
-                                    <!--انتخاب دسته بندی-->
-                                    <!--</option>-->
+                                    <option value="">
+                                    انتخاب دسته بندی
+                                    </option>
                                 @foreach($categories as $category)
                                         @if (old('category_id') == $category->id)
                                               <option value="{{$category->id}}" selected>{{$category->name}}</option>
@@ -67,7 +67,7 @@
                           <label for="quantity">
                               موجودی محصول
                               </label>
-                            <input  type="number" name="quantity" id="quantity" class="form-control" value="{{isset($product)?$product->quantity:Request::old('quantity')}}" data-error="لطفا این فیلد را  پر نمایید." >
+                            <input required type="number" name="quantity" id="quantity" class="form-control" value="{{isset($product)?$product->quantity:Request::old('quantity')}}" data-error="لطفا این فیلد را  پر نمایید." >
                            <div class="help-block with-errors"></div>
                        </div>
                         
@@ -101,10 +101,10 @@
                     <div class="col-md-8">
                     
                     <div class="form-group">
-                        <label for="name1">
-                            نام محصول
+                        <label for="name">
+                            عنوان محصول 
                         </label>
-                            <input  type="text" name="name" class="form-control" id="name1" value="{{isset($product)?$product->name:Request::old('name')}}" data-error="لطفا این فیلد را  پر نمایید." >
+                            <input required type="text" name="name" class="form-control" id="name" value="{{isset($product)?$product->name:Request::old('name')}}" data-error="لطفا این فیلد را  پر نمایید." >
                            <div class="help-block with-errors"></div>
                         </div>
                     
@@ -124,21 +124,21 @@
                             <label for="price_discount">
                                 قیمت در تخفیف ویژه
                             </label>
-                            <input  type="number" name="price_discount" id="price_discount" class="form-control" size="60" value="{{isset($product)?$product->price_discount:Request::old('price_discount')}}" data-error="لطفا این فیلد را  پر نمایید." >
+                            <input required type="number" name="price_discount" id="price_discount" class="form-control" size="60" value="{{isset($product)?$product->price_discount:Request::old('price_discount')}}" data-error="لطفا این فیلد را  پر نمایید." >
                             <div class="help-block with-errors"></div>
                           </div>
                           <div class="col-xs-4">
                             <label for="price_sell">
                                 قیمت فروش
                             </label>
-                            <input  type="number" name="price_sell" id="price_sell" class="form-control" size="60" value="{{isset($product)?$product->price_sell:Request::old('price_sell')}}" data-error="لطفا این فیلد را  پر نمایید." >
+                            <input required type="number" name="price_sell" id="price_sell" class="form-control" size="60" value="{{isset($product)?$product->price_sell:Request::old('price_sell')}}" data-error="لطفا این فیلد را  پر نمایید." >
                             <div class="help-block with-errors"></div>
                           </div>
                           <div class="col-xs-4">
                             <label for="price_buy">
                                 قیمت خرید (تومان)
                             </label>
-                            <input  type="number" name="price_buy" id="price_buy" class="form-control" size="60"  value="{{isset($product)?$product->price_buy:Request::old('price_buy')}}" data-error="لطفا این فیلد را  پر نمایید." >
+                            <input required type="number" name="price_buy" id="price_buy" class="form-control" size="60"  value="{{isset($product)?$product->price_buy:Request::old('price_buy')}}" data-error="لطفا این فیلد را  پر نمایید." >
                             <div class="help-block with-errors"></div>
                           </div>
                           
@@ -149,16 +149,16 @@
                         <div class="form-group row">
                               <div class="col-xs-6">
                                 <label for="weight_unit">
-                                   واحد وزن (مانند گرم، کیلوگرم، لیتر و...)
+                                   واحد وزن
                                 </label>
-                                <input  type="text" name="weight_unit" id="weight_unit" class="form-control" size="60" value="{{isset($product)?$product->weight_unit:Request::old('weight_unit')}}" placeholder="گرم،کیلوگرم ، لیتر" data-error="لطفا این فیلد را  پر نمایید." >
+                                <input required type="text" name="weight_unit" id="weight_unit" class="form-control" size="60" value="{{isset($product)?$product->weight_unit:Request::old('weight_unit')}}" placeholder="گرم،کیلوگرم ، لیتر" data-error="لطفا این فیلد را  پر نمایید." >
                                   <div class="help-block with-errors"></div>
                               </div>
                               <div class="col-xs-6">
                                 <label for="weight">
                                     وزن محصول (به صورت عدد)
                                 </label>
-                                <input  type="text" name="weight" id="weight" class="form-control" size="60" value="{{isset($product)?$product->weight:Request::old('weight')}}" data-error="لطفا این فیلد را  پر نمایید." >
+                                <input required type="text" name="weight" id="weight" class="form-control" size="60" value="{{isset($product)?$product->weight:Request::old('weight')}}" data-error="لطفا این فیلد را  پر نمایید." >
                                  <div class="help-block with-errors"></div>
  
                               </div>

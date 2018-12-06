@@ -109,6 +109,11 @@ class StoreController extends Controller
     public function store_product(Request $request){
         $this->validate($request, [
             'name' => 'required',
+            'price_buy' => 'required',
+            'price_sell' => 'required',
+            'category_id'=>'required',
+            'weight'=>'required|numeric',
+            'desc'=>'required',
         ]);
 
          $input=$request->all();
@@ -158,10 +163,6 @@ class StoreController extends Controller
     
     
     public function update_product(Request $request,$id){
-        $this->validate($request, [
-            'weight'=>'numeric',
-            'name' => 'required',
-        ]);
         $product=Product::withoutGlobalScopes()->where('id',$id)->first();
         if(!$this->can_edit($product)){
             return redirect()->route('store.home');

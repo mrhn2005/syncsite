@@ -27,6 +27,9 @@
                                 <th>
                                    موضوع
                                 </th>
+                                <th>
+                                   تاریخ
+                                </th>
                                <th>
                                    متن پیام
                                 </th>
@@ -48,6 +51,7 @@
                                <td>{{$message->name}}</td>
                                <td>{{$message->email}}</td>
                                <td>{{$message->subject}}</td>
+                               <td>{{$message->created_at}}</td>
                                <td>{{$message->body}}</td>
                                <td><button class="btn btn-danger" type="submit" form="delete{{$message->id}}">
                                    <i class="fa fa-remove" style="font-size:16px; "></i>
