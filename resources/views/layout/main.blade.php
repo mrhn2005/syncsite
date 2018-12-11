@@ -5,14 +5,14 @@
     <meta name="yandex-verification" content="940bb71838ebd5e3" />
  <!-- Global site tag (gtag.js) - Google Analytics -->
  
-    <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111472260-2"></script>-->
-    <!--<script>-->
-    <!--  window.dataLayer = window.dataLayer || [];-->
-    <!--  function gtag(){dataLayer.push(arguments);}-->
-    <!--  gtag('js', new Date());-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111472260-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
     
-    <!--  gtag('config', 'UA-111472260-2');-->
-    <!--</script>-->
+      gtag('config', 'UA-111472260-2');
+    </script>
     <script>window.$crisp=[];window.CRISP_WEBSITE_ID="9ceb273e-843e-4657-9d5d-5d9641907602";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
    
 
