@@ -165,9 +165,9 @@
                         <!--<span style="text-align:right">-->
                         <!-- زمان باقیمانده تا محلیژه: &nbsp;-->
                         <!-- </span>-->
-                         <div id="demo" class="countdown-box " style="margin-top:-10px;margin-down:-10px">
-                            <div id="contdown-timer" style="max-width:300px;margin:auto;" data-countdown="2018/10/2"></div>
-                        </div>
+                        <!-- <div id="demo" class="countdown-box " style="margin-top:-10px;margin-down:-10px">-->
+                        <!--    <div id="contdown-timer" style="max-width:300px;margin:auto;" data-countdown="2018/10/2"></div>-->
+                        <!--</div>-->
                         <!--<span id="timer" style="font-size:130%;background-color:gray;color:white;padding-left:10px;padding-right:10px;font-weight:bold">-->
                             
                         <!--</span>-->
