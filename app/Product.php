@@ -26,6 +26,7 @@ class Product extends Model
         'category_id',
         'weight',
         'weight_unit',
+        'active',
         
         
         ];

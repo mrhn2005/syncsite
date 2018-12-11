@@ -73,33 +73,30 @@
                     <div class="container">
                         <div class="row" style="text-align:center">
                             <!-- single-footer-widget start -->
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="single-footer-widget">
                                     <h3>
                                         <a href="{{route('contact')}}">
                                             درباره ما
                                         </a>
                                     </h3>
+                                    <h3><a href="{{route('terms')}}">
+                                        قوانین و مقررات
+                                        </a></h3>
+                                        <h3><a href="{{route('complaint')}}">
+                                        ثبت شکایت
+                                        </a></h3>
                                     
                                 </div>
                             </div>
                             <!-- single-footer-widget end -->
                             <!-- single-footer-widget start -->
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <div class="single-footer-widget res1">
-                                    <h3><a href="{{route('terms')}}">
-                                        قوانین و مقررات
-                                        </a></h3>
-                                   
-                                </div>
-                            </div>
+
                             <!-- single-footer-widget end -->
                             <!-- single-footer-widget start -->
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="single-footer-widget res1">
-                                    <h3><a href="{{route('complaint')}}">
-                                        ثبت شکایت
-                                        </a></h3>
+                                    <img id='jxlzesgtjxlzoeuksizpjxlzapfu' style='cursor:pointer' onclick='window.open("https://logo.samandehi.ir/Verify.aspx?id=1018915&p=rfthobpdrfthmcsipfvlrfthdshw", "Popup","toolbar=no, scrollbars=no, location=no, statusbar=no, menubar=no, resizable=0, width=450, height=630, top=30")' alt='logo-samandehi' src='https://logo.samandehi.ir/logo.aspx?id=1018915&p=nbpdlymanbpdaqgwbsiynbpdujyn'/>
                                     
                                 </div>
                             </div>

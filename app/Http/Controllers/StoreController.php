@@ -108,6 +108,7 @@ class StoreController extends Controller
     
     public function store_product(Request $request){
         $this->validate($request, [
+            'weight'=>'numeric',
             'name' => 'required',
         ]);
 
@@ -176,7 +177,9 @@ class StoreController extends Controller
                 $photo->save();
 
         }
-        $product->update($request->all());
+        $input=$request->all();
+        $input['active']=0;
+        $product->update($input);
         if(count($request->tags)>0){
             $product->retag($request->tags);
         }
