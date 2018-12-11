@@ -203,6 +203,7 @@ Route::group([
 Route::get('sitemap', ['as'=>'sitempa', 'uses'=>'HomeController@sitemap']);
 Route::group(['prefix' => 'store'], function () {
   Route::get('/login', 'StoreAuth\LoginController@showLoginForm')->name('login');
+  Route::get('store/login', 'StoreAuth\LoginController@showLoginForm')->name('login');
   Route::post('/login', 'StoreAuth\LoginController@login');
   Route::post('/logout', 'StoreAuth\LoginController@logout')->name('logout');
 
@@ -248,3 +249,4 @@ Route::group([
         Route::resource('/store','StoreController', ['only' => [ 'update']]);
     });
 Route::post('/getcities',['as'=>'get_cities', 'uses'=>'StoreController@get_cities']);
+
