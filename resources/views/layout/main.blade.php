@@ -4,7 +4,7 @@
 <head>
     <meta name="yandex-verification" content="940bb71838ebd5e3" />
  <!-- Global site tag (gtag.js) - Google Analytics -->
- 
+ @if(config('app.debug')==false)
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111472260-2"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -14,7 +14,7 @@
       gtag('config', 'UA-111472260-2');
     </script>
     <script>window.$crisp=[];window.CRISP_WEBSITE_ID="9ceb273e-843e-4657-9d5d-5d9641907602";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
-   
+ @endif  
 
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

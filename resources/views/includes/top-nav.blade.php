@@ -104,15 +104,19 @@
                                                                 <!--    <li><a href="index-4.html">Home Version Four</a></li>-->
                                                                 <!--</ul>-->
                                                             </li>
-                                                            <li><a data-toggle="modal"  href="#loginModal">
+                                                            <li><a  href="#">
                                                                 ورود
                                                                 </a>
-                                                                <!--<ul class="sub-menu">-->
-                                                                <!--    <li><a href="index.html" class="mega-menu-title">Home Version One</a></li>-->
-                                                                <!--    <li><a href="index-2.html">Home Version Two</a></li>-->
-                                                                <!--    <li><a href="index-3.html">Home Version Three</a></li>-->
-                                                                <!--    <li><a href="index-4.html">Home Version Four</a></li>-->
-                                                                <!--</ul>-->
+                                                                <ul class="sub-menu" >
+                                                                    <li><a data-toggle="modal"  href="#loginModal">
+                                                                       ورود خریدار
+                                                                    </a></li>
+                                                                    <li><a href="{{ url('/store/login') }}">
+                                                                    ورود حجره دار
+                                                                    </a></li>
+                                                                    
+                                                                    
+                                                                </ul>
                                                             </li>
                                                             
                                                             @endif
@@ -151,22 +155,19 @@
                                             <li><a data-toggle="modal"  href="#registerModal">
                                                 ثبت نام
                                                 </a>
-                                                <!--<ul class="sub-menu">-->
-                                                <!--    <li><a href="index.html" class="mega-menu-title">Home Version One</a></li>-->
-                                                <!--    <li><a href="index-2.html">Home Version Two</a></li>-->
-                                                <!--    <li><a href="index-3.html">Home Version Three</a></li>-->
-                                                <!--    <li><a href="index-4.html">Home Version Four</a></li>-->
-                                                <!--</ul>-->
+
                                             </li>
-                                            <li><a data-toggle="modal"  href="#loginModal">
+                                            <li><a  href="#">
                                                 ورود
                                                 </a>
-                                                <!--<ul class="sub-menu">-->
-                                                <!--    <li><a href="index.html" class="mega-menu-title">Home Version One</a></li>-->
-                                                <!--    <li><a href="index-2.html">Home Version Two</a></li>-->
-                                                <!--    <li><a href="index-3.html">Home Version Three</a></li>-->
-                                                <!--    <li><a href="index-4.html">Home Version Four</a></li>-->
-                                                <!--</ul>-->
+                                                <ul class="sub-menu"  style="direction:rtl; text-align:right; left:0px;width:100%" >
+                                                    <li><a data-toggle="modal"  href="#loginModal">
+                                                       ورود خریدار
+                                                    </a></li>
+                                                    <li><a href="{{ url('/store/login') }}">
+                                                    ورود حجره دار
+                                                    </a></li>
+                                                </ul>
                                             </li>
                                             
                                             @endif

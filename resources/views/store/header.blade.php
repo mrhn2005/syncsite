@@ -27,7 +27,7 @@
                                 @if (Auth::guard('store')->check())
                                 <div class="top-menu floatright ">
                                     <ul> 
-                                        <li><a href="{{ route('store.home')}}" style="direction:rtl;text-align:right">
+                                        <li><a href="#" style="direction:rtl;text-align:right">
                                         <i class="fa fa-user" style="font-size:14px"></i>
                                                             خوش آمدید
                                                            {{ Auth::guard('store')->user()->name}}
@@ -155,7 +155,7 @@
                                                          </a>
                                                         </li>
                                                         @if (Auth::guard('store')->check())
-                                                            <li><a href="{{ route('store.home')}}" style="direction:rtl">
+                                                            <li><a href="#" style="direction:rtl">
                                                                             خوش آمدید
                                                                            {{ Auth::guard('store')->user()->name}}
                                                                             </a>

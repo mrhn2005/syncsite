@@ -50,7 +50,7 @@ class HomeController extends Controller
                         
         $mahalije=0;
         if(Product::where('active_discount',1)->count()>3){
-           $mahalije=1; 
+           $mahalije=0; 
         }
         if($mahalije){
          $products=Product::where('active_discount',1)->inRandomOrder()->take($this->product_num)->get();   
