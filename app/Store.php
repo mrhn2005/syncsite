@@ -66,4 +66,11 @@ class Store extends Authenticatable
         }
         return $value;
     }
+    
+    public function categories(){
+        $categories=$this->products()->with('category')->get()->pluck('category')->unique('id')->values()->take('3');
+        
+        return $categories;
+    }
+
 }

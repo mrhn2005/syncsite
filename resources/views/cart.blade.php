@@ -291,7 +291,7 @@
 					</div>
 					<div class="col-lg-12">
 						<h3>
-						لطفا برای تکمیل خرید خود ابتدا در سابت ثبت نام کنید.
+						لطفا برای تکمیل خرید خود ابتدا ثبت نام کنید.
 						</h3>
 						<div class="text-center">
 							<div class="buttons-cart">

@@ -124,6 +124,7 @@ Route::group([
     'middleware' => ['web'], //you need to add the last middleware to array to fix it (version < v.1.0.6)
     ], function () {
         Route::get('/product/{id}', ['as'=>'product.show', 'uses'=>'HomeController@single_product']);
+        Route::get('/vendors', ['as'=>'vendors', 'uses'=>'HomeController@vendor']);
         Route::post('cart', ['as'=>'cart.add', 'uses'=>'CartController@add']);
         
         Route::post('cart/remove', ['as'=>'cart.remove', 'uses'=>'CartController@remove']);

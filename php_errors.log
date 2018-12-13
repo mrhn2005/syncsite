@@ -50,3 +50,12 @@
 [18-Nov-2018 15:50:21 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Controllers\Province' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminStoreController.php on line 19
 [18-Nov-2018 17:29:35 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/ubuntu/workspace/storage/framework/views/28d919b56d10628da082273c595eb908b9b597f2.php on line 96
 [18-Nov-2018 17:30:00 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/ubuntu/workspace/storage/framework/views/28d919b56d10628da082273c595eb908b9b597f2.php on line 96
+[13-Dec-2018 14:12:54 Asia/Tehran] PHP Parse error:  syntax error, unexpected '__data' (T_STRING) in /home/ubuntu/workspace/storage/framework/views/9553de314b0e2038a246bd230fb2fab569fec39d.php on line 231
+[13-Dec-2018 14:13:25 Asia/Tehran] PHP Parse error:  syntax error, unexpected '__data' (T_STRING) in /home/ubuntu/workspace/storage/framework/views/9553de314b0e2038a246bd230fb2fab569fec39d.php on line 231
+[13-Dec-2018 14:13:48 Asia/Tehran] PHP Parse error:  syntax error, unexpected '__data' (T_STRING) in /home/ubuntu/workspace/storage/framework/views/9553de314b0e2038a246bd230fb2fab569fec39d.php on line 231
+[13-Dec-2018 14:14:19 Asia/Tehran] PHP Parse error:  syntax error, unexpected '').hover(function() {' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/storage/framework/views/9553de314b0e2038a246bd230fb2fab569fec39d.php on line 251
+[13-Dec-2018 14:14:21 Asia/Tehran] PHP Parse error:  syntax error, unexpected '').hover(function() {' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/storage/framework/views/9553de314b0e2038a246bd230fb2fab569fec39d.php on line 251
+[13-Dec-2018 14:14:42 Asia/Tehran] PHP Parse error:  syntax error, unexpected '').hover(function() {' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/storage/framework/views/9553de314b0e2038a246bd230fb2fab569fec39d.php on line 251
+[13-Dec-2018 14:28:11 Asia/Tehran] PHP Parse error:  syntax error, unexpected '').hover(function() {' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/storage/framework/views/9553de314b0e2038a246bd230fb2fab569fec39d.php on line 258
+[13-Dec-2018 16:19:43 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /home/ubuntu/workspace/app/Store.php on line 73
+[13-Dec-2018 16:30:52 Asia/Tehran] PHP Fatal error:  Call to undefined function routes() in /home/ubuntu/workspace/storage/framework/views/a2a52c74f7bbac4df39c7423423387ac376c8c5d.php on line 26

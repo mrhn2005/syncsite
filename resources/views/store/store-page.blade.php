@@ -24,6 +24,7 @@ $value=str_replace('&zwnj;',' ',$value)
 @section('style')
 <style>
 
+
 .no-product{
     font-size:160%;font-weight:bold;padding:50px 0;direction:rtl;
 }

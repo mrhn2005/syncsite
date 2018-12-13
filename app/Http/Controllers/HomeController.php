@@ -32,6 +32,12 @@ use Illuminate\Support\Facades\Cache;
 class HomeController extends Controller
 {
     private $product_num=6;
+    
+    public function vendor(){
+        $vendors=Store::has('products')->withCount('products')->get();
+        return view('store.stores',compact('vendors'));
+    }
+    
     public function home_view(){
         $start=microtime(true);
         $this->sync_cart();
@@ -157,10 +163,7 @@ class HomeController extends Controller
     }
     
     public function homeproducts(Request $request){
-        $sales=Sale::select('product_id', DB::raw('SUM(quantity) as sum'))
-                        ->groupBy('product_id')
-                        ->orderBy('sum', 'desc')
-                        ->take(5)->get();
+
         if (\Request::ajax()&&!empty($request->category_id)){
             // return $request->category_id;
             // $products=Product::where('category_id',$request->category_id)->orderBy('id','desc')->take(4)->get();
@@ -189,7 +192,7 @@ class HomeController extends Controller
             // $products=Product::where('active_discount',1)->take(4)->get();
             $mahalije=0;
             if(Product::where('active_discount',1)->count()>3){
-               $mahalije=1; 
+               $mahalije=0; 
             }
             if($mahalije){
              $products=Product::where('active_discount',1)->take($this->product_num)->get();   
