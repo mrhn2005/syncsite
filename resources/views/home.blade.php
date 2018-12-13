@@ -120,7 +120,7 @@
                 <div class="row">
                     <div class="section-title">
                         <h2 class="questo">
-                            محصولات ما
+                            محصولات حجره‌ها
                         </h2>
                     </div>
                 </div>
@@ -177,14 +177,7 @@
                 <div class="posts1">
                 @include('includes.maincat')
                 </div>
-                     <div class="text-center" style="margin-bottom:40px;">
-                        <div class="buttons-cart">
-                            <a  class="" href="{{route('shop')}}" style="font-size:150%;text-decoration:none" >
-                                مشاهده تمام محصولات
-                            </a>
-                        
-                       </div>
-                    </div>
+                 
             </div>
         </div>
         
@@ -379,78 +372,7 @@
                 </div>
             </div>
         </div>
-    <div id="partners" class="discount-area margin-top-60" style="background: url('/img/bg/testimonial-bg.jpg') repeat;color:#7E5738;font-weight:bold">
-            <div class="container" style="text-align:center;direction:rtl;padding:70px 0 70px 0;font-size:110%" >
-                <div class="row" >
-                    <div class="col-md-12 text-center">
-                        <h2 class="questo h2tag" style="padding-bottom:60px;font-weight:bold;color:#7E5738">
-                       همکاری با محلی جات
-                        </h2>
-                    </div>
-                    <div class="col-md-4" >
-                        <div class="icon-wrapper"><a href="{{route('mahalikhah.create')}}" target="_blank">
-                            <img class="img-circle img-thumbnail img-responsive round-image" src="/photos/partners/mahlikhah.jpg" alt="محلی خواه"/>
-                            </a>
-                        </div>
-                        <div class="howtobuy" style="height: 120px;">
-                        هر محصولی را که علاقه دارید همین حالا  سفارش دهید تا در سریعترین زمان ممکن آن را در فروشگاه موجود نماییم.
-
-                        </div>
-                        <div class="text-center" style="margin-bottom:40px;">
-                                <div class="buttons-cart">
-                                    <a  class="" href="{{route('mahalikhah.create')}}" style="font-size:150%;text-decoration:none" title="ثبت نام محلی خواه">
-                                       می خواهم محصول معرفی کنم
-                                    </a>
-                                
-                               </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4" >
-                        <div class="icon-wrapper"><a href="{{route('mahaliyar.create')}}" target="_blank">
-                            <img class="img-circle img-thumbnail img-responsive round-image" src="/photos/partners/mahaliyar.jpg" alt="محلی یار" />
-                            </a>
-                        </div>
-                        <div class="howtobuy" style="height: 120px;">
-                          شما می توانید محصولات ما را در فروشگاه، خانه، کافی شاپ و ... خود به فروش برسانید.
-
-                        </div>
-                        <div class="text-center" style="margin-bottom:40px;">
-                                <div class="buttons-cart">
-                                    <a  class="" href="{{route('mahaliyar.create')}}" style="font-size:150%;text-decoration:none" title="ثبت نام محلی یار" >
-                                     محلی یار هستم
-                                    </a>
-                                
-                               </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="col-md-4" >
-                        <div class="icon-wrapper"><a href="{{route('mahalisaz.create')}}" target="_blank">
-                            <img class="img-circle img-thumbnail img-responsive round-image" src="/photos/partners/mahalisaz1.jpg" alt="محلی ساز" />
-                            </a>
-                        </div>
-                        <div class="howtobuy" style="height: 120px;">
-                           اگر محصول محلی تولید می کنید میتوانید محصولات خود را در محلی جات به فروش رسانید.
-
-                        </div>
-                        <div class="text-center" style="margin-bottom:40px;">
-                                <div class="buttons-cart">
-                                    <a  class="" href="{{route('mahalisaz.create')}}" style="font-size:150%;text-decoration:none" title="ثبت نام محلی ساز">
-                                       محلی ساز هستم
-                                    </a>
-                                
-                               </div>
-                        </div>
-                    </div>
-                    
-                    
-                </div>
-            </div>
-            <!--<div class="single-banner">-->
-            <!--    <a href="{{route('shop')}}"><img src="img/banners/salim-4.jpg" alt="" /></a>-->
-            <!--</div>-->
-        </div>
+    
     @include('includes.footer')
       <!-- quickview product -->
       

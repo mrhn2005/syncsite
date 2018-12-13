@@ -166,15 +166,15 @@ class HomeController extends Controller
             // $products=Product::where('category_id',$request->category_id)->orderBy('id','desc')->take(4)->get();
            $category=Category::find($request->category_id);
            $productss=Category::with('products')->descendantsAndSelf($category->id)->pluck('products');
-                    
+                    $categor=$category;
                  $products=$productss->collapse()->sortByDesc('quantity')->take($this->product_num);
-            return view ('includes.homeproducts',compact('products','sales'));
+            return view ('includes.homeproducts',compact('products','categor'));
         }
         
         $products=Product::inRandomOrder()->take($this->product_num)->get();
         if (\Request::ajax()) {
             
-            return view ('includes.homeproducts',compact('products'));
+            return view ('includes.homeproducts',compact('products','categor'));
             // return \Response::json(View::make('includes.shop', array('products' => $products))->render());
         }
         
@@ -204,6 +204,7 @@ class HomeController extends Controller
             $category=$categories->first();
             // return $category->id;
             if(isset($category)){
+                $categor=$category;
             // $products=Product::where('category_id',$category->id)->orderBy('id','desc')->take(4)->get();
                 $productss=Category::with('products')->descendantsAndSelf($category->id)->pluck('products');
         
@@ -211,7 +212,7 @@ class HomeController extends Controller
                 
             }
             
-            return view ('includes.maincat',compact('products','categories','sales'));  
+            return view ('includes.maincat',compact('products','categories','sales','categor'));  
         }
         
         $products=Product::inRandomOrder()->take($this->product_num)->get();

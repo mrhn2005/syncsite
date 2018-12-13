@@ -30,17 +30,18 @@
     </div>
  </div>
 
-@foreach($products as $product) 
-<?php $in_sale=0; ?>
-<!-- quickview product -->
-    @foreach($sales as $sale)
-        @if($sale->product->id == $product->id)
-         <?php $in_sale=1; break;?>
+ <div class="text-center" style="margin-bottom:40px;">
+    <div class="buttons-cart">
+        @if(isset($categor))
+        <a id="category_link" href="{{route('category.show',$categor->slug)}}" style="font-size:150%;text-decoration:none" >
+            مشاهده تمام محصولات
+        </a>
+        @else
+        <a id="category_link" href="{{route('shop')}}" style="font-size:150%;text-decoration:none" >
+            مشاهده تمام محصولات
+        </a>
         @endif
-    @endforeach
-    @if($in_sale==0)
-     @include('includes.product-modal')
-    @endif
-@endforeach
+   </div>
+</div>
 
 @endif
