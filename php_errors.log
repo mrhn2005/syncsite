@@ -60,3 +60,8 @@
 [13-Dec-2018 16:19:43 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /home/ubuntu/workspace/app/Store.php on line 73
 [13-Dec-2018 16:30:52 Asia/Tehran] PHP Fatal error:  Call to undefined function routes() in /home/ubuntu/workspace/storage/framework/views/a2a52c74f7bbac4df39c7423423387ac376c8c5d.php on line 26
 [13-Dec-2018 17:51:32 Asia/Tehran] PHP Parse error:  syntax error, unexpected ''vendors)); ?>" style="font-si' (T_ENCAPSED_AND_WHITESPACE) in /home/ubuntu/workspace/storage/framework/views/17af9202a85e0abfae2162d74556bfe139043997.php on line 45
+[13-Dec-2018 18:14:15 Asia/Tehran] PHP Parse error:  syntax error, unexpected ':', expecting '(' in /home/ubuntu/workspace/storage/framework/views/d9b351e9d50b8d4a888258e62757741aeb45b983.php on line 37
+[13-Dec-2018 18:42:53 Asia/Tehran] PHP Parse error:  syntax error, unexpected '__data' (T_STRING) in /home/ubuntu/workspace/storage/framework/views/a6c9c6ff0eb8329001b2aa8bc08754548536da8e.php on line 257
+[13-Dec-2018 19:06:50 Asia/Tehran] PHP Parse error:  syntax error, unexpected ']' in /home/ubuntu/workspace/storage/framework/views/e563aa0d7cdac47843472e995e3a05225c89d339.php on line 25
+[13-Dec-2018 19:07:31 Asia/Tehran] PHP Parse error:  syntax error, unexpected ']' in /home/ubuntu/workspace/storage/framework/views/e563aa0d7cdac47843472e995e3a05225c89d339.php on line 25
+[13-Dec-2018 19:07:45 Asia/Tehran] PHP Parse error:  syntax error, unexpected ']' in /home/ubuntu/workspace/storage/framework/views/e563aa0d7cdac47843472e995e3a05225c89d339.php on line 25

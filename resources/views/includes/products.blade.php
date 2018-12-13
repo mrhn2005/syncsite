@@ -1,25 +1,10 @@
 @if(count($products)<1)
 
 <div class="col-sm-9 col-sm-pull-3">
-	@if(isset($maincat1) && $scategory->id==3)
-	<?php $post = DB::table('stories')->where('id',4)->first() ?>
-	<div class="shop-banner">
-		<a href="{{ route('blog.show',$post->slug)}}">
-        <img class="img-banner" src="/organic.jpg" alt="organic">
-        <div class="content">
-		    <h3>
-		    	{{$post->subject}}
-		    </h3>
-		    <p>
-		        {{$post->sbody}}
-		    </p>
-	  	</div>
-	  	</a>
-    </div>
-    @endif
-<div class="text-center" style="font-size:160%; height:300px;direction:rtl;font-weight:bold">
-    محصولات این دسته به زودی به محلی جات افزوده خواهند شد.
-</div>
+	
+	<div class="text-center" style="font-size:160%; height:300px;direction:rtl;font-weight:bold">
+	    محصولات این دسته به زودی به محلی جات افزوده خواهند شد.
+	</div>
 </div>
 
 @else

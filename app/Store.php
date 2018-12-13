@@ -55,6 +55,10 @@ class Store extends Authenticatable
         return $this->hasMany('App\Product')->withoutGlobalScopes();
     }
     
+    public function visible(){
+        return $this->hasMany('App\Product');
+    }
+    
     public function city(){
         return $this->belongsTo('App\City');
     }
@@ -68,7 +72,7 @@ class Store extends Authenticatable
     }
     
     public function categories(){
-        $categories=$this->products()->with('category')->get()->pluck('category')->unique('id')->values()->take('3');
+        $categories=$this->visible()->with('category')->get()->pluck('category')->unique('id')->values();
         
         return $categories;
     }

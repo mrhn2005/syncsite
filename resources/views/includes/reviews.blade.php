@@ -30,7 +30,13 @@
                 @if(!empty($review->reply))
                 <div class="alert alert-success" style="margin-right:30px;text-align:justify">
                     <span style="font-weight:bold;">
-                    پاسخ محلی جات: 
+                    پاسخ
+                    @if(!empty($product->store))
+                    {{$product->store->name}}
+                    @else 
+                    محلی جات
+                    @endif
+                    :
                     </span>
                   {{$review->reply}}
                 </div>

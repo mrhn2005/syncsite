@@ -23,7 +23,9 @@ $value=str_replace('&zwnj;',' ',$value)
 
 @section('style')
 <style>
-
+.tab-content{
+    direction:rtl;
+}
 
 .no-product{
     font-size:160%;font-weight:bold;padding:50px 0;direction:rtl;
@@ -167,8 +169,8 @@ blockquote strong{
 								<li><a href="{{route('home')}}">
 								    خانه
 								 <span></span></a></li>
-								 <li><a href="{{route('shop')}}">
-								    فروشگاه
+								 <li><a href="{{route('vendors')}}">
+								   حجره‌ها
 								 <span>&lt;</span></a></li>
 								
 								<li><a href="{{route('store.page',$store->slug)}}">
@@ -197,6 +199,8 @@ blockquote strong{
 		 
 		 <!-- cart-page-end -->
 		<!-- Single Description Tab -->
+				
+            
 		<div class="single-product-description">
 			<div class="container">
 				<div class="row">
@@ -205,7 +209,11 @@ blockquote strong{
 						<div class="product-description-tab custom-tab">
 							<!-- tab bar -->
 							<ul class="sin-pro-tab" role="tablist">
-								<li class="active"><a href="#product-des" data-toggle="tab" style="direction:rtl">
+							    <li class="active"><a href="#products" data-toggle="tab" style="direction:rtl">
+									<i class="fa fa-list" style="font-weight:bold"></i>&nbsp;
+									محصولات
+								</a></li>
+								<li class=""><a href="#product-des" data-toggle="tab" style="direction:rtl">
 									<i class="fa fa-file-text-o" style="font-weight:bold"></i>&nbsp;
 									داستان زندگی حجره دار
 								</a></li>
@@ -218,7 +226,41 @@ blockquote strong{
 							</ul>
 							<!-- Tab Content -->
 							<div class="tab-content">
-								<div class="tab-pane active" id="product-des">
+							    <div class="tab-pane active" id="products">
+								    <div class="container">
+                    
+                                        <div class="row">
+                                            
+                                            <div class="section-title">
+                                                <h2 class="questo">
+                                                    محصولات حجره 
+                                                    
+                                                </h2>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="row" style="margin:10px">
+                                         <!--Tab panes -->
+                                            <div class="">
+                    
+                                                @include('store.page.side-nav')
+                                                @include('includes.products')
+                                                @if(count($store->products)<1)
+                                                
+                                                <div class="text-center no-product" >
+                                                    <p>
+                                                        هنوز محصولی اضافه نشده است.
+                                                    </p>
+                                                </div>
+                                                    
+                                                @endif
+                                            </div>
+                      
+                                        </div>
+                                    </div>
+                                
+							    </div>
+								<div class="tab-pane" id="product-des">
 								    <div class="sin-product-shot-desc" style="font-family:'IranSans','BYekan';direction:rtl;font-size:100%;text-align:justify;line-height:34px;">
 						                {{$store->history}}
 						            </div>
@@ -226,9 +268,7 @@ blockquote strong{
 								<div class="tab-pane" id="product-review">
 								    @include('store.page.reviews')
 								</div>
-								
-								
-							
+
 							</div>
 						</div>
 					</div>
@@ -236,51 +276,7 @@ blockquote strong{
 			</div>
 		</div>
 		
-		<div class="products-area-3">
-            <div class="container">
-                <hr>
-                <div class="row">
-                    
-                    <div class="section-title">
-                        <h2 class="questo">
-                            محصولات حجره 
-                            {{$store->name}}
-                        </h2>
-                    </div>
-                </div>
-                
-                <div class="row" style="margin:10px">
-                     <!--Tab panes -->
-                    <div class="tab-content">
 
-                            <div class="single-carousel55" style="margin-right:10px;margin-left:10px;">
-                                
-                                @foreach($store->products as $product)
-                                    
-                                    
-                                    <!-- single-product start-->
-                                        
-                                         @include('includes.single-product')
-                                    
-                                         
-                                @endforeach
-                                        
-                            </div>
-                            @if(count($store->products)<1)
-                            
-                            <div class="text-center no-product" >
-                                <p>
-                                    هنوز محصولی اضافه نشده است.
-                                </p>
-                            </div>
-                            
-                            @endif
-                    </div>
-                    
-                    
-                </div>
-            </div>
-        </div>
 		<!-- End Single Description Tab -->
 		<!--brands-area start-->
 		@include('includes.footer')

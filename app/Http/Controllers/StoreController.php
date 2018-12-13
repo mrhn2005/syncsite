@@ -131,7 +131,7 @@ class StoreController extends Controller
                 //return $input;
             }
          return redirect()->route('store.products')->with(['success'=>'
-         محصول با موفقیت اضافه شد. می توانید تصاویر بیشتری اضافه نمایید.
+         محصول با موفقیت اضافه شد. و پس از تایید در وبسایت قرار خواهد گرفت. می توانید تصاویر بیشتری اضافه نمایید.
          ']);
     }
     
@@ -185,7 +185,7 @@ class StoreController extends Controller
         }
 
         return redirect()->route('store.products')->with(['success'=>'
-         محصول با موفقیت ویرایش شد.
+         محصول با موفقیت ویرایش شد.و پس از تاید در وبسایت قرار خواهد گرفت.
          ']);
     } 
     

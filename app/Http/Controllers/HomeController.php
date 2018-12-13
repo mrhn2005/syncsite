@@ -34,7 +34,8 @@ class HomeController extends Controller
     private $product_num=6;
     
     public function vendor(){
-        $vendors=Store::has('products')->withCount('products')->get();
+        $vendors=Store::has('products')->withCount('products')->paginate(12);
+        
         return view('store.stores',compact('vendors'));
     }
     
@@ -78,9 +79,17 @@ class HomeController extends Controller
         return view('home',compact('categories','products','sales','maincats','mahalije','isbanner','banners'));
     }
     
-    public function show_store($id){
-        $store=Store::where('id',$id)->orWhere('slug',$id)->with('products')->firstOrFail();    
-        return view('store.store-page',compact('store'));
+    public function show_store($id,$category_slug=null){
+        $store=Store::where('id',$id)->orWhere('slug',$id)->with('visible')->firstOrFail();
+        if(!$category_slug==null){
+            $category=Category::where('slug',$category_slug)->firstOrFail();
+            $products=Product::where('category_id',$category->id)->where('store_id',$store->id)->orderBy('quantity','desc')->paginate(9);
+            
+            return view('store.store-page',compact('store','products','category'));
+        }
+                
+        $products=$store->visible->sortByDesc('quantity')->paginate(9);
+        return view('store.store-page',compact('store','products'));
     }
     
     public function blog(){

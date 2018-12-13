@@ -27,9 +27,14 @@
         <div class="sub_title">
           دسته بندی ها:
             @foreach($vendor->categories() as $category)
+               @if($loop->index>2)
+                 @break
+                @endif
                 <a class=" category-name btn btn-success" href="{{route('category.show',$category->slug)}}" target="_blank">
                     {{$category->name}}
                 </a>
+               
+                
             @endforeach
         </div>
         <p class="description">{{str_limit($vendor->description,300)}}</p>

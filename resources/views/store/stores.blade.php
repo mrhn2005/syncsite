@@ -212,6 +212,9 @@
 				@endforeach
 			     
 			</div>
+			<div class="pages">
+                {{ $vendors->links() }}
+            </div>
 		</div>
 		 <!-- cart-page-end -->
 		<!-- Single Description Tab -->
