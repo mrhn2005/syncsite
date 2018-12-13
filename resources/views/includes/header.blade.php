@@ -136,6 +136,11 @@
                                                             فروشگاه
                                                             </a>
                                                         </li>
+                                                        <li><a href="{{route('vendors')}}">
+                                                           حجره‌ها
+                                                            </a>
+                                                            
+                                                        </li>
                                                         <li><a href="{{route('cart')}}">
                                                             سبد خرید
                                                             </a>
@@ -246,6 +251,11 @@
                                                     </li>
                                                     @endforeach
                                                 </ul>
+                                                
+                                            </li>
+                                            <li><a href="{{route('vendors')}}">
+                                               حجره‌ها
+                                                </a>
                                                 
                                             </li>
                                             <li><a href="{{route('cart')}}">

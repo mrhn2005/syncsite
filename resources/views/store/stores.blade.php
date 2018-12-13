@@ -1,6 +1,6 @@
 @extends('layout.main')
 @section('title')
-نتایج جستجو|
+حجره ها |
  فروشگاه اینترنتی محلی‌جات
 @endsection
 
@@ -17,7 +17,7 @@
   margin-bottom: 4px;
 }
 .column{
-  margin-bottom:10px;
+  margin-bottom:20px;
 }
 .post-module {
   direction: rtl;
@@ -206,7 +206,7 @@
 		<div class="container" style="padding-bottom: 100px;">
 			<div class="row">
 			    @foreach($vendors as $vendor)
-			        <div class="col-md-4">
+			        <div class="col-md-4 col-sm-6">
 				    @include('store.single-store')
 				    </div>
 				@endforeach

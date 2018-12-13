@@ -59,3 +59,4 @@
 [13-Dec-2018 14:28:11 Asia/Tehran] PHP Parse error:  syntax error, unexpected '').hover(function() {' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/storage/framework/views/9553de314b0e2038a246bd230fb2fab569fec39d.php on line 258
 [13-Dec-2018 16:19:43 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /home/ubuntu/workspace/app/Store.php on line 73
 [13-Dec-2018 16:30:52 Asia/Tehran] PHP Fatal error:  Call to undefined function routes() in /home/ubuntu/workspace/storage/framework/views/a2a52c74f7bbac4df39c7423423387ac376c8c5d.php on line 26
+[13-Dec-2018 17:51:32 Asia/Tehran] PHP Parse error:  syntax error, unexpected ''vendors)); ?>" style="font-si' (T_ENCAPSED_AND_WHITESPACE) in /home/ubuntu/workspace/storage/framework/views/17af9202a85e0abfae2162d74556bfe139043997.php on line 45
