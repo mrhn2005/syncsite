@@ -155,10 +155,7 @@
                                                             وبلاگ
                                                          </a>
                                                         </li>
-                                                        <li><a href="{{route('temper.first')}}">
-                                                            طبع شناسی
-                                                         </a>
-                                                        </li>
+
                                                         @if (Auth::guard('store')->check())
                                                             <li><a href="#" style="direction:rtl">
                                                                             خوش آمدید
@@ -267,10 +264,6 @@
                                                 وبلاگ
                                              </a>
                                             </li>
-                                            <li><a href="{{route('temper.first')}}">
-                                                            طبع شناسی
-                                                         </a>
-                                                        </li>
                                             <!--<li><a class="active" href="#about-us">-->
                                             <!--    تماس با ما-->
                                             <!--    </a>-->
