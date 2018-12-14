@@ -22,13 +22,13 @@
             </div>
              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="padding-top:20px;padding-bottom:20px">
 				<ul class="nav nav-pills nav-stacked">
-					<li class="category-select {{isset($category)?'':'active'}}" ><a href="{{route('store.page',[$store->slug])}}" style="width:100%;font-weight:bold;font-size:120%" >
+					<li class="category-select {{isset($category)?'':'active'}}" ><a href="{{route('store.page',[$store->slug])}}" style="width:100%;font-weight:bold;" >
 					همه محصولات
 					</a></li>
 					@foreach ($store->categories() as $maincat)
 					
 					<li class="{{isset($category)?($category->id==$maincat->id?'active':'' ):''}}" >
-					    <a style="width:100%;font-weight:bold;font-size:120%" href="{{route('store.page',[$store->slug,$maincat->slug])}}" >
+					    <a style="width:100%;font-weight:bold;" href="{{route('store.page',[$store->slug,$maincat->slug])}}" >
 					    {{$maincat->name}} 
 					        
 					    </a>

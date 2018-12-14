@@ -42,7 +42,7 @@
         </a>
         @endif
         
-        <a id="category_link" href="{{route('vendors')}}" style="font-size:150%;text-decoration:none" >
+        <a  href="{{route('vendors')}}" style="font-size:150%;text-decoration:none" >
             مشاهده حجره‌ها
         </a>
    </div>
