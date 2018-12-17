@@ -37,7 +37,7 @@
                                 تعداد محصولات
                                 </th>
                                 <th>
-                                   نمایش
+                                    نمایش محصولات
                                 </th>
                                 <th>
                                  ویرایش 
@@ -57,8 +57,13 @@
                                 <td>{{$store->mobile}}</td>
                                 <td>{{$store->email}}</td>
                                 <td>{{$store->address}}</td>
-                                <td>{{$store->products->count()}}</td>
-                                <td>{{$store->active}}</td>
+                                <td>
+                                    
+                                    {{$store->products->count()}}
+                                    
+                                </td>
+                                <td><a href="{{route('admin.store.products',$store->id)}}">
+                                        <i class="fa fa-eye"></i></a></td>
                                 <td><a href="{{route('admin.store.edit',$store)}}">
                                     <i style="font-size:130%;" class="fa fa-edit"></i>
                                 </a></td>

@@ -119,6 +119,8 @@ Route::group([
    Route::get('stores/edit/{store}',['as'=>'admin.store.edit', 'uses'=>'AdminStoreController@edit']);
    Route::get('stores/{store}/notification',['as'=>'admin.store.notification', 'uses'=>'AdminStoreController@notification']);
    Route::put('stores/{store}/notification',['as'=>'admin.store.notification.store', 'uses'=>'AdminStoreController@send_notification']);
+   Route::get('stores/{store}/products',['as'=>'admin.store.products', 'uses'=>'ProductController@vendor_products']);
+
 
 });
 
