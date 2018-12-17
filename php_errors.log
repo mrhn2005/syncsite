@@ -65,3 +65,11 @@
 [13-Dec-2018 19:06:50 Asia/Tehran] PHP Parse error:  syntax error, unexpected ']' in /home/ubuntu/workspace/storage/framework/views/e563aa0d7cdac47843472e995e3a05225c89d339.php on line 25
 [13-Dec-2018 19:07:31 Asia/Tehran] PHP Parse error:  syntax error, unexpected ']' in /home/ubuntu/workspace/storage/framework/views/e563aa0d7cdac47843472e995e3a05225c89d339.php on line 25
 [13-Dec-2018 19:07:45 Asia/Tehran] PHP Parse error:  syntax error, unexpected ']' in /home/ubuntu/workspace/storage/framework/views/e563aa0d7cdac47843472e995e3a05225c89d339.php on line 25
+[17-Dec-2018 13:51:40 UTC] PHP Fatal error:  Call to undefined method Closure::__set_state() in /home/ubuntu/workspace/bootstrap/cache/config.php on line 86
+[17-Dec-2018 13:51:43 UTC] PHP Fatal error:  Call to undefined method Closure::__set_state() in /home/ubuntu/workspace/bootstrap/cache/config.php on line 86
+[17-Dec-2018 13:51:53 UTC] PHP Fatal error:  Call to undefined method Closure::__set_state() in /home/ubuntu/workspace/bootstrap/cache/config.php on line 86
+[17-Dec-2018 13:52:10 UTC] PHP Fatal error:  Call to undefined method Closure::__set_state() in /home/ubuntu/workspace/bootstrap/cache/config.php on line 86
+[17-Dec-2018 13:52:16 UTC] PHP Fatal error:  Call to undefined method Closure::__set_state() in /home/ubuntu/workspace/bootstrap/cache/config.php on line 86
+[17-Dec-2018 13:52:24 UTC] PHP Fatal error:  Call to undefined method Closure::__set_state() in /home/ubuntu/workspace/bootstrap/cache/config.php on line 86
+[17-Dec-2018 13:52:54 UTC] PHP Warning:  require(/home/ubuntu/workspace/public/../bootstrap/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/public/index.php on line 22
+[17-Dec-2018 13:52:54 UTC] PHP Fatal error:  require(): Failed opening required '/home/ubuntu/workspace/public/../bootstrap/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/public/index.php on line 22

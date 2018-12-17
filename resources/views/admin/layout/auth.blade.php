@@ -100,6 +100,9 @@
                             <li><a class="" href="{{route('products.create')}}">
                                 افزودن
                             </a></li>
+                            <li><a class=""  href="{{route('products.disactive')}}">
+                                محصولات غیر فعال
+                                </a></li>
                             <li><a class="" href="{{route('products.discount')}}">
                                 محصولات تخفیف دار
                             </a></li>

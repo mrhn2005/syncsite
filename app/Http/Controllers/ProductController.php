@@ -66,6 +66,23 @@ class ProductController extends Controller
         //  }
         return view('admin.products.index',compact('products','categories','stores'));
     }
+    
+    public function disactive()
+    {   
+        $categories=Category::whereIsLeaf()->get();
+        $stores=Store::all();
+        $products=Product::withoutGlobalScopes()->where('active',0)->orderBy('id','desc')->with(['category','store'])->paginate(12);
+        //  foreach($products as $product){
+        //      $text=substr(strip_tags($product->desc), 0,250);
+        //      $text=str_replace("&zwnj;"," ",$text);
+        //      $text=str_replace("\xD9"," ",$text);
+             
+        //      $product->desc_short=$text;
+             
+        //      $product->update();
+        //  }
+        return view('admin.products.index',compact('products','categories','stores'));
+    }
 
     /**
      * Show the form for creating a new resource.

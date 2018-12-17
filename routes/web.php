@@ -69,6 +69,8 @@ Route::group([
     
     
 ], function () {
+    Route::get('/product/disactive', ['as'=>'products.disactive', 'uses'=>'ProductController@disactive']);
+    
     Route::get('category/reorder',['as'=>'sort','uses'=>'CategoryController@sort']);
     Route::post('cateory/reorder',['as'=>'reorder','uses'=>'CategoryController@reorder']);
     
@@ -94,6 +96,7 @@ Route::group([
    Route::resource('sale','SaleController');
    Route::resource('transactions','TransactionController');
    Route::resource('costs','CostController');
+   
    
    Route::post('/products/update_quantity', ['as'=>'quantity.update', 'uses'=>'ProductController@update_quantity']);
    Route::post('/products/update_multiple', ['as'=>'multiple.update', 'uses'=>'ProductController@update_multiple']);

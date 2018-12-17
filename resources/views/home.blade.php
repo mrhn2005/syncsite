@@ -281,7 +281,12 @@
                                 
                                 @foreach($sales as $sale)
                                     
-                                    <?php $product=$sale->product; ?>
+                                    <?php
+                                    
+                                    if($sale->product){
+                                     $product=$sale->product;   
+                                    }
+                                     ?>
                                     <!-- single-product start-->
                                         
                                          @include('includes.single-product')

@@ -107,10 +107,17 @@ class StoreController extends Controller
     }
     
     public function store_product(Request $request){
-        $this->validate($request, [
-            'weight'=>'numeric',
-            'name' => 'required',
-        ]);
+        if(isset($request->weight)){
+            $this->validate($request, [
+                'weight'=>'numeric',
+                'name' => 'required',
+            ]);  
+        }else{
+            $this->validate($request, [
+                'name' => 'required',
+            ]);
+        }
+        
 
          $input=$request->all();
          $product=Product::create($input);
@@ -159,10 +166,17 @@ class StoreController extends Controller
     
     
     public function update_product(Request $request,$id){
-        $this->validate($request, [
-            'weight'=>'numeric',
-            'name' => 'required',
-        ]);
+        if(isset($request->weight)){
+            $this->validate($request, [
+                'weight'=>'numeric',
+                'name' => 'required',
+            ]);  
+        }else{
+            $this->validate($request, [
+                'name' => 'required',
+            ]);
+        }
+        
         $product=Product::withoutGlobalScopes()->where('id',$id)->first();
         if(!$this->can_edit($product)){
             return redirect()->route('store.home');
@@ -178,14 +192,14 @@ class StoreController extends Controller
 
         }
         $input=$request->all();
-        $input['active']=0;
+        // $input['active']=0;
         $product->update($input);
         if(count($request->tags)>0){
             $product->retag($request->tags);
         }
 
         return redirect()->route('store.products')->with(['success'=>'
-         محصول با موفقیت ویرایش شد.و پس از تاید در وبسایت قرار خواهد گرفت.
+         محصول با موفقیت ویرایش شد.
          ']);
     } 
     
