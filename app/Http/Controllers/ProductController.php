@@ -217,15 +217,15 @@ class ProductController extends Controller
     public function discount(){
         $categories=Category::all();
         $products=Product::orderBy('id','desc')->where('active_discount',1)->get();
-        
-        return view('admin.products.index',compact('products','categories'));   
+        $stores=Store::all();
+        return view('admin.products.index',compact('products','categories','stores'));   
     }
     
     public function free(){
         $categories=Category::all();
         $products=Product::orderBy('id','desc')->where('free',1)->get();
-        
-        return view('admin.products.index',compact('products','categories'));   
+        $stores=Store::all();
+        return view('admin.products.index',compact('products','categories','stores'));   
     }
     
     public function single_category($id){
