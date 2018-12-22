@@ -192,6 +192,7 @@ return [
          \Conner\Tagging\Providers\TaggingServiceProvider::class,
          Kavenegar\Laravel\ServiceProvider::class,
          Barryvdh\Debugbar\ServiceProvider::class,
+         Laravel\Scout\ScoutServiceProvider::class,
          
     ],
 

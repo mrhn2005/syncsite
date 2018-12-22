@@ -80,6 +80,7 @@ class ComposerStaticInitef7fb846dc0ae33edf35a4692a6c9e44
         'P' => 
         array (
             'Psy\\' => 4,
+            'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'PhpParser\\' => 10,
@@ -94,6 +95,7 @@ class ComposerStaticInitef7fb846dc0ae33edf35a4692a6c9e44
             'League\\Fractal\\' => 15,
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+            'Laravel\\Scout\\' => 14,
         ),
         'K' => 
         array (
@@ -273,6 +275,10 @@ class ComposerStaticInitef7fb846dc0ae33edf35a4692a6c9e44
         array (
             0 => __DIR__ . '/..' . '/psy/psysh/src/Psy',
         ),
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -304,6 +310,10 @@ class ComposerStaticInitef7fb846dc0ae33edf35a4692a6c9e44
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
+        ),
+        'Laravel\\Scout\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/scout/src',
         ),
         'Kavenegar\\Laravel\\' => 
         array (
@@ -501,10 +511,34 @@ class ComposerStaticInitef7fb846dc0ae33edf35a4692a6c9e44
                 0 => __DIR__ . '/..' . '/barryvdh/reflection-docblock/src',
             ),
         ),
+        'A' => 
+        array (
+            'AlgoliaSearch' => 
+            array (
+                0 => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
         'AdminTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AdminTableSeeder.php',
+        'AlgoliaSearch\\AlgoliaConnectionException' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/AlgoliaConnectionException.php',
+        'AlgoliaSearch\\AlgoliaException' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/AlgoliaException.php',
+        'AlgoliaSearch\\Analytics' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Analytics.php',
+        'AlgoliaSearch\\Client' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Client.php',
+        'AlgoliaSearch\\ClientContext' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/ClientContext.php',
+        'AlgoliaSearch\\FailingHostsCache' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/FailingHostsCache.php',
+        'AlgoliaSearch\\FileFailingHostsCache' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/FileFailingHostsCache.php',
+        'AlgoliaSearch\\InMemoryFailingHostsCache' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/InMemoryFailingHostsCache.php',
+        'AlgoliaSearch\\Index' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Index.php',
+        'AlgoliaSearch\\IndexBrowser' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/IndexBrowser.php',
+        'AlgoliaSearch\\Iterators\\AlgoliaIterator' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Iterators/AlgoliaIterator.php',
+        'AlgoliaSearch\\Iterators\\RuleIterator' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Iterators/RuleIterator.php',
+        'AlgoliaSearch\\Iterators\\SynonymIterator' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Iterators/SynonymIterator.php',
+        'AlgoliaSearch\\Json' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Json.php',
+        'AlgoliaSearch\\PlacesIndex' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/PlacesIndex.php',
+        'AlgoliaSearch\\SynonymType' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/SynonymType.php',
+        'AlgoliaSearch\\Version' => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src/AlgoliaSearch/Version.php',
         'App\\Address' => __DIR__ . '/../..' . '/app/Address.php',
         'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
         'App\\Answer' => __DIR__ . '/../..' . '/app/Answer.php',
@@ -569,7 +603,7 @@ class ComposerStaticInitef7fb846dc0ae33edf35a4692a6c9e44
         'App\\Http\\Controllers\\StoreAuth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoreAuth/LoginController.php',
         'App\\Http\\Controllers\\StoreAuth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoreAuth/RegisterController.php',
         'App\\Http\\Controllers\\StoreAuth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoreAuth/ResetPasswordController.php',
-        'App\\Http\\Controllers\\StoreController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoreController.php',
+        'App\\Http\\Controllers\\StoreController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoreController.1.php',
         'App\\Http\\Controllers\\StoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoryController.php',
         'App\\Http\\Controllers\\TimediscountController' => __DIR__ . '/../..' . '/app/Http/Controllers/TimediscountController.php',
         'App\\Http\\Controllers\\TransactionController' => __DIR__ . '/../..' . '/app/Http/Controllers/TransactionController.php',
@@ -2740,6 +2774,20 @@ class ComposerStaticInitef7fb846dc0ae33edf35a4692a6c9e44
         'Kris\\LaravelFormBuilder\\FormHelper' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/FormHelper.php',
         'Kris\\LaravelFormBuilder\\RulesParser' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/RulesParser.php',
         'Kris\\LaravelFormBuilder\\Traits\\ValidatesWhenResolved' => __DIR__ . '/..' . '/kris/laravel-form-builder/src/Kris/LaravelFormBuilder/Traits/ValidatesWhenResolved.php',
+        'Laravel\\Scout\\Builder' => __DIR__ . '/..' . '/laravel/scout/src/Builder.php',
+        'Laravel\\Scout\\Console\\FlushCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/FlushCommand.php',
+        'Laravel\\Scout\\Console\\ImportCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/ImportCommand.php',
+        'Laravel\\Scout\\EngineManager' => __DIR__ . '/..' . '/laravel/scout/src/EngineManager.php',
+        'Laravel\\Scout\\Engines\\AlgoliaEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/AlgoliaEngine.php',
+        'Laravel\\Scout\\Engines\\Engine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/Engine.php',
+        'Laravel\\Scout\\Engines\\NullEngine' => __DIR__ . '/..' . '/laravel/scout/src/Engines/NullEngine.php',
+        'Laravel\\Scout\\Events\\ModelsFlushed' => __DIR__ . '/..' . '/laravel/scout/src/Events/ModelsFlushed.php',
+        'Laravel\\Scout\\Events\\ModelsImported' => __DIR__ . '/..' . '/laravel/scout/src/Events/ModelsImported.php',
+        'Laravel\\Scout\\Jobs\\MakeSearchable' => __DIR__ . '/..' . '/laravel/scout/src/Jobs/MakeSearchable.php',
+        'Laravel\\Scout\\ModelObserver' => __DIR__ . '/..' . '/laravel/scout/src/ModelObserver.php',
+        'Laravel\\Scout\\ScoutServiceProvider' => __DIR__ . '/..' . '/laravel/scout/src/ScoutServiceProvider.php',
+        'Laravel\\Scout\\Searchable' => __DIR__ . '/..' . '/laravel/scout/src/Searchable.php',
+        'Laravel\\Scout\\SearchableScope' => __DIR__ . '/..' . '/laravel/scout/src/SearchableScope.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -3671,6 +3719,9 @@ class ComposerStaticInitef7fb846dc0ae33edf35a4692a6c9e44
         'Psr\\Log\\NullLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/NullLogger.php',
         'Psr\\Log\\Test\\DummyTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'Psr\\Log\\Test\\LoggerInterfaceTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
+        'Psr\\SimpleCache\\CacheException' => __DIR__ . '/..' . '/psr/simple-cache/src/CacheException.php',
+        'Psr\\SimpleCache\\CacheInterface' => __DIR__ . '/..' . '/psr/simple-cache/src/CacheInterface.php',
+        'Psr\\SimpleCache\\InvalidArgumentException' => __DIR__ . '/..' . '/psr/simple-cache/src/InvalidArgumentException.php',
         'Psy\\Autoloader' => __DIR__ . '/..' . '/psy/psysh/src/Psy/Autoloader.php',
         'Psy\\CodeCleaner' => __DIR__ . '/..' . '/psy/psysh/src/Psy/CodeCleaner.php',
         'Psy\\CodeCleaner\\AbstractClassPass' => __DIR__ . '/..' . '/psy/psysh/src/Psy/CodeCleaner/AbstractClassPass.php',

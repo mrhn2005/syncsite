@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Scopes\ActiveScope;
+use Laravel\Scout\Searchable;
 
 class Product extends Model
 {
-    use Sluggable;
+    use Sluggable,Searchable;
     use \Conner\Tagging\Taggable;
     protected $fillable = [
         'name',
@@ -41,7 +42,25 @@ class Product extends Model
 
         static::addGlobalScope(new ActiveScope);
     }
-            
+    
+    public function searchableAs()
+    {
+        return 'products_index';
+    }
+    
+    public function toSearchableArray()
+    {
+        $array =  [
+            'id'      => $this->id,
+            'name'    => $this->name,
+            'category'=>$this->category->name
+        ];
+
+        // Customize array...
+
+        return $array;
+    }
+    
     public function category(){
         return $this->belongsTo('App\Category');
     }

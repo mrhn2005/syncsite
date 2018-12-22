@@ -265,7 +265,8 @@ class HomeController extends Controller
     	
     	$results = array();
     	
-    	$queries = Product::where('name', 'LIKE', '%'.$term.'%')->take(5)->get();
+    // 	$queries = Product::where('name', 'LIKE', '%'.$term.'%')->take(5)->get();
+    	$queries= App\Product::search($request->term)->take(6)->get();
     	
     	foreach ($queries as $query)
     	{
@@ -286,11 +287,11 @@ class HomeController extends Controller
     // 	$results = Product::where('name', 'LIKE', '%'.$term.'%')->take(12)->get();
     // 	$term=$request->term;
     	
+    	$results= App\Product::search($request->term)->get();
     	
-    	
-    	$results = Product::whereHas('category', function ($query) use ( $term ) {
-            $query->where('name', 'like', '%'.$term.'%');
-        })->orWhere('name', 'LIKE', '%'.$term.'%')->get();
+    // 	$results = Product::whereHas('category', function ($query) use ( $term ) {
+    //         $query->where('name', 'like', '%'.$term.'%');
+    //     })->orWhere('name', 'LIKE', '%'.$term.'%')->get();
     	
     
    

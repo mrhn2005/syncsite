@@ -18,4 +18,5 @@ return array(
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
     'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
     'Barryvdh' => array($vendorDir . '/barryvdh/reflection-docblock/src'),
+    'AlgoliaSearch' => array($vendorDir . '/algolia/algoliasearch-client-php/src'),
 );
