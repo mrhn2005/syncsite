@@ -40,7 +40,9 @@ class HomeController extends Controller
     }
     
     public function home_view(){
-        $start=microtime(true);
+        // $start=microtime(true);
+        
+           
         $this->sync_cart();
         $categories =Category::defaultOrder()->get(['id', 'name','slug', '_lft', '_rgt', 'parent_id'])->toTree();
         $maincats=Maincat::all();
@@ -62,7 +64,8 @@ class HomeController extends Controller
         if($mahalije){
          $products=Product::where('active_discount',1)->inRandomOrder()->take($this->product_num)->get();   
         }else{
-            $products=Product::where('quantity','>',0)->orderBy('created_at','desc')->take($this->product_num)->get();
+            // $products=Product::where('quantity','>',0)->orderBy('created_at','desc')->take($this->product_num)->get();
+            $products= Product::groupBy('store_id')->where('quantity','>',0)->orderBy('created_at','desc')->take($this->product_num)->get();
         }
         
         $banners=Banner::all();
@@ -74,7 +77,7 @@ class HomeController extends Controller
             $isbanner=0;
             
         }
-        $duration=(microtime(true)-$start)*1000;
+        // $duration=(microtime(true)-$start)*1000;
     // return $duration;
         return view('home',compact('categories','products','sales','maincats','mahalije','isbanner','banners'));
     }
