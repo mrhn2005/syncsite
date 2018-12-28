@@ -35,7 +35,11 @@ class Handler extends ExceptionHandler
     {
         parent::report($exception);
     }
-
+    
+    public function handleException($request, Exception $exception)
+    {
+        return 'hi';
+    }
     /**
      * Render an exception into an HTTP response.
      *
@@ -53,7 +57,14 @@ class Handler extends ExceptionHandler
         }
         if ($exception instanceof MethodNotAllowedHttpException) {
             return redirect()->back();
-    }
+         }
+        if (config('app.env')=='production'){
+            if ($exception) {
+            
+                return view('errors.exception');
+            }
+        }
+        
         return parent::render($request, $exception);
     }
 

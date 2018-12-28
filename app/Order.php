@@ -8,9 +8,7 @@ class Order extends Model
 {
     protected $appends = [
         'price',
-        'month',
-        'year',
-        'RelativeMonth'
+        
     ];
     
     protected $guarded = []; 

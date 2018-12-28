@@ -73,3 +73,82 @@
 [17-Dec-2018 13:52:24 UTC] PHP Fatal error:  Call to undefined method Closure::__set_state() in /home/ubuntu/workspace/bootstrap/cache/config.php on line 86
 [17-Dec-2018 13:52:54 UTC] PHP Warning:  require(/home/ubuntu/workspace/public/../bootstrap/autoload.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/public/index.php on line 22
 [17-Dec-2018 13:52:54 UTC] PHP Fatal error:  require(): Failed opening required '/home/ubuntu/workspace/public/../bootstrap/autoload.php' (include_path='.:/usr/share/php') in /home/ubuntu/workspace/public/index.php on line 22
+[25-Dec-2018 15:45:03 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'error' (T_STRING) in /home/ubuntu/workspace/app/Exceptions/Handler.php on line 79
+[25-Dec-2018 15:45:03 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'error' (T_STRING) in /home/ubuntu/workspace/app/Exceptions/Handler.php on line 79
+[25-Dec-2018 15:45:04 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'error' (T_STRING) in /home/ubuntu/workspace/app/Exceptions/Handler.php on line 79
+[25-Dec-2018 15:45:15 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'error' (T_STRING) in /home/ubuntu/workspace/app/Exceptions/Handler.php on line 79
+[25-Dec-2018 15:45:17 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'error' (T_STRING) in /home/ubuntu/workspace/app/Exceptions/Handler.php on line 79
+[25-Dec-2018 15:46:05 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'error' (T_STRING) in /home/ubuntu/workspace/app/Exceptions/Handler.php on line 80
+[25-Dec-2018 15:46:05 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'error' (T_STRING) in /home/ubuntu/workspace/app/Exceptions/Handler.php on line 80
+[25-Dec-2018 15:46:05 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'error' (T_STRING) in /home/ubuntu/workspace/app/Exceptions/Handler.php on line 80
+[25-Dec-2018 15:46:12 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'error' (T_STRING) in /home/ubuntu/workspace/app/Exceptions/Handler.php on line 80
+[25-Dec-2018 15:46:25 Asia/Tehran] PHP Parse error:  syntax error, unexpected 'error' (T_STRING) in /home/ubuntu/workspace/app/Exceptions/Handler.php on line 81
+[26-Dec-2018 09:55:59 Asia/Tehran] PHP Fatal error:  Uncaught exception 'BadMethodCallException' with message 'Method [send] does not exist on view.' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php:399
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->__call('send', Array)
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->send()
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(89): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(BadMethodCallException))
+#3 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(BadMethodCallException))
+#4 {main}
+  thrown in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php on line 399
+[26-Dec-2018 09:55:59 Asia/Tehran] PHP Fatal error:  Uncaught exception 'BadMethodCallException' with message 'Method [send] does not exist on view.' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php:399
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->__call('send', Array)
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->send()
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(89): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(BadMethodCallException))
+#3 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(BadMethodCallException))
+#4 {main}
+  thrown in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php on line 399
+[26-Dec-2018 09:56:00 Asia/Tehran] PHP Fatal error:  Uncaught exception 'BadMethodCallException' with message 'Method [send] does not exist on view.' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php:399
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->__call('send', Array)
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->send()
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(89): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(BadMethodCallException))
+#3 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(BadMethodCallException))
+#4 {main}
+  thrown in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php on line 399
+[26-Dec-2018 09:57:08 Asia/Tehran] PHP Fatal error:  Uncaught exception 'BadMethodCallException' with message 'Method [send] does not exist on view.' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php:399
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->__call('send', Array)
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->send()
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(89): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(BadMethodCallException))
+#3 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(BadMethodCallException))
+#4 {main}
+  thrown in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php on line 399
+[26-Dec-2018 09:57:09 Asia/Tehran] PHP Fatal error:  Uncaught exception 'BadMethodCallException' with message 'Method [send] does not exist on view.' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php:399
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->__call('send', Array)
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->send()
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(89): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(BadMethodCallException))
+#3 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(BadMethodCallException))
+#4 {main}
+  thrown in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php on line 399
+[26-Dec-2018 09:57:09 Asia/Tehran] PHP Fatal error:  Uncaught exception 'BadMethodCallException' with message 'Method [send] does not exist on view.' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php:399
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->__call('send', Array)
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->send()
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(89): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(BadMethodCallException))
+#3 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(BadMethodCallException))
+#4 {main}
+  thrown in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php on line 399
+[28-Dec-2018 10:27:16 Asia/Tehran] PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Use of undefined constant app - assumed 'app'' in /home/ubuntu/workspace/app/Exceptions/Handler.php:61
+Stack trace:
+#0 /home/ubuntu/workspace/app/Exceptions/Handler.php(61): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(8, 'Use of undefine...', '/home/ubuntu/wo...', 61, Array)
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): App\Exceptions\Handler->render(Object(Illuminate\Http\Request), Object(ErrorException))
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(89): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(ErrorException))
+#3 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(ErrorException))
+#4 {main}
+  thrown in /home/ubuntu/workspace/app/Exceptions/Handler.php on line 61
+[28-Dec-2018 10:27:38 Asia/Tehran] PHP Fatal error:  Uncaught exception 'ErrorException' with message 'array_key_exists(): The first argument should be either a string or an integer' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Support/Arr.php:151
+Stack trace:
+#0 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'array_key_exist...', '/home/ubuntu/wo...', 151, Array)
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Support/Arr.php(151): array_key_exists(false, Array)
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Support/Arr.php(284): Illuminate\Support\Arr::exists(Array, false)
+#3 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Config/Repository.php(49): Illuminate\Support\Arr::get(Array, false, NULL)
+#4 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php(269): Illuminate\Config\Repository->get(false, NULL)
+#5 /home/ubuntu/workspace/app/Exceptions/Handler.php(61): config(false)
+#6 /home/ubuntu/workspace/vendor/laravel/fr in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Support/Arr.php on line 151
+[28-Dec-2018 10:28:31 Asia/Tehran] PHP Fatal error:  Class 'App\Exceptions\App' not found in /home/ubuntu/workspace/app/Exceptions/Handler.php on line 61
+[28-Dec-2018 10:37:31 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Controllers\Vendor' not found in /home/ubuntu/workspace/app/Http/Controllers/HomeController.php on line 48
+[28-Dec-2018 10:38:02 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Controllers\Srore' not found in /home/ubuntu/workspace/app/Http/Controllers/HomeController.php on line 48
+[28-Dec-2018 11:18:11 Asia/Tehran] PHP Fatal error:  Class 'App\jDate' not found in /home/ubuntu/workspace/app/Store.php on line 88

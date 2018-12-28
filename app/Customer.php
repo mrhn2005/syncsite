@@ -18,19 +18,19 @@ class Customer extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password', 'mobile', 'phone'
     ];
-    protected $appends = [
-        'price',
-        'month',
-        'year',
-        'RelativeMonth',
-        'wet',
-        'hot',
-        'temper',
-        'temperscore',
-        'temperf',
-        'contest',
-        'temperphoto',
-    ];
+    // protected $appends = [
+    //     'price',
+    //     'month',
+    //     'year',
+    //     'RelativeMonth',
+    //     'wet',
+    //     'hot',
+    //     'temper',
+    //     'temperscore',
+    //     'temperf',
+    //     'contest',
+    //     'temperphoto',
+    // ];
     /**
      * The attributes that should be hidden for arrays.
      *

@@ -93,7 +93,9 @@
 }
 
 @endif
+
 </style>
+<link rel="stylesheet" href="css/vendor.css">
 @endsection
 
 @section('content')
@@ -268,7 +270,7 @@
                     
                     <div class="section-title">
                         <h2 class="questo">
-                            پرفروش ترین محصولات
+                            پرفروش ترین حجره ها
                         </h2>
                     </div>
                 </div>
@@ -277,21 +279,16 @@
                      <!--Tab panes -->
                     <div class="tab-content">
 
-                            <div class="single-carousel55">
+                            <div class="row">
                                 
-                                @foreach($sales as $sale)
+                                @foreach($vendors as $vendor)
                                     
-                                    <?php
                                     
-                                    if($sale->product){
-                                     $product=$sale->product;   
-                                    }
-                                     ?>
                                     <!-- single-product start-->
-                                        
-                                         @include('includes.single-product')
+                                        <div class="col-md-4 col-sm-6">
+                                         @include('store.single-store')
                                     
-                                         
+                                         </div>
                                 @endforeach
                                         
                             </div>
@@ -299,8 +296,8 @@
                     </div>
                     <div class="text-center" style="margin-bottom:40px;">
                         <div class="buttons-cart">
-                            <a  class="" href="{{route('shop')}}" style="font-size:150%;text-decoration:none" >
-                                مشاهده تمام محصولات
+                            <a  class="" href="{{route('vendors')}}" style="font-size:150%;text-decoration:none" >
+                                مشاهده تمام حجره ها
                             </a>
                         
                        </div>
@@ -377,10 +374,56 @@
                 </div>
             </div>
         </div>
-    
+    <div class="products-area-3">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="section-title">
+                        <h2 class="questo">
+                            پرفروش ترین محصولات
+                        </h2>
+                    </div>
+                </div>
+                
+                <div class="row" style="margin:10px">
+                     <!--Tab panes -->
+                    <div class="tab-content">
+
+                            <div class="single-carousel55">
+                                
+                                @foreach($sales as $sale)
+                                    
+                                    <?php
+                                    
+                                    if($sale->product){
+                                     $product=$sale->product;   
+                                    }
+                                     ?>
+                                    <!-- single-product start-->
+                                        
+                                         @include('includes.single-product')
+                                    
+                                         
+                                @endforeach
+                                        
+                            </div>
+ 
+                    </div>
+                    <div class="text-center" style="margin-bottom:40px;">
+                        <div class="buttons-cart">
+                            <a  class="" href="{{route('shop')}}" style="font-size:150%;text-decoration:none" >
+                                مشاهده تمام محصولات
+                            </a>
+                        
+                       </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>  
     @include('includes.footer')
       <!-- quickview product -->
-      
+    
        <!--<link rel="stylesheet" href="/css/bootstrap-rtl.min.css"> -->
             <!-- Modal -->
         
@@ -388,15 +431,18 @@
        
     </div>
         
-        <!-- END quickview product -->
-    @foreach($sales as $sale)
-                                    
-        <?php $product=$sale->product; ?>                
-       @include('includes.product-modal')
-    @endforeach
+
 @endsection
 @section('js')
 <script>
+$(window).load(function() {
+  $('.post-module').hover(function() {
+    $(this).find('.description').stop().animate({
+      height: "toggle",
+      opacity: "toggle"
+    }, 300);
+  });
+});
 @if($isbanner==0)
 $(document).ready(function(){
      $("#top-image").load(function() {

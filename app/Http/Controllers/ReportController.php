@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 // use LaravelAnalytics;
 use App\Order;
 use App\Customer;
+use App\Store;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 class ReportController extends Controller
@@ -17,8 +18,9 @@ class ReportController extends Controller
         // $analytic=LaravelAnalytics::getVisitorsAndPageViews(2);
         // $analytic=LaravelAnalytics::getVisitorsAndPageViewsForPeriod($startDate,$endDate);
         // return $analytic;
-        $customers=Customer::all();
+        $customers=Customer::select('created_at')->get();
         $orders=Order::all();
-        return view('admin.home',compact('orders','customers'));
+        $vendors=Store::select('created_at')->get();
+        return view('admin.home',compact('orders','customers','vendors'));
     }
 }

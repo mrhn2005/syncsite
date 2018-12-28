@@ -34,6 +34,7 @@ class HomeController extends Controller
     private $product_num=6;
     
     public function vendor(){
+        // return Product::with('store:id,name')->find(Cart::content()->pluck('id'))->pluck('store')->unique();
         $vendors=Store::has('products')->withCount('products')->paginate(12);
         
         return view('store.stores',compact('vendors'));
@@ -45,6 +46,7 @@ class HomeController extends Controller
            
         $this->sync_cart();
         $categories =Category::defaultOrder()->get(['id', 'name','slug', '_lft', '_rgt', 'parent_id'])->toTree();
+        $vendors=Store::all();
         $maincats=Maincat::all();
         $sales=Cache::remember('sales',10000,function(){
             return Sale::select('product_id', DB::raw('SUM(quantity) as sum'))
@@ -79,7 +81,7 @@ class HomeController extends Controller
         }
         // $duration=(microtime(true)-$start)*1000;
     // return $duration;
-        return view('home',compact('categories','products','sales','maincats','mahalije','isbanner','banners'));
+        return view('home',compact('categories','products','sales','maincats','mahalije','isbanner','banners','vendors'));
     }
     
     public function show_store($id,$category_slug=null){
@@ -209,7 +211,8 @@ class HomeController extends Controller
             if($mahalije){
              $products=Product::where('active_discount',1)->take($this->product_num)->get();   
             }else{
-                $products=Product::where('quantity','>',0)->orderBy('created_at','desc')->take($this->product_num)->get();
+                // $products=Product::where('quantity','>',0)->orderBy('created_at','desc')->take($this->product_num)->get();
+                $products= Product::groupBy('store_id')->where('quantity','>',0)->orderBy('created_at','desc')->take($this->product_num)->get();
             }
             return view ('includes.maincat',compact('products','categories','mahalije','sales'));  
             

@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Cviebrock\EloquentSluggable\Sluggable;
 use App\Scopes\ActiveScope;
+use Morilog\Jalali\Facades\jDate;
 class Store extends Authenticatable
 {
     use Notifiable;
@@ -21,6 +22,10 @@ class Store extends Authenticatable
     // ];
     
     protected $guarded=[];
+    
+    protected $appends = [
+        
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -75,6 +80,18 @@ class Store extends Authenticatable
         $categories=$this->visible()->with('category')->get()->pluck('category')->unique('id')->values();
         
         return $categories;
+    }
+    
+    
+    public function getMonthAttribute(){
+        return $this->attributes['month'] = jDate::forge($this->created_at)->format('%m');
+    }
+    
+    public function getYearAttribute(){
+        return $this->attributes['year'] = jDate::forge($this->created_at)->format('%Y');
+    }
+    public function getRelativeMonthAttribute(){
+        return $this->attributes['RelativeMonth'] = $this->month+$this->year*12;
     }
 
 }

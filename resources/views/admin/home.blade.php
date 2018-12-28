@@ -39,6 +39,9 @@
                                 <th>
                                     تعداد افراد ثبت نامی
                                 </th>
+                                <th>
+                                    تعداد حجره های ثبت نامی
+                                </th>
                                 
                           </tr>
                         </thead>
@@ -54,6 +57,7 @@
                                <td>{{$orders->where('discount','>','0')->count()}}</td>
                                <td>{{$orders->where('delivered','0')->count()}}</td>
                                <td>{{$customers->count()}}</td>
+                               <td>{{$vendors->count()}}</td>
                             </tr>
                             @for($i=0;$i<5;$i++)
                             <tr>
@@ -73,6 +77,7 @@
                                <td>{{$orders->where('RelativeMonth',$this_month-$i)->where('discount','>','0')->count()}}</td>
                                <td>{{$orders->where('RelativeMonth',$this_month-$i)->where('delivered','0')->count()}}</td>
                                <td>{{$customers->where('RelativeMonth',$this_month-$i)->count()}}</td>
+                               <td>{{$vendors->where('RelativeMonth',$this_month-$i)->count()}}</td>
                                
                             </tr>
                             @endfor
