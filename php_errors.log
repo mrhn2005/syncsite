@@ -152,3 +152,31 @@ Stack trace:
 [28-Dec-2018 10:37:31 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Controllers\Vendor' not found in /home/ubuntu/workspace/app/Http/Controllers/HomeController.php on line 48
 [28-Dec-2018 10:38:02 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Controllers\Srore' not found in /home/ubuntu/workspace/app/Http/Controllers/HomeController.php on line 48
 [28-Dec-2018 11:18:11 Asia/Tehran] PHP Fatal error:  Class 'App\jDate' not found in /home/ubuntu/workspace/app/Store.php on line 88
+[28-Dec-2018 13:19:28 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Controllers\View' not found in /home/ubuntu/workspace/app/Http/Controllers/HomeController.php on line 41
+[28-Dec-2018 13:37:31 Asia/Tehran] PHP Fatal error:  Class 'Gloudemans\Shoppingcart\Product' not found in /home/ubuntu/workspace/vendor/gloudemans/shoppingcart/src/Cart.php on line 281
+[28-Dec-2018 13:38:10 Asia/Tehran] PHP Fatal error:  Class 'Gloudemans\Shoppingcart\Product' not found in /home/ubuntu/workspace/vendor/gloudemans/shoppingcart/src/Cart.php on line 281
+[28-Dec-2018 18:52:47 Asia/Tehran] PHP Fatal error:  Class 'App\Http\Controllers\Product' not found in /home/ubuntu/workspace/app/Http/Controllers/Controller.php on line 15
+[29-Dec-2018 11:03:45 Asia/Tehran] PHP Fatal error:  Uncaught exception 'BadMethodCallException' with message 'Method [send] does not exist on view.' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php:399
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->__call('send', Array)
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->send()
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(89): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(BadMethodCallException))
+#3 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(BadMethodCallException))
+#4 {main}
+  thrown in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php on line 399
+[29-Dec-2018 11:03:46 Asia/Tehran] PHP Fatal error:  Uncaught exception 'BadMethodCallException' with message 'Method [send] does not exist on view.' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php:399
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->__call('send', Array)
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->send()
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(89): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(BadMethodCallException))
+#3 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(BadMethodCallException))
+#4 {main}
+  thrown in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php on line 399
+[29-Dec-2018 11:03:46 Asia/Tehran] PHP Fatal error:  Uncaught exception 'BadMethodCallException' with message 'Method [send] does not exist on view.' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php:399
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->__call('send', Array)
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(112): Illuminate\View\View->send()
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(89): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse(Object(BadMethodCallException))
+#3 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(BadMethodCallException))
+#4 {main}
+  thrown in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php on line 399

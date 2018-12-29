@@ -28,14 +28,17 @@ use Aries\Seppay\Models\Transaction;
 use Telegram\Bot\Laravel\Facades\Telegram;
 use Telegram\Bot\Api;
 use Kavenegar;
+
 use Illuminate\Support\Facades\Cache;
 class HomeController extends Controller
 {
     private $product_num=6;
     
+    
+    
     public function vendor(){
         // return Product::with('store:id,name')->find(Cart::content()->pluck('id'))->pluck('store')->unique();
-        $vendors=Store::has('products')->withCount('products')->paginate(12);
+        $vendors=Store::has('products')->with(['city'])->withCount('products')->paginate(12);
         
         return view('store.stores',compact('vendors'));
     }
@@ -54,20 +57,15 @@ class HomeController extends Controller
                         ->orderBy('sum', 'desc')
                         ->take(5)->get();
         });
-        // $sales=Sale::select('product_id', DB::raw('SUM(quantity) as sum'))
-        //                 ->groupBy('product_id')
-        //                 ->orderBy('sum', 'desc')
-        //                 ->take(5)->get();
-                        
         $mahalije=0;
         if(Product::where('active_discount',1)->count()>3){
            $mahalije=0; 
         }
         if($mahalije){
-         $products=Product::where('active_discount',1)->inRandomOrder()->take($this->product_num)->get();   
+         $products=Product::with(['store','photo'])->where('active_discount',1)->inRandomOrder()->take($this->product_num)->get();   
         }else{
             // $products=Product::where('quantity','>',0)->orderBy('created_at','desc')->take($this->product_num)->get();
-            $products= Product::groupBy('store_id')->where('quantity','>',0)->orderBy('created_at','desc')->take($this->product_num)->get();
+            $products= Product::with(['store','photo'])->groupBy('store_id')->where('quantity','>',0)->orderBy('created_at','desc')->take($this->product_num)->get();
         }
         
         $banners=Banner::all();
@@ -94,6 +92,7 @@ class HomeController extends Controller
         }
                 
         $products=$store->visible->sortByDesc('quantity')->paginate(9);
+        
         return view('store.store-page',compact('store','products'));
     }
     
@@ -188,7 +187,7 @@ class HomeController extends Controller
             return view ('includes.homeproducts',compact('products','categor'));
         }
         
-        $products=Product::inRandomOrder()->take($this->product_num)->get();
+        $products=Product::with(['store','photo'])->inRandomOrder()->take($this->product_num)->get();
         if (\Request::ajax()) {
             
             return view ('includes.homeproducts',compact('products','categor'));
@@ -209,10 +208,10 @@ class HomeController extends Controller
                $mahalije=0; 
             }
             if($mahalije){
-             $products=Product::where('active_discount',1)->take($this->product_num)->get();   
+             $products=Product::with(['store','photo'])->where('active_discount',1)->take($this->product_num)->get();   
             }else{
                 // $products=Product::where('quantity','>',0)->orderBy('created_at','desc')->take($this->product_num)->get();
-                $products= Product::groupBy('store_id')->where('quantity','>',0)->orderBy('created_at','desc')->take($this->product_num)->get();
+                $products= Product::with(['store','photo'])->groupBy('store_id')->where('quantity','>',0)->orderBy('created_at','desc')->take($this->product_num)->get();
             }
             return view ('includes.maincat',compact('products','categories','mahalije','sales'));  
             
@@ -233,7 +232,7 @@ class HomeController extends Controller
             return view ('includes.maincat',compact('products','categories','sales','categor'));  
         }
         
-        $products=Product::inRandomOrder()->take($this->product_num)->get();
+        $products=Product::with(['store','photo'])->inRandomOrder()->take($this->product_num)->get();
         if (\Request::ajax()) {
             return view ('includes.homeproducts',compact('products','sales'));
             // return \Response::json(View::make('includes.shop', array('products' => $products))->render());
@@ -309,13 +308,13 @@ class HomeController extends Controller
         
         $this->sync_cart();
     
-        $product=Product::where('slug',$id)->orWhere('id',$id)->firstOrFail();
+        $product=Product::with(['store','photo','images','reviews'])->where('slug',$id)->orWhere('id',$id)->firstOrFail();
         
         // $related_products=Product::whereHas('category', function($query) use($product) 
         //     { 
         //         $query->where('name', $product->category); 
         //     })->whereNotIn('name', [$product->name])->get();
-        $related_products=Product::with('photo')->where('category_id',$product->category_id)->whereNotIn('id', [$product->id])->inRandomOrder()->take(5)->get();
+        $related_products=Product::with(['photo','store'])->where('category_id',$product->category_id)->whereNotIn('id', [$product->id])->inRandomOrder()->take(5)->get();
         
         // $categories =Category::defaultOrder()->get(['id', 'name','slug','photo' ,'_lft', '_rgt', 'parent_id'])->toTree();
         return view('product-page2',compact('related_products','product'));

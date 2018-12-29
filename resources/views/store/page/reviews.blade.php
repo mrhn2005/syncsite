@@ -2,8 +2,8 @@
 <div class="row" style="margin-left:10px; direction:rtl;">
     
     <div class="col-md-12">
-    @foreach($store->products as $product)    
-       @foreach($product->reviews as $review)
+       
+       @foreach($store->reviews as $review)
            @if($review->active==1)
                <div>
                    
@@ -15,7 +15,7 @@
                      
                     {{$review->customer->name}}
                     (محصول
-                    {{$product->name}}
+                    {{$review->product->name}}
                     )
                     <div style="float:left"  class="rating">
                         <div  class="gray">
@@ -41,7 +41,7 @@
                 @endif
            @endif
        @endforeach
-      @endforeach
+     
     </div>
     
     

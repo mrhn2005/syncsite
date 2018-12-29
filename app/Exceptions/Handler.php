@@ -58,12 +58,12 @@ class Handler extends ExceptionHandler
         if ($exception instanceof MethodNotAllowedHttpException) {
             return redirect()->back();
          }
-        if (config('app.env')=='production'){
-            if ($exception) {
+        // if (config('app.env')=='production'){
+        //     if ($exception) {
             
-                return view('errors.exception');
-            }
-        }
+        //         return view('errors.exception');
+        //     }
+        // }
         
         return parent::render($request, $exception);
     }

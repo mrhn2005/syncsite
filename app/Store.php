@@ -83,6 +83,11 @@ class Store extends Authenticatable
     }
     
     
+    public function reviews()
+    {
+        return $this->hasManyThrough('App\Review', 'App\Product')->with(['product','customer']);
+    }
+    
     public function getMonthAttribute(){
         return $this->attributes['month'] = jDate::forge($this->created_at)->format('%m');
     }
