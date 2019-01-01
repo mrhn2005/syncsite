@@ -603,7 +603,7 @@ class ComposerStaticInitef7fb846dc0ae33edf35a4692a6c9e44
         'App\\Http\\Controllers\\StoreAuth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoreAuth/LoginController.php',
         'App\\Http\\Controllers\\StoreAuth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoreAuth/RegisterController.php',
         'App\\Http\\Controllers\\StoreAuth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoreAuth/ResetPasswordController.php',
-        'App\\Http\\Controllers\\StoreController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoreController.1.php',
+        'App\\Http\\Controllers\\StoreController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoreController.php',
         'App\\Http\\Controllers\\StoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/StoryController.php',
         'App\\Http\\Controllers\\TimediscountController' => __DIR__ . '/../..' . '/app/Http/Controllers/TimediscountController.php',
         'App\\Http\\Controllers\\TransactionController' => __DIR__ . '/../..' . '/app/Http/Controllers/TransactionController.php',

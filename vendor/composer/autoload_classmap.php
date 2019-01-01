@@ -88,7 +88,7 @@ return array(
     'App\\Http\\Controllers\\StoreAuth\\LoginController' => $baseDir . '/app/Http/Controllers/StoreAuth/LoginController.php',
     'App\\Http\\Controllers\\StoreAuth\\RegisterController' => $baseDir . '/app/Http/Controllers/StoreAuth/RegisterController.php',
     'App\\Http\\Controllers\\StoreAuth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/StoreAuth/ResetPasswordController.php',
-    'App\\Http\\Controllers\\StoreController' => $baseDir . '/app/Http/Controllers/StoreController.1.php',
+    'App\\Http\\Controllers\\StoreController' => $baseDir . '/app/Http/Controllers/StoreController.php',
     'App\\Http\\Controllers\\StoryController' => $baseDir . '/app/Http/Controllers/StoryController.php',
     'App\\Http\\Controllers\\TimediscountController' => $baseDir . '/app/Http/Controllers/TimediscountController.php',
     'App\\Http\\Controllers\\TransactionController' => $baseDir . '/app/Http/Controllers/TransactionController.php',
