@@ -236,7 +236,7 @@ Route::group([
         Route::post('/products/add',['as'=>'store.products.store', 'uses'=>'StoreController@store_product']);
         Route::get('/photos/products/{product}', ['as'=>'store.product.photos', 'uses'=>'StoreController@add_photos']);
         Route::get('/notifications', ['as'=>'store.notifications.show', 'uses'=>'StoreController@notifications']);
-        
+        Route::get('product/{product}/property',['as'=>'store.products.properties', 'uses'=>'StoreController@property_add']);
         //  Route::get('/customer/favorites', ['as'=>'customer.favorites', 'uses'=>'CustomerController@favorites']); 
         //  Route::get('/customer/orders', ['as'=>'customer.orders', 'uses'=>'CustomerController@orders']); 
         //  Route::get('/customer/order/{order_id}', ['as'=>'customer.orders.show', 'uses'=>'CustomerController@orders_show']); 
@@ -253,6 +253,8 @@ Route::group([
     ], function () {
         Route::resource('photo','PhotoController');
         Route::resource('/store','StoreController', ['only' => [ 'update']]);
+        
+        Route::post('product/property/add',['as'=>'product.property.store', 'uses'=>'PropertyController@product_store']);
     });
 Route::post('/getcities',['as'=>'get_cities', 'uses'=>'StoreController@get_cities']);
 

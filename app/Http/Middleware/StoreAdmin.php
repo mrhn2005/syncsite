@@ -20,7 +20,7 @@ class StoreAdmin
 	        return $next($request);
 	    }
         if (Auth::guard('store')->check()) {
-            
+            // dd($request->product_id);
             if(isset($request->product_id)){
                 
                    $product=Product::withoutGlobalScopes()->findOrFail($request->product_id);

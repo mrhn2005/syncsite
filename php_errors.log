@@ -180,3 +180,4 @@ Stack trace:
 #3 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->handleException(Object(BadMethodCallException))
 #4 {main}
   thrown in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php on line 399
+[03-Jan-2019 11:26:42 Asia/Tehran] PHP Parse error:  syntax error, unexpected '__data' (T_STRING) in /home/ubuntu/workspace/storage/framework/views/a6f5dadf29382248f9d3327a183984cd5ea5cc99.php on line 2

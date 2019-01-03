@@ -144,7 +144,7 @@ class Product extends Model
     }
     
     public function properties(){
-        return $this->belongsToMany('App\Property', 'product_property')->withPivot('name');
+        return $this->belongsToMany('App\Property', 'product_property')->withPivot('name')->withoutGlobalScopes();
     }
     
     public function main_photo(){

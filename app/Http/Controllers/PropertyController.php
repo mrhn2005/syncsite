@@ -147,13 +147,14 @@ class PropertyController extends Controller
     }
     
     public function product_add(Product $product){
-        
+        return 'hi';
+        $product=Product::withoutGlobalScopes()->where('id',$product_id)->firstOrFail();
         return view('admin.products.property',compact('product'));
     }
     
     public function product_store(Request $request){
         // $product=$request->product;
-        $product=Product::where('id',$request->product)->firstOrFail();
+        $product=Product::withoutGlobalScopes()->where('id',$request->product_id)->firstOrFail();
         // return $product;
         $i=0;
         foreach($request->property as $property){

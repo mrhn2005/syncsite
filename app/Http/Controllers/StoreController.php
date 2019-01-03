@@ -223,6 +223,13 @@ class StoreController extends Controller
     }
     
     
+    public function property_add( $product_id){
+         $product=Product::withoutGlobalScopes()->where('id',$product_id)->firstOrFail();
+        
+        return view('store.products.property',compact('product'));
+    }
+    
+    
     private function can_edit($product){
         if(!empty($product->store)){
             if($product->store->id==Auth::guard('store')->user()->id){
