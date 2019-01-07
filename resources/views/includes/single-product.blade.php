@@ -51,7 +51,7 @@
                    
                 <div class="price-box floatleft">
                     @if(Request::is('free'))
-                     <p style="color:red; visibility: hidden " class="normal-price"> <span class="floatleft">تومان</span>
+                     <p style="color:red; visibility: hidden " class="normal-price"> <span class="floatleft">{{$product->price_unit}}</span>
                                &nbsp; 18000
                             </p>
                      <p style="color:#992F53 " class="normal-price"> 
@@ -59,7 +59,7 @@
                         </p>
                     @else
                         @if($product->quantity==0)
-                            <p style="color:red; visibility: hidden " class="normal-price"> <span class="floatleft">تومان</span>
+                            <p style="color:red; visibility: hidden " class="normal-price"> <span class="floatleft">{{$product->price_unit}}</span>
                                &nbsp; 18000
                             </p>
                             
@@ -68,18 +68,18 @@
                             </p>
                         @else
                             @if($product->active_discount==0)
-                            <p style="color:red; visibility: hidden " class="normal-price"> <span class="floatleft">تومان</span>
+                            <p style="color:red; visibility: hidden " class="normal-price"> <span class="floatleft">{{$product->price_unit}}</span>
                                &nbsp; 18000
                             </p>
-                            <p  class="normal-price"> <span class="floatleft">تومان</span>
+                            <p  class="normal-price"> <span class="floatleft">{{$product->price_unit}}</span>
                                &nbsp; {{$product->price_sell}}
                             </p>
                             
                             @else
-                            <p style="text-decoration: line-through; " class="normal-price"> <span class="floatleft">تومان</span>
+                            <p style="text-decoration: line-through; " class="normal-price"> <span class="floatleft">{{$product->price_unit}}</span>
                                &nbsp; {{$product->price_sell}}
                             </p>
-                            <p style="color:red " class="normal-price"> <span class="floatleft">تومان</span>
+                            <p style="color:red " class="normal-price"> <span class="floatleft">{{$product->price_unit}}</span>
                                &nbsp; {{$product->price_discount}}
                             </p>
                             @endif

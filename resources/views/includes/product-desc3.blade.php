@@ -62,13 +62,13 @@
                     <p class="normal-price floatright" style="direction:rtl;">
                         <span itemprop="price">{{$product->price_sell}}</span>
                         
-                            تومان
+                            {{$product->price_unit}}
                      </p>
                      @else
                      <p class="normal-price floatright" style="direction:rtl;text-decoration: line-through;">
                         {{$product->price_sell}}
                         
-                            تومان
+                            {{$product->price_unit}}
                             
                      </p>
                      
@@ -77,7 +77,7 @@
                           &nbsp;
                         <span itemprop="price">{{$product->price_discount}}</span>
                         
-                            تومان
+                            {{$product->price_unit}}
                      </p>
                      @endif
                 @endif

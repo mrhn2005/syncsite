@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->integer('price_buy')->nullable();
             $table->integer('price_sell')->nullable();
             $table->integer('price_discount')->nullable();
+            $table->string('price_unit')->default('تومان');
             $table->float('score')->nullable();
             $table->string('image')->nullable();
             $table->integer('weight')->nullable();
