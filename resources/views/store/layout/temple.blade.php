@@ -61,6 +61,11 @@
     									<li class="category-select" ><a href="{{ route('store.page',Auth::guard('store')->user()->slug)}}" style="width:100%" >
     									حجره شما
     									</a></li>
+    									
+    									</a></li>
+    									<li class="category-select" ><a href="{{ route('blog.show','کالاهای-خود-را-در-محلی-جات-بفروشید')}}" style="width:100%" >
+    									آموزش افزودن محصول
+    									</a></li>
     								
     								</ul>
     							</div>

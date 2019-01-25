@@ -33,7 +33,7 @@
                         </a></h5>
                     @else
                     <h5 style="direction:rtl;" class="product-name floatleft"><a href="{{route('product.show',$product->slug)}}">
-                           {{$product->weight.' '. $product->weight_unit}}
+                           {{ $product->weight.' '. $product->weight_unit}}
                         </a></h5>
                     @endif
                     

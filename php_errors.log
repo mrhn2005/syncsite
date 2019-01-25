@@ -181,3 +181,6 @@ Stack trace:
 #4 {main}
   thrown in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/View/View.php on line 399
 [03-Jan-2019 11:26:42 Asia/Tehran] PHP Parse error:  syntax error, unexpected '__data' (T_STRING) in /home/ubuntu/workspace/storage/framework/views/a6f5dadf29382248f9d3327a183984cd5ea5cc99.php on line 2
+[17-Jan-2019 21:04:40 Asia/Tehran] PHP Parse error:  syntax error, unexpected '$product' (T_VARIABLE) in /home/ubuntu/workspace/storage/framework/views/a08fc9bf027a9fd61efa621286027af5b00e4e34.php on line 36
+[24-Jan-2019 11:49:47 Asia/Tehran] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/storage/framework/views/022df40aab56443a3206e47362719fb90f49261c.php on line 156
+[25-Jan-2019 13:05:40 Asia/Tehran] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/storage/framework/views/62c514dbf60ca02a6cb22538914c1f98bb1f3875.php on line 64

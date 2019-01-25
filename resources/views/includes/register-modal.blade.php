@@ -149,6 +149,13 @@
                                 @endif
                             </div>
                         </div>
+                        <p>
+                            شما با کلیک بر روی ثبت نام با 
+                            <a style="color:#D9534F" href="{{route('terms')}}">
+                                قوانین و مقررات
+                            </a>
+                            خرید و فروش در محلی جات موافقت می نمایید.
+                        </p>
                         <div class="form-group">
                             <div class="col-md-4 col-md-offset-4">
                                 <input style="font-size:18px" type="submit" name="register" class="btn btn-success btn-md btn-block" value="ثبت نام">              

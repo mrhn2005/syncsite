@@ -87,6 +87,13 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-2">
+                                <p>
+                            شما با کلیک بر روی ثبت نام با 
+                            <a style="color:#D9534F" href="{{route('terms')}}">
+                                قوانین و مقررات
+                            </a>
+                            خرید و فروش در محلی جات موافقت می نمایید.
+                        </p>
                                 <button type="submit" class="btn btn-primary">
                                     ثبت نام
                                 </button>
