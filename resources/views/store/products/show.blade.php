@@ -28,7 +28,7 @@
         </a> 
         </div>
         
-            @foreach ($store->products as $product)
+            @foreach ($store->products->sortbyDesc('created_at') as $product)
             	<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 edit-mom">
             		@include('includes.single-product')
             		<div class="edit">

@@ -107,15 +107,15 @@ class StoreController extends Controller
     }
     
     public function store_product(Request $request){
+        $this->validate($request, [
+                'name' => 'required',
+            ]); 
         if(isset($request->weight)){
-            $this->validate($request, [
-                'weight'=>'numeric',
-                'name' => 'required',
-            ]);  
-        }else{
-            $this->validate($request, [
-                'name' => 'required',
-            ]);
+            if (!is_numeric($request->weight)){
+                return redirect()->back()->with(['fail'=>'
+        وزن باید عدد به صورت عدد وارد گردد.
+         ']);
+            }  
         }
         
 
@@ -166,15 +166,15 @@ class StoreController extends Controller
     
     
     public function update_product(Request $request,$id){
+        $this->validate($request, [
+                'name' => 'required',
+            ]); 
         if(isset($request->weight)){
-            $this->validate($request, [
-                'weight'=>'numeric',
-                'name' => 'required',
-            ]);  
-        }else{
-            $this->validate($request, [
-                'name' => 'required',
-            ]);
+            if (!is_numeric($request->weight)){
+                return redirect()->back()->with(['fail'=>'
+        وزن باید عدد به صورت عدد وارد گردد.
+         ']);
+            }  
         }
         
         $product=Product::withoutGlobalScopes()->where('id',$id)->first();
