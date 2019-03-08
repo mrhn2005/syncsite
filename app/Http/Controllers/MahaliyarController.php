@@ -31,7 +31,7 @@ class MahaliyarController extends Controller
      */
     public function create()
     {
-        return view('partners.mahaliyar');
+        return redirect('/store/register');
     }
 
     /**
