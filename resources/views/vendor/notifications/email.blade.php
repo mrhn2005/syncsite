@@ -51,7 +51,7 @@
 {{-- Subcopy --}}
 @isset($actionText)
 @component('mail::subcopy')
-اگر در بازگردانی رمز عبور مشکل دارید، لطفا لینک زیر را در مرورگر خود کپی کنید و دکمه enter را بزنید
+لینک:
  [{{ $actionUrl }}]({{ $actionUrl }})
 @endcomponent
 @endisset

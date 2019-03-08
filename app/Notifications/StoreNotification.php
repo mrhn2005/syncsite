@@ -30,7 +30,7 @@ class StoreNotification extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return ['database','mail'];
     }
 
     public function toDatabase($notifiable)
@@ -40,5 +40,16 @@ class StoreNotification extends Notification
             'message' => $this->message,
             'product_id'=>$this->product_id,
         ];
+    }
+    
+    public function toMail($notifiable)
+    {
+        $url = url('/store/home');
+    
+        return (new MailMessage)
+                    ->greeting('سلام')
+                    ->line('شما پیامی در محلی جات دریافت کردید:')
+                    ->line($this->message)
+                    ->action('ورود به حجره', $url);
     }
 }

@@ -29,15 +29,20 @@
                 <div class="gray">
                     حجره:
                     
-                    <a style="color:#90133B" href="{{route('store.page',$product->store->slug)}}">{{$product->store->name}}</a>
-                    
+                    <a id="contact-up" class="btn btn-default" href="{{route('store.page',$product->store->slug)}}">{{$product->store->name}}</a>
+                    <a id="contact-get" Class="btn btn-danger" href="#">
+                    دریافت اطلاعات تماس
+                    </a>
+                    <p id="contact-info" Class="btn btn-info" href="#">
+                    {{$product->store->mobile}}
+                    </p>
                 </div>
             </div>
             @endif
             <div  class="right-class" style="clear:both;padding-top:20px;padding-bottom:15px;">
                 <div class="gray">
                     دسته بندی:
-                    <a style="color:#90133B" href="{{route('category.show',$product->category->slug)}}">{{$product->category->name}}</a>
+                    <a  class="btn btn-default" href="{{route('category.show',$product->category->slug)}}">{{$product->category->name}}</a>
                 </div>
             </div>
             

@@ -109,6 +109,8 @@ blockquote strong{
     /*border-right: none;*/
 }
 @media only screen and (max-width: 767px){
+
+
     .sin-pro-tab li {
         border-bottom: 1px solid #e1e1e1; ;
         /*border-top: 1px solid ;*/
@@ -134,6 +136,16 @@ blockquote strong{
     color: #952A44;
     font-weight: 700;
 }
+
+#contact-info{
+   display:none;
+   margin-bottom:8px;
+}
+
+.gray a{
+    margin-bottom:8px;
+}
+
 </style>
 <!--<link rel="stylesheet" href="//cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css">-->
 
@@ -328,6 +340,15 @@ $(".single-carousel55").owlCarousel({
         itemsTablet: [768,2],
         itemsMobile : [479,1],
     });
+    
+$(document).ready(function() {
+    $('#contact-get').click(function(e) {  
+      e.preventDefault();
+      $('#contact-get').hide();
+      $('#contact-info').css("display","inline-block");
+    });
+});
+    
 </script>
 
 
