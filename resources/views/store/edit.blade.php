@@ -9,7 +9,7 @@
           </label>
 
         <div class="">
-            <input  type="text" class="form-control" name="name" value="{{$store->name }}" required data-error="لطفا این فیلد را  پر نمایید." >
+            <input  type="text" class="form-control" name="name" value="{{$store->name }}"  data-error="لطفا این فیلد را  پر نمایید." >
             <div class="help-block with-errors"></div>
             @if ($errors->has('name'))
                 <span class="help-block">
@@ -24,7 +24,7 @@
           </label>
 
         <div class="">
-            <input  type="text" class="form-control" name="mobile" pattern="^[\u06F0-\u06F90-9]{11}$" value="{{$store->mobile}}" placeholder="09124322534" required data-error="لطفا این فیلد را مطابق فرمت خواسته شده پر نمایید." >
+            <input  type="text" class="form-control" name="mobile" required pattern="^[\u06F0-\u06F90-9]{11}$" value="{{$store->mobile}}" placeholder="09124322534"  data-error="لطفا این فیلد را مطابق فرمت خواسته شده پر نمایید." >
             <div class="help-block with-errors"></div>
             @if ($errors->has('mobile'))
                 <span class="help-block">
@@ -77,7 +77,7 @@
         <label for="city">
             انتخاب شهر:
         </label>
-        <select required id="city" name="city_id" class="form-control" style="font-size:90%">
+        <select  id="city" name="city_id" class="form-control" style="font-size:90%">
             <?php $cities=!empty($store->city)?$store->city->province->cities:$provinces->first()->cities; ?>
             
             @foreach($cities as $city)
@@ -119,7 +119,7 @@
           </label>
 
         <div class="">
-            <textarea required id="history" rows="6"  class="form-control" name="history"  data-error="لطفا این فیلد را پر نمایید." >{{ $store->history}}</textarea>
+            <textarea  id="history" rows="6"  class="form-control" name="history"  data-error="لطفا این فیلد را پر نمایید." >{{ $store->history}}</textarea>
             <div class="help-block with-errors"></div>
             @if ($errors->has('phone'))
                 <span class="help-block">
