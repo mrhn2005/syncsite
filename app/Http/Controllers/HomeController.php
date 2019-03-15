@@ -49,7 +49,7 @@ class HomeController extends Controller
            
         $this->sync_cart();
         $categories =Category::defaultOrder()->get(['id', 'name','slug', '_lft', '_rgt', 'parent_id'])->toTree();
-        $vendors=Store::has('products')->withCount('products')->inRandomOrder()->take(3)->get(); 
+        $vendors=Store::has('products')->withCount('products')->inRandomOrder()->where('featured',1)->take(3)->get(); 
         $maincats=Maincat::all();
         $sales=Cache::remember('sales',10000,function(){
             return Sale::select('product_id', DB::raw('SUM(quantity) as sum'))

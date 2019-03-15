@@ -270,7 +270,7 @@
                     
                     <div class="section-title">
                         <h2 class="questo">
-                            پرفروش ترین حجره ها
+                            حجره‌های برگزیده
                         </h2>
                     </div>
                 </div>
