@@ -204,6 +204,41 @@
                 color: #90133B!important;
                 font-weight:bold!important;
         }
+        .c-footer__social{
+            direction:rtl;
+            margin-bottom: 17px;
+        }
+        .c-footer__social i{
+            font-size:38px;
+            vertical-align: middle;
+        }
+        .c-footer__social--instagram {
+            width: 330px;
+            height: 55px;
+            text-align: center;
+            border-radius: 9px;
+            background-image: linear-gradient(266deg,#4e60d3,#913baf 35%,#d52d88 68%,#f26d4f);
+            -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,.11);
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,.11);
+            color: #fff;
+            font-weight: 700;
+            display: inline-block;
+            font-size: 17px !important;
+            /*font-size: .857rem;*/
+            line-height: 55px;
+        }
+        .c-footer__social--instagram a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+        }
+        .c-footer__social--instagram a:hover {
+            
+            color: #ffb;
+        }
+        .footer-area {
+            padding:30px 0 0;
+        }
     </style>
     <!-- modernizr js -->
     <!--<script src="/js/vendor/modernizr-2.8.3.min.js"></script>-->

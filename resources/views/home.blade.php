@@ -181,6 +181,12 @@
                 </div>
                  
             </div>
+            
+                <div class="text-center">
+                    @include('includes.instagram')
+                </div>
+                
+            
         </div>
         
         <div id="howBuy" class="discount-area margin-top-60" style="background: url('pat8.png') repeat;color:white">

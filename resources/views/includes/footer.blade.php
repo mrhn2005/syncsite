@@ -1,6 +1,10 @@
 
     <footer>
+                
             <div class="footer-area footer-area-3" id="about-us">
+                <div class="text-center">
+                    @include('includes.instagram')
+                </div>
                 <!--footer-top-area start-->
                 <div class="footer-top-area">
                     <div class="container">
