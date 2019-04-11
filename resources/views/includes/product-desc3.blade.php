@@ -58,9 +58,15 @@
             @else
                 @if($product->quantity==0) 
                 <link itemprop="availability" href="http://schema.org/OutOfStock"/>
+                    <p class="normal-price " style="direction:rtl; display:none;">
+                        <span itemprop="price">{{$product->price_sell}}</span>
+                        
+                            {{$product->price_unit}}
+                     </p>
                     <p style="color:red;direction:rtl;" class="normal-price floatright" > 
                        ناموجود
                     </p>
+                    
                 @else
                 <link itemprop="availability" href="http://schema.org/InStock"/>
                     @if($product->active_discount==0)
