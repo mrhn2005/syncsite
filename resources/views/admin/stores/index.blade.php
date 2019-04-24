@@ -51,7 +51,7 @@
                         <tbody>
                             @foreach ($stores as $store)
                             <tr>
-                                <td>{{$loop->iteration}}</td>
+                                <td>{{$store->id}}</td>
                                 <td>{{$store->name}}</td>
                                 <td>{{$store->created_at}}</td>
                                 <td>{{$store->mobile}}</td>
