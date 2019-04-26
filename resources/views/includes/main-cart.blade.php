@@ -116,7 +116,9 @@ else{
 				<td class="product-subtotal"   colspan="6" style="padding-top:10px;padding-bottom:10px;color:green;">
 					<span id="delivery_price">{{$delivery_price}}</span>
 					تومان
-					
+					<strong>
+						(متعاقبا توسط حجره دار اعلام خواهد شد)
+					</strong>
 				</td>
 			</tr>
 			<tr>

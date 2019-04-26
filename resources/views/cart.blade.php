@@ -74,16 +74,13 @@
 					@endif
 				</div>
 				<br>
-					<div>
+					<div class="text-center">
 						
-						<p style="font-size:120%">
-							<strong>
+						<p style="font-size:170%">
+							<strong style="color:red;">
 								توجه:
 							</strong>
-							هزینه ارسال برای داخل پارک فناوری و همچنین خرید بالای 100 هزار تومان رایگان است.
-							هزینه ارسال برای خریدهای زیر 100 هزار تومان شهر تهران 
-							{{DB::table('deliveries')->first()->price}}
-							تومان می باشد.
+							هزینه ارسال پس از خرید توسط حجره دارها اعلام خواهد شد.
 						</p>
 					</div>
 									
