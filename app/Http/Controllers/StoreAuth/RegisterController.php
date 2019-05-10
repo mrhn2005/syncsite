@@ -53,6 +53,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:stores',
+            'mobile' => 'required',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -68,6 +69,7 @@ class RegisterController extends Controller
         $store=Store::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'mobile' => $data['mobile'],
             'password' => bcrypt($data['password']),
         ]);
         

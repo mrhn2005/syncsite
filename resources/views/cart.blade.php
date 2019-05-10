@@ -75,12 +75,21 @@
 				</div>
 				<br>
 					<div class="text-center">
-						
+						<?php $store_count=count(array_filter(App\Product::with('store')->find(array_keys(Cart::content()->toArray()))->pluck('store')->pluck('id')->unique()->toArray())); ?>
 						<p style="font-size:170%">
 							<strong style="color:red;">
 								توجه:
 							</strong>
-							هزینه ارسال پس از خرید توسط حجره دارها اعلام خواهد شد.
+							@if($store_count>1)
+												سبد خرید شما از
+							 <strong style="color:red">{{$store_count}}</strong>
+							 حجره متفاوت است. هر حجره دارای هزینه ارسال جداگانه است.
+							 
+								هزینه ارسال پس از خرید توسط حجره دارها اعلام خواهد شد.
+							@else
+								هزینه ارسال پس از خرید توسط حجره دار اعلام خواهد شد.
+							@endif
+		
 						</p>
 					</div>
 									

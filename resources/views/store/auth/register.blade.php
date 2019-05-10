@@ -36,14 +36,28 @@
                                 @endif
                             </div>
                         </div>
-
+                        <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
+                            <label  class="col-md-4 col-md-push-8 control-label">
+                              تلفن همراه:
+                              </label>
+                    
+                            <div class="col-md-6 col-md-pull-2">
+                                <input  type="text" class="form-control" name="mobile" required pattern="^[\u06F0-\u06F90-9]{11}$" value="{{ old('mobile') }}" placeholder="09121234567"  data-error="لطفا این فیلد را مطابق فرمت خواسته شده پر نمایید." >
+                                <div class="help-block with-errors"></div>
+                                @if ($errors->has('mobile'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('mobile') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 col-md-push-8 control-label">
                             آدرس پست الکترونیکی:
                             </label>
 
                             <div class="col-md-6 col-md-pull-2" >
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input id="email" required type="email" class="form-control" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">

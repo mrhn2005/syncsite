@@ -87,5 +87,6 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.7/validator.min.js"></script>
 </body>
 </html>

@@ -50,6 +50,11 @@ else{
 			<tr>
 			    <td class="product-name">
 					<a  href="{{route('product.show',$product->slug)}}">{{$product->name}}</a>
+					@if(!empty($product->store))
+					<br>
+					<a style="color:blue"  href="{{route('store.page',$product->store->slug)}}">(حجره: {{$product->store->name}})</a>
+					
+					@endif
 				</td>
 			    
 				<td class="product-thumbnail">
