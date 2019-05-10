@@ -45,7 +45,7 @@ class HomeController extends Controller
     
     public function home_view(){
         // $start=microtime(true);
-        return count(array_filter(Product::with('store')->find(array_keys(Cart::content()->toArray()))->pluck('store')->pluck('id')->unique()->toArray()));
+        
            
         $this->sync_cart();
         $categories =Category::defaultOrder()->get(['id', 'name','slug', '_lft', '_rgt', 'parent_id'])->toTree();
